@@ -11,7 +11,7 @@ Este repositorio contiene el código fuente de la web informativa del evento, do
 
 ---
 
-## 🕹️ ¿Qué es la Arequipa Game Jam?
+## ¿Qué es la Arequipa Game Jam?
 
 La **Arequipa Game Jam** es un evento de creación de videojuegos que forma parte de la **Global Game Jam**, el evento de desarrollo de videojuegos más grande del mundo.
 
@@ -22,7 +22,7 @@ Durante 48 horas, personas de distintas disciplinas —programación, arte, dise
 
 ---
 
-## 🌋 Arequipa Game Jam
+## Arequipa Game Jam
 
 La Arequipa Game Jam tiene como objetivo:
 - Fomentar el desarrollo de videojuegos en la región
