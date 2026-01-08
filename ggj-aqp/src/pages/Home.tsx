@@ -1,6 +1,7 @@
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import HeroSection from '../components/home/HeroSection';
+import CountdownSection from '../components/home/CountdownSection';
 import AboutSection from '../components/home/AboutSection';
 import MissionSection from '../components/home/MissionSection';
 import ScheduleSection from '../components/home/ScheduleSection';
@@ -17,6 +18,7 @@ const Home = () => {
         <>
             <Navbar />
             <HeroSection />
+            <CountdownSection />
             <AboutSection />
             <MissionSection />
             <ScheduleSection />
