@@ -12,9 +12,11 @@
 
 **HeroSection**: Banner principal de la landing con el título “Game Jam 2026”, una breve descripción del evento y un contador regresivo hasta el inicio.
 
+**CountdownSection**: Sección de contador regresivo que muestra el tiempo restante hasta el inicio del evento.
+
 **AboutSection**: Sección introductoria que explica qué es la Game Jam y su propósito, acompañada de un recurso visual o ilustración temática.
 
-**MissionSection**: Conjunto de tarjetas informativas que presentan los pilares, valores u objetivos principales del evento mediante iconos y texto breve.
+**RegistrationStepsSection**: Conjunto de tarjetas informativas que muestran los pasos a seguir para registrarse en el evento
 
 **ScheduleSection**: Sección de cronograma que organiza las actividades del evento por fechas y días, utilizando un selector para facilitar la navegación.
 
@@ -55,8 +57,9 @@ src/
 │   │   └── Footer.tsx
 │   ├── home/                         # Componentes exclusivos de la Home
 │   │   ├── HeroSection.tsx
+│   │   ├── CountdownSection.tsx
 │   │   ├── AboutSection.tsx
-│   │   ├── MissionSection.tsx
+│   │   ├── RegistrationStepsSection.tsx
 │   │   ├── ScheduleSection.tsx
 │   │   ├── CallToActionMid.tsx       # El bloque del mando de consola
 │   │   ├── LocationSection.tsx
@@ -90,9 +93,11 @@ Navbar: Cabecera global con navegación y acceso a inscripción.
 
 HeroSection: Primer impacto visual con el título "Game Jam 2026" y el contador de tiempo.
 
+CountdownSection: Sección de contador regresivo que muestra el tiempo restante hasta el inicio del evento.
+
 AboutSection: Bloque informativo que explica la naturaleza del evento.
 
-MissionSection: Fichas con los pilares fundamentales o visión de la competencia.
+RegistrationStepsSection: Tarjetas que muestran los pasos para registrarse en el evento.
 
 ScheduleSection: Sección interactiva con el cronograma de actividades por días.
 
