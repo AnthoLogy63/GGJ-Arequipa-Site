@@ -15,11 +15,11 @@ El repositorio utiliza una estructura de ramas simple y estricta, orientada a pr
   Rama de producción.  
   Contiene únicamente código estable y listo para despliegue.  
   Está protegida y **no se permiten commits directos** bajo ninguna circunstancia.
+  Solo se pueden subir pull requests revisados.
 
 - **dev**  
   Rama principal de desarrollo.  
   Todas las nuevas funcionalidades, correcciones y mejoras se integran aquí antes de pasar a producción.  
-  Solo se actualiza mediante Pull Requests revisados.
 
 ### Ramas de trabajo
 
