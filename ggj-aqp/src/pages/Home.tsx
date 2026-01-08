@@ -3,7 +3,7 @@ import Footer from '../components/common/Footer';
 import HeroSection from '../components/home/HeroSection';
 import CountdownSection from '../components/home/CountdownSection';
 import AboutSection from '../components/home/AboutSection';
-import MissionSection from '../components/home/MissionSection';
+import RegistrationStepsSection from '../components/home/RegistrationStepsSection';
 import ScheduleSection from '../components/home/ScheduleSection';
 import CallToActionMid from '../components/home/CallToActionMid';
 import LocationSection from '../components/home/LocationSection';
@@ -20,7 +20,7 @@ const Home = () => {
             <HeroSection />
             <CountdownSection />
             <AboutSection />
-            <MissionSection />
+            <RegistrationStepsSection />
             <ScheduleSection />
             <CallToActionMid />
             <LocationSection />
