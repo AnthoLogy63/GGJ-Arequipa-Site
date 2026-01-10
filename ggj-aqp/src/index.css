@@ -5,4 +5,64 @@ body {
     color: white;
     margin: 0;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+
+/* Animación logo flotante */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Triangulitos */
+.tri {
+  position: absolute;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: tri-float 1.2s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+/* Formas variadas */
+.tri.small  { width: 6px;  height: 6px; }
+.tri.medium { width: 8px;  height: 10px; }
+.tri.tall   { width: 6px;  height: 14px; }
+.tri.wide   { width: 12px; height: 7px; }
+
+/* Posiciones (alrededor del logo) */
+.t1 { bottom:30px; right:50%; animation-delay:2s; }
+.t2 { top:60px;  left:20%; animation-delay:2.2s; }
+.t3 { top:220px;  right:10%; animation-delay:2.4s; }
+.t4 { top:180px; left:15%; animation-delay:2.6s; }
+.t5 { top:15%; right:160px; animation-delay:1.8s; }
+.t6 { top:20%; right:106px;  animation-delay:2s; }
+.t7 { bottom:5%; left:15%; animation-delay:2.2s; }
+.t8 { bottom:8px; right:30%; animation-delay:2.4s; }
+
+/* Animación flotante para los triángulos */
+@keyframes tri-float {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-6px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
