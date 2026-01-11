@@ -7,7 +7,7 @@ const AboutSection = () => {
             id="about"
             className="
                 w-full
-                py-10 sm:py-10 md:py-60
+                py-10 sm:py-10 md:py-40
                 px-6
                 bg-cover
                 bg-center
@@ -25,11 +25,11 @@ const AboutSection = () => {
 
             {/* Contenido */}
             <div className="relative max-w-7xl mx-auto">
-                <div className="flex flex-col lg:flex-row items-center gap-12 ml-6">
+                <div className="flex flex-col lg:flex-row items-center gap-12 ml-0 lg:ml-6">
                     
                     {/* Izquierda */}
                     <div className="w-full lg:w-3/5 text-white">
-                        <h2 className="text-3xl md:text-6xl font-bold pr-20">
+                        <h2 className="text-4xl md:text-6xl font-bold pr-20">
                             ¿Qué es la Global Game Jam?
                         </h2>
 
@@ -37,7 +37,7 @@ const AboutSection = () => {
                             className="
                                 text-lg md:text-2xl font-semibold
                                 text-[#1DF2F2]
-                                mt-3 mb-16
+                                mt-3 mb-4 sm:mb-8 md:mb-16
                                 drop-shadow-[2px_0_6px_#1DF2F2]
                                 drop-shadow-[-px_0_6px_#1DF2F2]
                                 drop-shadow-[0_0_10px_#1DF2F2]
@@ -64,7 +64,7 @@ const AboutSection = () => {
                                     text-[#A3FFFE]
                                     border-2
                                     border-[#29F7F5]
-                                    rounded-xl
+                                    rounded
                                     transition-all
                                     duration-300
                                     cursor-pointer
@@ -85,7 +85,7 @@ const AboutSection = () => {
                                     text-[#FFA1FE]
                                     border-2
                                     border-[#F130EE]
-                                    rounded-xl
+                                    rounded
                                     transition-all
                                     duration-300
                                     cursor-pointer
