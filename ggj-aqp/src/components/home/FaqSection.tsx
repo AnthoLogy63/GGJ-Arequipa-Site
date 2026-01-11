@@ -28,42 +28,59 @@ const FaqSection = () => {
     ];
 
     return (
-        <section className="py-24 px-4 relative overflow-hidden bg-[#11091C]">
+        <section className="py-24 px-4 relative bg-[#11091C] flex justify-center">
 
-            {/* === ZONA DE ADORNOS FLOTANTES (EL "MARCO") === */}
-            {/* Nota: 'hidden md:block' es para que solo salgan en PC y no estorben en celular */}
+            {/* Contenedor Principal con 'relative' para que los adornos se peguen a él */}
+            <div className="w-full max-w-3xl relative">
 
-            {/* Lado IZQUIERDO */}
-            {/* Línea vertical Cyan larga */}
-            <div className="hidden md:block absolute top-1/3 left-[5%] w-[2px] h-32 bg-[#1DF2F2] shadow-[0_0_10px_#1DF2F2]"></div>
-            {/* Guion Magenta horizontal */}
-            <div className="hidden md:block absolute top-[30%] left-[3%] w-6 h-1 bg-[#EC469A]"></div>
-            {/* Guion Cyan pequeño */}
-            <div className="hidden md:block absolute bottom-[30%] left-[8%] w-4 h-1 bg-[#1DF2F2]"></div>
+                {/* === ZONA DE ADORNOS (Ajustados al milímetro) === */}
+                <div className="hidden md:block">
 
-            {/* Lado DERECHO */}
-            {/* Rombo Hueco Magenta (Arriba) */}
-            <div className="hidden md:block absolute top-[20%] right-[10%] w-6 h-6 border-2 border-[#EC469A] rotate-45 shadow-[0_0_10px_#EC469A]"></div>
-            {/* Rombo Relleno Cyan pequeño */}
-            <div className="hidden md:block absolute top-[30%] right-[5%] w-3 h-3 bg-[#1DF2F2] rotate-45"></div>
-            {/* Línea Vertical Magenta (Abajo) */}
-            <div className="hidden md:block absolute bottom-[25%] right-[8%] w-[2px] h-20 bg-[#EC469A] shadow-[0_0_10px_#EC469A]"></div>
-            {/* Guion Magenta horizontal */}
-            <div className="hidden md:block absolute bottom-[40%] right-[4%] w-6 h-1 bg-[#EC469A]"></div>
+                    {/* 1. LADO IZQUIERDO */}
+                    {/* Línea Horizontal Cyan (Arriba de la 1ra pregunta) */}
+                    <div className="absolute top-[130px] -left-4 w-16 h-[3px] bg-[#1DF2F2] shadow-[0_0_10px_#1DF2F2] rounded-full"></div>
+
+                    {/* Guion Magenta (Medio) */}
+                    <div className="absolute top-[45%] -left-10 w-4 h-[3px] bg-[#EC469A] rounded-full opacity-80"></div>
+
+                    {/* Línea Vertical Cyan (Abajo - Pegada al final) */}
+                    <div className="absolute bottom-8 -left-8 w-[3px] h-24 bg-[#1DF2F2] shadow-[0_0_10px_#1DF2F2] rounded-full"></div>
 
 
-            {/* Contenido Principal */}
-            <div className="max-w-3xl mx-auto relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-wide">
-                    Preguntas Frecuentes (FAQ)
-                </h2>
+                    {/* 2. LADO DERECHO */}
+                    {/* Rombo Grande Hueco Magenta (Arriba) */}
+                    <div className="absolute top-[100px] -right-16 w-8 h-8 border-2 border-[#EC469A] rotate-45 shadow-[0_0_5px_#EC469A] opacity-80"></div>
 
-                {/* CORRECCIÓN 1: Texto Cyan más grueso y un poco más grande */}
-                <p className="text-[#1DF2F2] text-lg font-medium mb-12 tracking-wide">
-                    Todo lo que necesitas saber sobre el evento
-                </p>
+                    {/* Rombo Pequeño Sólido Cyan (Justo debajo del grande) */}
+                    <div className="absolute top-[150px] -right-8 w-3 h-3 bg-[#1DF2F2] rotate-45 shadow-[0_0_5px_#1DF2F2]"></div>
 
-                <div className="space-y-4">
+                    {/* Guion Magenta (Medio-Bajo) */}
+                    <div className="absolute top-[65%] -right-10 w-6 h-[3px] bg-[#EC469A] rounded-full"></div>
+
+                    {/* Línea Vertical Magenta (Abajo) */}
+                    <div className="absolute bottom-16 -right-6 w-[3px] h-16 bg-[#EC469A] shadow-[0_0_10px_#EC469A] rounded-full"></div>
+
+
+                    {/* 3. ZONA INFERIOR (Los que faltaban) */}
+                    {/* Rombo pequeñito morado (Centro-Izquierda) */}
+                    <div className="absolute -bottom-8 left-[30%] w-2 h-2 border border-[#EC469A] rotate-45 opacity-60"></div>
+
+                    {/* Guioncito Cyan (Centro-Derecha) */}
+                    <div className="absolute -bottom-6 right-[40%] w-3 h-1 bg-[#1DF2F2] opacity-60"></div>
+                </div>
+
+                {/* === CONTENIDO === */}
+                <div className="mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-wide">
+                        Preguntas Frecuentes (FAQ)
+                    </h2>
+                    {/* Subtítulo Cyan brillante */}
+                    <p className="text-[#1DF2F2] text-lg font-medium tracking-wide drop-shadow-[0_0_2px_rgba(29,242,242,0.5)]">
+                        Todo lo que necesitas saber sobre el evento
+                    </p>
+                </div>
+
+                <div className="space-y-4 relative z-10">
                     {faqs.map((faq, index) => (
                         <div
                             key={index}
