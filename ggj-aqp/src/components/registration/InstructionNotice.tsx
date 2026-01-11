@@ -25,28 +25,38 @@ const InstructionNotice = () => {
 
                     {/* Lista de condiciones */}
                     <div className="space-y-4 max-w-2xl mx-auto mb-8">
-                        {/* Item 1 */}
-                        <div className="flex items-start gap-3">
-                            <div className="bg-[#EC469A] p-1 rounded mt-1"> {/* Rosa */}
-                                <X size={16} className="text-white" strokeWidth={3} />
+                        {/* Item 1 - Solo Local */}
+                        <div className="flex items-center gap-4">
+                            {/* Cuadrado Sólido Rosa */}
+                            <div className="w-8 h-8 min-w-[32px] bg-[#EC469A] rounded flex items-center justify-center shadow-[0_0_10px_rgba(236,70,154,0.5)]">
+                                <X size={20} className="text-white" strokeWidth={3} />
                             </div>
-                            <p className="text-gray-300"><strong className="text-white">Solo registro local</strong> - No podrás subir tu juego</p>
+                            <p className="text-gray-300 text-sm md:text-base">
+                                <strong className="text-white block">Solo registro local</strong>
+                                <span className="opacity-80">No podrás subir tu juego</span>
+                            </p>
                         </div>
 
-                        {/* Item 2 */}
-                        <div className="flex items-start gap-3">
-                            <div className="bg-[#EC469A] p-1 rounded mt-1"> {/* Rosa */}
-                                <X size={16} className="text-white" strokeWidth={3} />
+                        {/* Item 2 - Solo Global */}
+                        <div className="flex items-center gap-4">
+                            <div className="w-8 h-8 min-w-[32px] bg-[#EC469A] rounded flex items-center justify-center shadow-[0_0_10px_rgba(236,70,154,0.5)]">
+                                <X size={20} className="text-white" strokeWidth={3} />
                             </div>
-                            <p className="text-gray-300"><strong className="text-white">Solo registro global</strong> - No tendrás acceso</p>
+                            <p className="text-gray-300 text-sm md:text-base">
+                                <strong className="text-white block">Solo registro global</strong>
+                                <span className="opacity-80">No tendrás acceso</span>
+                            </p>
                         </div>
 
-                        {/* Item 3 */}
-                        <div className="flex items-start gap-3">
-                            <div className="bg-[#6E2880] p-1 rounded mt-1"> {/* Morado medio */}
-                                <Check size={16} className="text-white" strokeWidth={3} />
+                        {/* Item 3 - Ambos (Correcto) */}
+                        <div className="flex items-center gap-4">
+                            <div className="w-8 h-8 min-w-[32px] bg-[#6E2880] rounded flex items-center justify-center shadow-[0_0_10px_rgba(110,40,128,0.5)]">
+                                <Check size={20} className="text-white" strokeWidth={3} />
                             </div>
-                            <p className="text-gray-300"><strong className="text-white">Ambos registros</strong> - ¡Participación completa!</p>
+                            <p className="text-gray-300 text-sm md:text-base">
+                                <strong className="text-white block">Ambos registros</strong>
+                                <span className="text-[#1DF2F2]">¡Participación completa!</span>
+                            </p>
                         </div>
                     </div>
 
