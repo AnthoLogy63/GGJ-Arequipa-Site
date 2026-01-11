@@ -1,6 +1,6 @@
 const FaqSection = () => {
     return (
-        <section style={{ padding: '4rem 2rem' }}>
+        <section id="faq" style={{ padding: '4rem 2rem' }}>
             <p>Hola desde FaqSection</p>
         </section>
     );
