@@ -2,7 +2,7 @@ import React from "react";
 
 const RegistrationStepsSection = () => {
     return (
-        <section className="relative w-full py-40 px-6 overflow-hidden bg-[#110A1C] text-white">
+        <section id="registration" className="relative w-full py-40 px-6 overflow-hidden bg-[#110A1C] text-white">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-20">
                     <h2 className="text-4xl md:text-6xl font-bold mb-2">
@@ -56,7 +56,7 @@ const RegistrationStepsSection = () => {
                             <div
                                 className="absolute inset-0 rounded-full blur-md glow-pulse"
                                 style={{ backgroundColor: "#1DF2F2" }}
-                                />
+                            />
                             <svg
                                 width="100"
                                 height="100"
