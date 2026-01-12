@@ -56,7 +56,51 @@ const CountdownSection = () => {
                 </h2>
 
                 {/* Contenedores de cuenta regresiva - estilo synthwave */}
-                <div className="flex flex-wrap md:flex-nowrap justify-center gap-[12px]">
+                <div className="flex flex-wrap md:flex-nowrap justify-center gap-[12px] relative" style={{ paddingTop: '15px', paddingBottom: '15px', paddingLeft: '5px', paddingRight: '5px' }}>
+                    {/* Esquina superior izquierda del marco */}
+                    <div 
+                        className="absolute top-0 left-0"
+                        style={{
+                            width: '50px',
+                            height: '50px',
+                            borderTop: '4px solid #F130EE',
+                            borderLeft: '4px solid #F130EE',
+                            borderTopLeftRadius: '20px'
+                        }}
+                    />
+                    {/* Esquina superior derecha del marco */}
+                    <div 
+                        className="absolute top-0 right-0"
+                        style={{
+                            width: '50px',
+                            height: '50px',
+                            borderTop: '4px solid #F130EE',
+                            borderRight: '4px solid #F130EE',
+                            borderTopRightRadius: '20px'
+                        }}
+                    />
+                    {/* Esquina inferior izquierda del marco */}
+                    <div 
+                        className="absolute bottom-0 left-0"
+                        style={{
+                            width: '50px',
+                            height: '50px',
+                            borderBottom: '4px solid #F130EE',
+                            borderLeft: '4px solid #F130EE',
+                            borderBottomLeftRadius: '20px'
+                        }}
+                    />
+                    {/* Esquina inferior derecha del marco */}
+                    <div 
+                        className="absolute bottom-0 right-0"
+                        style={{
+                            width: '50px',
+                            height: '50px',
+                            borderBottom: '4px solid #F130EE',
+                            borderRight: '4px solid #F130EE',
+                            borderBottomRightRadius: '20px'
+                        }}
+                    />
                     {/* Días */}
                     <div 
                         className="
@@ -68,6 +112,7 @@ const CountdownSection = () => {
                             flex-col
                             items-center
                             justify-center
+                            relative
                         "
                         style={{
                             backgroundColor: '#251241',
@@ -75,23 +120,33 @@ const CountdownSection = () => {
                             height: '170px'
                         }}
                     >
+                        {/* Borde celeste inferior izquierdo */}
                         <div 
-                            className="font-black text-[#1DF2F2]"
+                            className="absolute bottom-0 left-0"
+                            style={{
+                                width: '90px',
+                                height: '90px',
+                                borderBottom: '3px solid #1DF2F2',
+                                borderLeft: '3px solid #1DF2F2',
+                                borderBottomLeftRadius: '16px'
+                            }}
+                        />
+                        <div 
+                            className="font-black text-[#1DF2F2] mb-0"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
                                 fontSize: '96px',
-                                lineHeight: '0.8',
-                                marginBottom: '-10px'
+                                lineHeight: '1'
                             }}
                         >
                             {timeLeft.days.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
                                 fontSize: '24px',
-                                lineHeight: '0.8'
+                                lineHeight: '1'
                             }}
                         >
                             DÍAS
@@ -189,6 +244,7 @@ const CountdownSection = () => {
                             flex-col
                             items-center
                             justify-center
+                            relative
                         "
                         style={{
                             backgroundColor: '#251241',
@@ -196,6 +252,17 @@ const CountdownSection = () => {
                             height: '170px'
                         }}
                     >
+                        {/* Borde celeste superior derecho */}
+                        <div 
+                            className="absolute top-0 right-0"
+                            style={{
+                                width: '90px',
+                                height: '90px',
+                                borderTop: '3px solid #1DF2F2',
+                                borderRight: '3px solid #1DF2F2',
+                                borderTopRightRadius: '16px'
+                            }}
+                        />
                         <div 
                             className="font-black text-[#1DF2F2] mb-0"
                             style={{
