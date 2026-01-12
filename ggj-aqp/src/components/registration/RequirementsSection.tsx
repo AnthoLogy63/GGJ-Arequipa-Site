@@ -44,7 +44,7 @@ const RequirementsSection = () => {
 
                 {/* Subtítulo - Raleway */}
                 <div className="flex justify-center mb-16">
-                    <p className="text-gray-400 text-center font-['Raleway'] max-w-xl text-sm md:text-base leading-relaxed">
+                    <p className="text-gray-300 text-center font-['Raleway'] font-medium max-w-xl text-sm md:text-base leading-relaxed">
                         Antes de iniciar tu inscripción, asegúrate de cumplir con los siguientes requisitos:
                     </p>
                 </div>
@@ -61,9 +61,9 @@ const RequirementsSection = () => {
                                 {req.customIcon ? req.customIcon : req.icon}
                             </div>
 
-                            {/* Título con Gradiente Mitad/Mitad */}
-                            <h3
-                                className="text-xl font-bold mb-4 font-['Raleway'] leading-tight h-14 flex items-center"
+                            {/* Título con Gradiente Mitad/Mitad - Heading 6 */}
+                            <h6
+                                className="text-base font-semibold mb-4 font-['Raleway'] leading-tight h-14 flex items-center"
                                 style={{
                                     background: 'linear-gradient(90deg, #1DF2F2 0%, #1DF2F2 30%, #F130EE 60%, #F130EE 100%)',
                                     WebkitBackgroundClip: 'text',
@@ -72,10 +72,10 @@ const RequirementsSection = () => {
                                 }}
                             >
                                 {req.title}
-                            </h3>
+                            </h6>
 
                             {/* Descripción - Raleway */}
-                            <p className="text-gray-400 text-sm leading-relaxed font-['Raleway']">
+                            <p className="text-gray-300 text-sm leading-relaxed font-['Raleway']">
                                 {req.description}
                             </p>
                         </div>
@@ -84,19 +84,33 @@ const RequirementsSection = () => {
             </div>
 
             {/* === DECORACIÓN: 8 Puntos a la derecha === */}
-            {/* Diseño: 2 columnas de 4 puntos. Color #9671F3 */}
-            <div className="absolute top-[15%] right-4 hidden xl:grid grid-cols-2 gap-x-4 gap-y-3 opacity-80">
-                {/* Columna 1 */}
-                <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3]"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3]"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3]"></div>
+            {/* Diseño: Layout escalonado. Color #9671F3 */}
+            <div className="absolute top-[15%] right-4 hidden xl:flex flex-col gap-y-3 opacity-80">
+                {/* Punto 1 (solo izquierda) */}
                 <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3]"></div>
 
-                {/* Columna 2 */}
-                <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3] opacity-60"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3] opacity-60"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3] opacity-60"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3] opacity-60"></div>
+                {/* Puntos 2-3 (par) */}
+                <div className="flex gap-x-4">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3] opacity-60"></div>
+                </div>
+
+                {/* Puntos 4-5 (par) */}
+                <div className="flex gap-x-4">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3] opacity-60"></div>
+                </div>
+
+                {/* Puntos 6-7 (par) */}
+                <div className="flex gap-x-4">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3] opacity-60"></div>
+                </div>
+
+                {/* Punto 8 (solo derecha, más abajo) */}
+                <div className="flex justify-end mt-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3] opacity-60"></div>
+                </div>
             </div>
 
             {/* Glow de ambiente */}
