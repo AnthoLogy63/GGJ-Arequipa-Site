@@ -1,3 +1,6 @@
+import fondoHero from "../../assets/images/backgrounds/Fondo1.webp";
+import imagenLateral from "../../assets/images/TuImagenLateral.png";
+
 const HeroSection = () => {
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -21,7 +24,7 @@ const HeroSection = () => {
                 justify-center
             "
             style={{
-                backgroundImage: `url('')`,
+                backgroundImage: `url(${fondoHero})`,
             }}
         >
             {/* Overlay oscuro */}
@@ -34,7 +37,7 @@ const HeroSection = () => {
                     {/* Imagen izquierda */}
                     <div className="w-full lg:w-2/5 flex justify-center">
                         <img
-                            src=""
+                            src={imagenLateral}
                             alt="Hero Image"
                             className="
                                 w-full
@@ -100,3 +103,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
