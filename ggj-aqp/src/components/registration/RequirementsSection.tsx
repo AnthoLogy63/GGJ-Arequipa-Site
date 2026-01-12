@@ -85,7 +85,7 @@ const RequirementsSection = () => {
 
             {/* === DECORACIÓN: 8 Puntos a la derecha === */}
             {/* Diseño: Layout escalonado. Color #9671F3 */}
-            <div className="absolute top-[15%] right-4 hidden xl:flex flex-col gap-y-3 opacity-80">
+            <div className="absolute top-[50%] right-[calc(25%-2rem)] hidden xl:flex flex-col gap-y-3 opacity-80">
                 {/* Punto 1 (solo izquierda) */}
                 <div className="w-1.5 h-1.5 rounded-full bg-[#9671F3]"></div>
 
