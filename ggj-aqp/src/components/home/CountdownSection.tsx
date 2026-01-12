@@ -32,7 +32,37 @@ const CountdownSection = () => {
     }, []);
 
     return (
-        <section className="w-full py-32 px-6 relative overflow-hidden flex items-center justify-center min-h-screen" style={{ backgroundColor: '#11091C' }}>
+        <>
+            <style>
+                {`
+                    @keyframes float {
+                        0%, 100% { transform: translateY(0px); }
+                        50% { transform: translateY(-10px); }
+                    }
+                    
+                    @keyframes floatDiamond {
+                        0%, 100% { transform: translateY(0px) rotate(45deg); }
+                        50% { transform: translateY(-8px) rotate(45deg); }
+                    }
+                    
+                    @keyframes pulse {
+                        0%, 100% { opacity: 0.6; }
+                        50% { opacity: 1; }
+                    }
+                    
+                    @keyframes fadeInOut {
+                        0%, 100% { opacity: 0.3; }
+                        50% { opacity: 0.8; }
+                    }
+                    
+                    @keyframes shimmer {
+                        0% { opacity: 0.4; transform: translateX(0); }
+                        50% { opacity: 1; transform: translateX(2px); }
+                        100% { opacity: 0.4; transform: translateX(0); }
+                    }
+                `}
+            </style>
+            <section className="w-full py-32 px-6 relative overflow-hidden flex items-center justify-center min-h-screen" style={{ backgroundColor: '#11091C' }}>
             <div className="relative max-w-7xl mx-auto text-center w-full">
                 {/* Título estilo neon inclinado */}
                 <h2 
@@ -118,7 +148,8 @@ const CountdownSection = () => {
                             background: '#1DF2F2',
                             borderRadius: '9999px',
                             boxShadow: '0 0 10px #1DF2F2',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'shimmer 2s ease-in-out infinite'
                         }}
                     />
                     <div 
@@ -131,7 +162,8 @@ const CountdownSection = () => {
                             background: '#F130EE',
                             borderRadius: '9999px',
                             opacity: 0.8,
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'shimmer 2.5s ease-in-out infinite 0.3s'
                         }}
                     />
                     <div 
@@ -144,7 +176,8 @@ const CountdownSection = () => {
                             background: '#1DF2F2',
                             borderRadius: '9999px',
                             boxShadow: '0 0 10px #1DF2F2',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'shimmer 2.2s ease-in-out infinite 0.5s'
                         }}
                     />
 
@@ -159,7 +192,8 @@ const CountdownSection = () => {
                             background: '#F130EE',
                             borderRadius: '9999px',
                             boxShadow: '0 0 10px #F130EE',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'shimmer 2.3s ease-in-out infinite 0.2s'
                         }}
                     />
                     <div 
@@ -172,7 +206,8 @@ const CountdownSection = () => {
                             background: '#1DF2F2',
                             borderRadius: '9999px',
                             opacity: 0.9,
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'shimmer 2.6s ease-in-out infinite 0.4s'
                         }}
                     />
 
@@ -187,7 +222,8 @@ const CountdownSection = () => {
                             background: '#1DF2F2',
                             borderRadius: '9999px',
                             boxShadow: '0 0 10px #1DF2F2',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'pulse 3s ease-in-out infinite'
                         }}
                     />
 
@@ -202,7 +238,8 @@ const CountdownSection = () => {
                             background: '#F130EE',
                             borderRadius: '9999px',
                             boxShadow: '0 0 10px #F130EE',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'pulse 3.2s ease-in-out infinite 0.5s'
                         }}
                     />
 
@@ -217,7 +254,8 @@ const CountdownSection = () => {
                             border: '2px solid #F130EE',
                             transform: 'rotate(45deg)',
                             filter: 'drop-shadow(0 0 3px #F130EE) drop-shadow(0 0 1px #F130EE)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'floatDiamond 3s ease-in-out infinite'
                         }}
                     />
                     <div 
@@ -230,7 +268,8 @@ const CountdownSection = () => {
                             border: '2px solid #1DF2F2',
                             transform: 'rotate(45deg)',
                             filter: 'drop-shadow(0 0 3px #1DF2F2) drop-shadow(0 0 1px #1DF2F2)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'floatDiamond 3.5s ease-in-out infinite 0.5s'
                         }}
                     />
                     <div 
@@ -243,7 +282,8 @@ const CountdownSection = () => {
                             border: '2px solid #F130EE',
                             transform: 'rotate(45deg)',
                             filter: 'drop-shadow(0 0 3px #F130EE) drop-shadow(0 0 1px #F130EE)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'floatDiamond 3.2s ease-in-out infinite 0.8s'
                         }}
                     />
                     <div 
@@ -256,7 +296,8 @@ const CountdownSection = () => {
                             border: '2px solid #1DF2F2',
                             transform: 'rotate(45deg)',
                             filter: 'drop-shadow(0 0 3px #1DF2F2) drop-shadow(0 0 1px #1DF2F2)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'floatDiamond 3.8s ease-in-out infinite 1s'
                         }}
                     />
 
@@ -271,7 +312,8 @@ const CountdownSection = () => {
                             background: '#1DF2F2',
                             borderRadius: '50%',
                             filter: 'drop-shadow(0 0 4px #1DF2F2) drop-shadow(0 0 2px #1DF2F2)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'fadeInOut 2s ease-in-out infinite'
                         }}
                     />
                     <div 
@@ -284,7 +326,8 @@ const CountdownSection = () => {
                             background: '#F130EE',
                             borderRadius: '50%',
                             filter: 'drop-shadow(0 0 4px #F130EE) drop-shadow(0 0 2px #F130EE)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'fadeInOut 2.5s ease-in-out infinite 0.3s'
                         }}
                     />
                     <div 
@@ -297,7 +340,8 @@ const CountdownSection = () => {
                             background: '#1DF2F2',
                             borderRadius: '50%',
                             filter: 'drop-shadow(0 0 4px #1DF2F2) drop-shadow(0 0 2px #1DF2F2)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'fadeInOut 2.2s ease-in-out infinite 0.5s'
                         }}
                     />
                     <div 
@@ -310,7 +354,8 @@ const CountdownSection = () => {
                             background: '#F130EE',
                             borderRadius: '50%',
                             filter: 'drop-shadow(0 0 4px #F130EE) drop-shadow(0 0 2px #F130EE)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'fadeInOut 2.8s ease-in-out infinite 0.7s'
                         }}
                     />
                     <div 
@@ -323,7 +368,8 @@ const CountdownSection = () => {
                             background: '#F130EE',
                             borderRadius: '50%',
                             filter: 'drop-shadow(0 0 4px #F130EE) drop-shadow(0 0 2px #F130EE)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'fadeInOut 2.4s ease-in-out infinite 0.2s'
                         }}
                     />
                     <div 
@@ -336,7 +382,8 @@ const CountdownSection = () => {
                             background: '#1DF2F2',
                             borderRadius: '50%',
                             filter: 'drop-shadow(0 0 4px #1DF2F2) drop-shadow(0 0 2px #1DF2F2)',
-                            zIndex: 5
+                            zIndex: 5,
+                            animation: 'fadeInOut 2.6s ease-in-out infinite 0.4s'
                         }}
                     />
 
@@ -530,6 +577,7 @@ const CountdownSection = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 
