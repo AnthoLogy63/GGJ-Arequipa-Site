@@ -23,7 +23,7 @@ const SponsorsSection = () => {
     {
       loop: true,
       dragFree: true,
-      containScroll: false
+      containScroll: false,
     },
     [AutoScroll({ playOnInit: true, speed: 1, stopOnInteraction: false })]
   );
@@ -33,11 +33,14 @@ const SponsorsSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#12091f] via-[#1b1030] to-[#12091f]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <h2 className="text-center lg:text-7xl md:text-5xl font-bold text-white">
+        <h2 className="text-center   text-3xl
+  sm:text-4xl
+  md:text-5xl
+  lg:text-7xl font-bold text-white">
           Nuestros <span className="text-[#54F4FC]">sponsors</span>
         </h2>
 
-        <p className="mt-7 text-center lg:text-4xl md:text-2xl text-gray-300 mx-auto">
+        <p className="mt-7 text-center lg:text-4xl md:text-3xl text-gray-300 mx-auto">
           Las corporaciones y colectivos que hacen posible esta rebelión creativa.
         </p>
       </div>
@@ -52,17 +55,33 @@ const SponsorsSection = () => {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-          <div className="relative overflow-hidden
-  [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]
-  [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]
-" ref={emblaRef}>
+          {/* MOBILE: layout fluido */}
+          <div className="flex flex-wrap justify-center gap-12 lg:hidden">
+            {sponsors.map((sponsor) => (
+              <img
+                key={sponsor.name}
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="h-14 w-auto brightness-0"
+              />
+            ))}
+          </div>
+
+          {/* DESKTOP: carrusel */}
+          <div
+            ref={emblaRef}
+            className="hidden lg:block relative overflow-hidden
+              [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]
+              [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]
+            "
+          >
             <div className="flex">
               {[...sponsors, ...sponsors].map((sponsor, index) => (
-                <div key={index} className="flex-shrink-0">
+                <div key={index} className="flex-shrink-0 mr-16">
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    className="h-15 w-auto brightness-0 duration-200 hover:brightness-100 mr-16"
+                    className="h-15 w-auto brightness-0 duration-200 hover:brightness-100"
                   />
                 </div>
               ))}
