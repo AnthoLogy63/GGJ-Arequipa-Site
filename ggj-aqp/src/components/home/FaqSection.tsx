@@ -69,11 +69,11 @@ const FaqSection = () => {
                     <div className="absolute -bottom-6 right-[20%] w-4 h-0.5 bg-[#1FF2F2] opacity-90"></div>
                 </div>
 
-                <div className="mb-20 -ml-25">
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-wide">
+                <div className="mb-12 md:mb-20 md:-ml-25 px-4 md:px-0">
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-wide text-center md:text-left">
                         Preguntas Frecuentes (FAQ)
                     </h2>
-                    <p className="text-[#1DF2F2] text-lg font-medium tracking-wide drop-shadow-[0_0_2px_rgba(29,242,242,0.5)]">
+                    <p className="text-[#1DF2F2] text-lg font-medium tracking-wide drop-shadow-[0_0_2px_rgba(29,242,242,0.5)] text-center md:text-left">
                         Todo lo que necesitas saber sobre el evento
                     </p>
                 </div>
@@ -106,7 +106,7 @@ const FaqSection = () => {
                   ${openIndex === index ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}
                 `}
                             >
-                                <div className="px-6 pb-6 text-gray-400 leading-relaxed border-t border-gray-800/50 pt-4 mt-2">
+                                <div className="px-6 pb-6 text-gray-200 font-medium leading-relaxed border-t border-gray-800/50 pt-4 mt-2">
                                     {faq.answer}
                                 </div>
                             </div>
