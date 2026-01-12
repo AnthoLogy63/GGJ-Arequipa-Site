@@ -86,6 +86,34 @@ const CountdownSection = () => {
                         100% { opacity: 0.4; transform: translateX(0); }
                     }
                     
+                    @keyframes backgroundGlitch {
+                        0%, 90% { 
+                            clip-path: inset(0 0 0 0);
+                            transform: translate(0);
+                        }
+                        92% { 
+                            clip-path: inset(10% 0 85% 0);
+                            transform: translate(-5px, 5px);
+                        }
+                        94% { 
+                            clip-path: inset(60% 0 30% 0);
+                            transform: translate(5px, -5px);
+                        }
+                        96% { 
+                            clip-path: inset(30% 0 60% 0);
+                            transform: translate(-5px, -5px);
+                        }
+                        98%, 100% { 
+                            clip-path: inset(0 0 0 0);
+                            transform: translate(0);
+                        }
+                    }
+                    
+                    @keyframes scanline {
+                        0% { transform: translateY(-100%); }
+                        100% { transform: translateY(100vh); }
+                    }
+                    
                     @keyframes glitch {
                         0% {
                             text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
@@ -139,7 +167,39 @@ const CountdownSection = () => {
                 `}
             </style>
             <section className="w-full py-32 px-6 relative overflow-hidden flex items-center justify-center min-h-screen" style={{ backgroundColor: '#11091C' }}>
-            <div className="relative max-w-7xl mx-auto text-center w-full">
+            {/* Efectos de fondo glitch */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                {/* Líneas de escaneo */}
+                <div 
+                    className="absolute w-full h-1 opacity-10"
+                    style={{
+                        background: 'linear-gradient(transparent, #1DF2F2, transparent)',
+                        animation: 'scanline 8s linear infinite',
+                        boxShadow: '0 0 10px #1DF2F2'
+                    }}
+                />
+                
+                {/* Efecto de glitch de fondo */}
+                <div 
+                    className="absolute inset-0 opacity-5"
+                    style={{
+                        background: 'repeating-linear-gradient(0deg, #F130EE 0px, transparent 2px, transparent 4px)',
+                        animation: 'backgroundGlitch 8s infinite',
+                        mixBlendMode: 'screen'
+                    }}
+                />
+                
+                {/* Ruido de fondo */}
+                <div 
+                    className="absolute inset-0 opacity-3"
+                    style={{
+                        backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'0.3\'/%3E%3C/svg%3E")',
+                        backgroundSize: '256px 256px'
+                    }}
+                />
+            </div>
+            
+            <div className="relative max-w-7xl mx-auto text-center w-full z-10">
                 {/* Título estilo neon inclinado con efecto glitch hacker */}
                 <h2 
                     className="font-black text-transparent mb-12 md:mb-20 italic uppercase mx-auto px-4"
