@@ -49,9 +49,9 @@ const CountdownSection = () => {
                 
                 setTimeout(() => {
                     setGlitchText(originalText);
-                }, 100);
+                }, 50);
             }
-        }, 2000);
+        }, 1200);
 
         return () => clearInterval(glitchInterval);
     }, []);
@@ -118,17 +118,23 @@ const CountdownSection = () => {
                     }
                     
                     @keyframes glitchSkew {
-                        0% { transform: skewX(-5deg); }
-                        10% { transform: skewX(-5deg) skewY(2deg); }
-                        20% { transform: skewX(-5deg); }
-                        30% { transform: skewX(-5deg) skewY(-2deg); }
-                        40% { transform: skewX(-5deg); }
-                        50% { transform: skewX(-5deg) skewY(1deg); }
-                        60% { transform: skewX(-5deg); }
-                        70% { transform: skewX(-5deg) skewY(-1deg); }
-                        80% { transform: skewX(-5deg); }
-                        90% { transform: skewX(-5deg) skewY(1deg); }
-                        100% { transform: skewX(-5deg); }
+                        0% { transform: skewX(-5deg) translateX(0); }
+                        10% { transform: skewX(-5deg) translateX(-8px); }
+                        11% { transform: skewX(-5deg) translateX(8px); }
+                        12% { transform: skewX(-5deg) translateX(0); }
+                        20% { transform: skewX(-5deg) translateX(0); }
+                        30% { transform: skewX(-5deg) translateX(6px); }
+                        31% { transform: skewX(-5deg) translateX(-6px); }
+                        32% { transform: skewX(-5deg) translateX(0); }
+                        50% { transform: skewX(-5deg) translateX(0); }
+                        60% { transform: skewX(-5deg) translateX(-5px); }
+                        61% { transform: skewX(-5deg) translateX(5px); }
+                        62% { transform: skewX(-5deg) translateX(0); }
+                        80% { transform: skewX(-5deg) translateX(0); }
+                        90% { transform: skewX(-5deg) translateX(7px); }
+                        91% { transform: skewX(-5deg) translateX(-7px); }
+                        92% { transform: skewX(-5deg) translateX(0); }
+                        100% { transform: skewX(-5deg) translateX(0); }
                     }
                 `}
             </style>
