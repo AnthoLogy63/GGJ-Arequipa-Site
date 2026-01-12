@@ -36,23 +36,30 @@ const CountdownSection = () => {
             <div className="relative max-w-7xl mx-auto text-center w-full">
                 {/* Título estilo neon inclinado */}
                 <h2 
-                    className="font-black text-transparent mb-20 italic"
+                    className="font-black text-transparent mb-20 italic uppercase mx-auto"
                     style={{
                         WebkitTextStroke: '3px #F130EE',
                         transform: 'skewX(-5deg)',
                         letterSpacing: '0.15em',
-                        fontSize: '75px'
+                        fontSize: '75px',
+                        fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                        width: '467px',
+                        height: '93px',
+                        lineHeight: '93px',
+                        whiteSpace: 'nowrap',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
                     }}
                 >
                     GAME START IN...
                 </h2>
 
                 {/* Contenedores de cuenta regresiva - estilo synthwave */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+                <div className="flex flex-wrap md:flex-nowrap justify-center gap-[12px]">
                     {/* Días */}
                     <div 
                         className="
-                            border-2 border-[#1DF2F2]
                             rounded-2xl
                             transition-all
                             duration-300
@@ -69,16 +76,23 @@ const CountdownSection = () => {
                         }}
                     >
                         <div 
-                            className="font-black text-[#1DF2F2] mb-2"
+                            className="font-black text-[#1DF2F2]"
                             style={{
-                                fontFamily: 'Impact, sans-serif',
-                                fontSize: '75px'
+                                fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                                fontSize: '96px',
+                                lineHeight: '0.8',
+                                marginBottom: '-10px'
                             }}
                         >
                             {timeLeft.days.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-[10px] md:text-xs text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            style={{
+                                fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                                fontSize: '24px',
+                                lineHeight: '0.8'
+                            }}
                         >
                             DÍAS
                         </div>
@@ -87,7 +101,6 @@ const CountdownSection = () => {
                     {/* Horas */}
                     <div 
                         className="
-                            border-2 border-[#1DF2F2]
                             rounded-2xl
                             transition-all
                             duration-300
@@ -104,16 +117,22 @@ const CountdownSection = () => {
                         }}
                     >
                         <div 
-                            className="font-black text-[#1DF2F2] mb-2"
+                            className="font-black text-[#1DF2F2] mb-0"
                             style={{
-                                fontFamily: 'Impact, sans-serif',
-                                fontSize: '75px'
+                                fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                                fontSize: '96px',
+                                lineHeight: '1'
                             }}
                         >
                             {timeLeft.hours.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-[10px] md:text-xs text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
+                            style={{
+                                fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                                fontSize: '24px',
+                                lineHeight: '1'
+                            }}
                         >
                             HORAS
                         </div>
@@ -122,7 +141,6 @@ const CountdownSection = () => {
                     {/* Minutos */}
                     <div 
                         className="
-                            border-2 border-[#1DF2F2]
                             rounded-2xl
                             transition-all
                             duration-300
@@ -139,16 +157,22 @@ const CountdownSection = () => {
                         }}
                     >
                         <div 
-                            className="font-black text-[#1DF2F2] mb-2"
+                            className="font-black text-[#1DF2F2] mb-0"
                             style={{
-                                fontFamily: 'Impact, sans-serif',
-                                fontSize: '75px'
+                                fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                                fontSize: '96px',
+                                lineHeight: '1'
                             }}
                         >
                             {timeLeft.minutes.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-[10px] md:text-xs text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
+                            style={{
+                                fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                                fontSize: '24px',
+                                lineHeight: '1'
+                            }}
                         >
                             MINUTOS
                         </div>
@@ -157,7 +181,6 @@ const CountdownSection = () => {
                     {/* Segundos */}
                     <div 
                         className="
-                            border-2 border-[#1DF2F2]
                             rounded-2xl
                             transition-all
                             duration-300
@@ -174,16 +197,22 @@ const CountdownSection = () => {
                         }}
                     >
                         <div 
-                            className="font-black text-[#1DF2F2] mb-2"
+                            className="font-black text-[#1DF2F2] mb-0"
                             style={{
-                                fontFamily: 'Impact, sans-serif',
-                                fontSize: '75px'
+                                fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                                fontSize: '96px',
+                                lineHeight: '1'
                             }}
                         >
                             {timeLeft.seconds.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-[10px] md:text-xs text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
+                            style={{
+                                fontFamily: 'Zing Rust Demo, Impact, sans-serif',
+                                fontSize: '24px',
+                                lineHeight: '1'
+                            }}
                         >
                             SEGUNDOS
                         </div>
