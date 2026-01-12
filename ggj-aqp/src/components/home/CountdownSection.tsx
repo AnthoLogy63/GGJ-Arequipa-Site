@@ -55,52 +55,295 @@ const CountdownSection = () => {
                     GAME START IN...
                 </h2>
 
-                {/* Contenedores de cuenta regresiva - estilo synthwave */}
-                <div className="flex flex-wrap md:flex-nowrap justify-center gap-[12px] relative" style={{ paddingTop: '15px', paddingBottom: '15px', paddingLeft: '5px', paddingRight: '5px' }}>
-                    {/* Esquina superior izquierda del marco */}
+                {/* Contenedores de cuenta regresiva - estilo synthwave con decoraciones Cyberpunk HUD */}
+                <div className="flex flex-wrap md:flex-nowrap justify-center gap-[6px] relative" style={{ paddingTop: '3px', paddingBottom: '3px', paddingLeft: '3px', paddingRight: '3px' }}>
+                    {/* ===== DECORACIONES CYBERPUNK HUD ===== */}
+                    
+                    {/* Marco superior izquierdo - Rosa con glow intenso */}
                     <div 
-                        className="absolute top-0 left-0"
+                        className="absolute pointer-events-none"
                         style={{
-                            width: '50px',
-                            height: '50px',
+                            top: '-20px',
+                            left: '15%',
+                            width: '45px',
+                            height: '45px',
                             borderTop: '4px solid #F130EE',
                             borderLeft: '4px solid #F130EE',
-                            borderTopLeftRadius: '20px'
+                            borderTopLeftRadius: '18px',
+                            filter: 'drop-shadow(0 0 12px #F130EE) drop-shadow(0 0 20px #F130EE)',
+                            zIndex: 20
                         }}
                     />
-                    {/* Esquina superior derecha del marco */}
+                    
+                    {/* Marco superior derecho - Cian con glow intenso */}
                     <div 
-                        className="absolute top-0 right-0"
+                        className="absolute pointer-events-none"
                         style={{
-                            width: '50px',
-                            height: '50px',
-                            borderTop: '4px solid #F130EE',
-                            borderRight: '4px solid #F130EE',
-                            borderTopRightRadius: '20px'
+                            top: '-20px',
+                            right: '15%',
+                            width: '45px',
+                            height: '45px',
+                            borderTop: '4px solid #1DF2F2',
+                            borderRight: '4px solid #1DF2F2',
+                            borderTopRightRadius: '18px',
+                            filter: 'drop-shadow(0 0 12px #1DF2F2) drop-shadow(0 0 20px #1DF2F2)',
+                            zIndex: 20
                         }}
                     />
-                    {/* Esquina inferior izquierda del marco */}
+                    
+                    {/* Marco inferior derecho - Rosa con glow intenso */}
                     <div 
-                        className="absolute bottom-0 left-0"
+                        className="absolute pointer-events-none"
                         style={{
-                            width: '50px',
-                            height: '50px',
+                            bottom: '-20px',
+                            right: '15%',
+                            width: '45px',
+                            height: '45px',
                             borderBottom: '4px solid #F130EE',
-                            borderLeft: '4px solid #F130EE',
-                            borderBottomLeftRadius: '20px'
-                        }}
-                    />
-                    {/* Esquina inferior derecha del marco */}
-                    <div 
-                        className="absolute bottom-0 right-0"
-                        style={{
-                            width: '50px',
-                            height: '50px',
-                            borderBottom: '4px solid #F130EE',
                             borderRight: '4px solid #F130EE',
-                            borderBottomRightRadius: '20px'
+                            borderBottomRightRadius: '18px',
+                            filter: 'drop-shadow(0 0 12px #F130EE) drop-shadow(0 0 20px #F130EE)',
+                            zIndex: 20
                         }}
                     />
+
+                    {/* Líneas horizontales - Izquierda */}
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '18%',
+                            left: '180px',
+                            width: '20px',
+                            height: '2px',
+                            background: '#1DF2F2',
+                            borderRadius: '9999px',
+                            boxShadow: '0 0 10px #1DF2F2',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '45%',
+                            left: '175px',
+                            width: '15px',
+                            height: '2px',
+                            background: '#F130EE',
+                            borderRadius: '9999px',
+                            opacity: 0.8,
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '75%',
+                            left: '170px',
+                            width: '18px',
+                            height: '2px',
+                            background: '#1DF2F2',
+                            borderRadius: '9999px',
+                            boxShadow: '0 0 10px #1DF2F2',
+                            zIndex: 5
+                        }}
+                    />
+
+                    {/* Líneas horizontales - Derecha */}
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '25%',
+                            right: '180px',
+                            width: '20px',
+                            height: '2px',
+                            background: '#F130EE',
+                            borderRadius: '9999px',
+                            boxShadow: '0 0 10px #F130EE',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '60%',
+                            right: '170px',
+                            width: '16px',
+                            height: '2px',
+                            background: '#1DF2F2',
+                            borderRadius: '9999px',
+                            opacity: 0.9,
+                            zIndex: 5
+                        }}
+                    />
+
+                    {/* Líneas verticales - Izquierda */}
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            bottom: '10%',
+                            left: '180px',
+                            width: '2px',
+                            height: '60px',
+                            background: '#1DF2F2',
+                            borderRadius: '9999px',
+                            boxShadow: '0 0 10px #1DF2F2',
+                            zIndex: 5
+                        }}
+                    />
+
+                    {/* Líneas verticales - Derecha */}
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            bottom: '15%',
+                            right: '180px',
+                            width: '2px',
+                            height: '50px',
+                            background: '#F130EE',
+                            borderRadius: '9999px',
+                            boxShadow: '0 0 10px #F130EE',
+                            zIndex: 5
+                        }}
+                    />
+
+                    {/* Rombos pequeños */}
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '-15px',
+                            left: '35%',
+                            width: '12px',
+                            height: '12px',
+                            border: '2px solid #F130EE',
+                            transform: 'rotate(45deg)',
+                            filter: 'drop-shadow(0 0 3px #F130EE) drop-shadow(0 0 1px #F130EE)',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '-10px',
+                            right: '35%',
+                            width: '8px',
+                            height: '8px',
+                            border: '2px solid #1DF2F2',
+                            transform: 'rotate(45deg)',
+                            filter: 'drop-shadow(0 0 3px #1DF2F2) drop-shadow(0 0 1px #1DF2F2)',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            bottom: '-12px',
+                            left: '35%',
+                            width: '10px',
+                            height: '10px',
+                            border: '2px solid #F130EE',
+                            transform: 'rotate(45deg)',
+                            filter: 'drop-shadow(0 0 3px #F130EE) drop-shadow(0 0 1px #F130EE)',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            bottom: '-10px',
+                            right: '35%',
+                            width: '8px',
+                            height: '8px',
+                            border: '2px solid #1DF2F2',
+                            transform: 'rotate(45deg)',
+                            filter: 'drop-shadow(0 0 3px #1DF2F2) drop-shadow(0 0 1px #1DF2F2)',
+                            zIndex: 5
+                        }}
+                    />
+
+                    {/* Puntos pequeños con glow */}
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '30%',
+                            left: '160px',
+                            width: '4px',
+                            height: '4px',
+                            background: '#1DF2F2',
+                            borderRadius: '50%',
+                            filter: 'drop-shadow(0 0 4px #1DF2F2) drop-shadow(0 0 2px #1DF2F2)',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '55%',
+                            right: '160px',
+                            width: '4px',
+                            height: '4px',
+                            background: '#F130EE',
+                            borderRadius: '50%',
+                            filter: 'drop-shadow(0 0 4px #F130EE) drop-shadow(0 0 2px #F130EE)',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            bottom: '-8px',
+                            left: '42%',
+                            width: '4px',
+                            height: '4px',
+                            background: '#1DF2F2',
+                            borderRadius: '50%',
+                            filter: 'drop-shadow(0 0 4px #1DF2F2) drop-shadow(0 0 2px #1DF2F2)',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            bottom: '-5px',
+                            right: '42%',
+                            width: '3px',
+                            height: '3px',
+                            background: '#F130EE',
+                            borderRadius: '50%',
+                            filter: 'drop-shadow(0 0 4px #F130EE) drop-shadow(0 0 2px #F130EE)',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '-8px',
+                            left: '40%',
+                            width: '3px',
+                            height: '3px',
+                            background: '#F130EE',
+                            borderRadius: '50%',
+                            filter: 'drop-shadow(0 0 4px #F130EE) drop-shadow(0 0 2px #F130EE)',
+                            zIndex: 5
+                        }}
+                    />
+                    <div 
+                        className="absolute pointer-events-none"
+                        style={{
+                            top: '-6px',
+                            right: '40%',
+                            width: '4px',
+                            height: '4px',
+                            background: '#1DF2F2',
+                            borderRadius: '50%',
+                            filter: 'drop-shadow(0 0 4px #1DF2F2) drop-shadow(0 0 2px #1DF2F2)',
+                            zIndex: 5
+                        }}
+                    />
+
+                    {/* Círculo decorativo eliminado para centrar más */}
+
+                    {/* ===== FIN DECORACIONES CYBERPUNK HUD ===== */}
+                    
                     {/* Días */}
                     <div 
                         className="
