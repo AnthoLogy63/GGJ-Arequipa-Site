@@ -3,7 +3,7 @@ import { Check, X } from 'lucide-react';
 const InstructionNotice = () => {
     return (
         <div className="w-full max-w-5xl mx-auto p-4">
-            <div className="relative rounded-2xl p-[2px] bg-gradient-to-r from-[#55F4FC] to-[#F130EE]">
+            <div className="relative rounded-2xl p-[2px] bg-gradient-to-br from-[#55F4FC] to-[#F130EE]">
 
                 <div className="bg-[#130D22] rounded-2xl p-8 md:p-12 relative overflow-hidden">
 
@@ -52,7 +52,7 @@ const InstructionNotice = () => {
                             </div>
                         </div>
 
-                        <p className="text-[#F580F3] font-semibold text-sm md:text-base tracking-wide font-['Raleway'] text-center">
+                        <p className="text-[#F580F3] font-semibold text-base md:text-lg tracking-wide font-['Raleway'] text-center">
                             Una vez completes ambos formularios, recibirás un email de confirmación en 24-48 horas.
                         </p>
                     </div>
