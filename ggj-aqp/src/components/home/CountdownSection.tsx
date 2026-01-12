@@ -36,11 +36,12 @@ const CountdownSection = () => {
             <div className="relative max-w-7xl mx-auto text-center w-full">
                 {/* Título estilo neon inclinado */}
                 <h2 
-                    className="text-5xl md:text-7xl lg:text-8xl font-black text-transparent mb-20 italic"
+                    className="font-black text-transparent mb-20 italic"
                     style={{
                         WebkitTextStroke: '3px #F130EE',
                         transform: 'skewX(-5deg)',
-                        letterSpacing: '0.15em'
+                        letterSpacing: '0.15em',
+                        fontSize: '75px'
                     }}
                 >
                     GAME START IN...
@@ -53,25 +54,31 @@ const CountdownSection = () => {
                         className="
                             border-2 border-[#1DF2F2]
                             rounded-2xl
-                            p-12 md:p-16
                             transition-all
                             duration-300
                             hover:scale-105
+                            flex
+                            flex-col
+                            items-center
+                            justify-center
                         "
                         style={{
-                            backgroundColor: '#251241'
+                            backgroundColor: '#251241',
+                            width: '210px',
+                            height: '170px'
                         }}
                     >
                         <div 
-                            className="text-6xl md:text-8xl font-black text-[#1DF2F2] mb-4"
+                            className="font-black text-[#1DF2F2] mb-2"
                             style={{
-                                fontFamily: 'Impact, sans-serif'
+                                fontFamily: 'Impact, sans-serif',
+                                fontSize: '75px'
                             }}
                         >
                             {timeLeft.days.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-base md:text-lg text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[10px] md:text-xs text-[#1DF2F2] uppercase tracking-widest font-bold"
                         >
                             DÍAS
                         </div>
@@ -82,25 +89,31 @@ const CountdownSection = () => {
                         className="
                             border-2 border-[#1DF2F2]
                             rounded-2xl
-                            p-12 md:p-16
                             transition-all
                             duration-300
                             hover:scale-105
+                            flex
+                            flex-col
+                            items-center
+                            justify-center
                         "
                         style={{
-                            backgroundColor: '#251241'
+                            backgroundColor: '#251241',
+                            width: '210px',
+                            height: '170px'
                         }}
                     >
                         <div 
-                            className="text-6xl md:text-8xl font-black text-[#1DF2F2] mb-4"
+                            className="font-black text-[#1DF2F2] mb-2"
                             style={{
-                                fontFamily: 'Impact, sans-serif'
+                                fontFamily: 'Impact, sans-serif',
+                                fontSize: '75px'
                             }}
                         >
                             {timeLeft.hours.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-base md:text-lg text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[10px] md:text-xs text-[#1DF2F2] uppercase tracking-widest font-bold"
                         >
                             HORAS
                         </div>
@@ -111,25 +124,31 @@ const CountdownSection = () => {
                         className="
                             border-2 border-[#1DF2F2]
                             rounded-2xl
-                            p-12 md:p-16
                             transition-all
                             duration-300
                             hover:scale-105
+                            flex
+                            flex-col
+                            items-center
+                            justify-center
                         "
                         style={{
-                            backgroundColor: '#251241'
+                            backgroundColor: '#251241',
+                            width: '210px',
+                            height: '170px'
                         }}
                     >
                         <div 
-                            className="text-6xl md:text-8xl font-black text-[#1DF2F2] mb-4"
+                            className="font-black text-[#1DF2F2] mb-2"
                             style={{
-                                fontFamily: 'Impact, sans-serif'
+                                fontFamily: 'Impact, sans-serif',
+                                fontSize: '75px'
                             }}
                         >
                             {timeLeft.minutes.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-base md:text-lg text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[10px] md:text-xs text-[#1DF2F2] uppercase tracking-widest font-bold"
                         >
                             MINUTOS
                         </div>
@@ -140,25 +159,31 @@ const CountdownSection = () => {
                         className="
                             border-2 border-[#1DF2F2]
                             rounded-2xl
-                            p-12 md:p-16
                             transition-all
                             duration-300
                             hover:scale-105
+                            flex
+                            flex-col
+                            items-center
+                            justify-center
                         "
                         style={{
-                            backgroundColor: '#251241'
+                            backgroundColor: '#251241',
+                            width: '210px',
+                            height: '170px'
                         }}
                     >
                         <div 
-                            className="text-6xl md:text-8xl font-black text-[#1DF2F2] mb-4"
+                            className="font-black text-[#1DF2F2] mb-2"
                             style={{
-                                fontFamily: 'Impact, sans-serif'
+                                fontFamily: 'Impact, sans-serif',
+                                fontSize: '75px'
                             }}
                         >
                             {timeLeft.seconds.toString().padStart(2, '0')}
                         </div>
                         <div 
-                            className="text-base md:text-lg text-[#1DF2F2] uppercase tracking-widest font-bold"
+                            className="text-[10px] md:text-xs text-[#1DF2F2] uppercase tracking-widest font-bold"
                         >
                             SEGUNDOS
                         </div>
