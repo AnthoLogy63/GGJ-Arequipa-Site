@@ -25,7 +25,7 @@ const InstructionNotice = () => {
                         <div className="flex flex-col gap-4 mb-8 text-left">
 
                             <div className="flex items-start md:items-center gap-3">
-                                <div className="min-w-[24px] w-6 h-6 bg-[#8206E8] rounded-[4px] flex items-center justify-center shadow-[0_0_8px_rgba(130,6,232,0.4)] mt-0.5 md:mt-0">
+                                <div className="min-w-[24px] w-6 h-6 bg-gradient-to-br from-[#E10B98] to-[#7F06EC] rounded-[4px] flex items-center justify-center shadow-[0_0_8px_rgba(225,11,152,0.4)] mt-0.5 md:mt-0">
                                     <X size={16} className="text-white" strokeWidth={4} />
                                 </div>
                                 <p className="text-gray-400 text-sm md:text-base leading-tight font-['Raleway']">
@@ -34,7 +34,7 @@ const InstructionNotice = () => {
                             </div>
 
                             <div className="flex items-start md:items-center gap-3">
-                                <div className="min-w-[24px] w-6 h-6 bg-[#8206E8] rounded-[4px] flex items-center justify-center shadow-[0_0_8px_rgba(130,6,232,0.4)] mt-0.5 md:mt-0">
+                                <div className="min-w-[24px] w-6 h-6 bg-gradient-to-br from-[#E10B98] to-[#7F06EC] rounded-[4px] flex items-center justify-center shadow-[0_0_8px_rgba(225,11,152,0.4)] mt-0.5 md:mt-0">
                                     <X size={16} className="text-white" strokeWidth={4} />
                                 </div>
                                 <p className="text-gray-400 text-sm md:text-base leading-tight font-['Raleway']">
@@ -43,7 +43,7 @@ const InstructionNotice = () => {
                             </div>
 
                             <div className="flex items-start md:items-center gap-3">
-                                <div className="min-w-[24px] w-6 h-6 bg-[#8206E8] rounded-[4px] flex items-center justify-center shadow-[0_0_8px_rgba(130,6,232,0.4)] mt-0.5 md:mt-0">
+                                <div className="min-w-[24px] w-6 h-6 bg-gradient-to-br from-[#E10B98] to-[#7F06EC] rounded-[4px] flex items-center justify-center shadow-[0_0_8px_rgba(225,11,152,0.4)] mt-0.5 md:mt-0">
                                     <Check size={16} className="text-white" strokeWidth={4} />
                                 </div>
                                 <p className="text-gray-400 text-sm md:text-base leading-tight font-['Raleway']">
@@ -52,7 +52,7 @@ const InstructionNotice = () => {
                             </div>
                         </div>
 
-                        <p className="text-[#F580F3] font-semibold text-base md:text-lg tracking-wide font-['Raleway'] text-center">
+                        <p className="text-[#F580F3] font-semibold text-sm md:text-base tracking-wide font-['Raleway'] text-left">
                             Una vez completes ambos formularios, recibirás un email de confirmación en 24-48 horas.
                         </p>
                     </div>
