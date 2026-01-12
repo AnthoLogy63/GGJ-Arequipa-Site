@@ -92,6 +92,20 @@ function DistributedDots(props: ComponentProps<'svg'>) {
   )
 }
 
+function SnakeLine(props: ComponentProps<'svg'>) {
+  return (
+    <svg width="572" height="588" viewBox="0 0 572 588" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path d="M15.0008 572.524C68.1017 568.486 63.4872 568.837 78.6304 567.685C78.6304 567.685 96.4342 565.184 136.4 560.902C176.365 556.619 288.268 526.179 337.887 476.191C387.506 426.203 355.703 360.576 355.703 360.576C355.703 360.576 338.192 329.129 330.798 318.859C317.996 301.076 279.251 219.902 321.928 160.284C331.687 146.652 341.382 134.106 356.94 120.811C371.529 108.345 383.03 101.383 391.891 94.0145C397.695 89.1868 406.947 83.2524 417.974 76.8108C441.35 63.1543 456.945 56.7132 463.693 54.0848C468.474 52.8948 554.398 15.8609 556.866 15.0042" stroke="url(#paint0_linear_126_1056)" stroke-width="30" stroke-linecap="round"/>
+    <defs>
+    <linearGradient id="paint0_linear_126_1056" x1="757.959" y1="-280.996" x2="69.2199" y2="537.607" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#31ECFA"/>
+    <stop offset="1" stop-color="#B045A8"/>
+    </linearGradient>
+    </defs>
+    </svg>
+  )
+}
+
 interface StepIndicatorProps {
   stepNumber: number;
   side?: 'left' | 'right';
@@ -183,8 +197,12 @@ function Step(props: StepProps) {
   return (
     <div className="flex flex-col gap-y-16 my-24">
       <StepIndicator {...props.indicator} />
-      <div className={`flex items-center gap-x-10 ${props.indicator.side === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
+      <div className={`flex items-center gap-x-16 ${props.indicator.side === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
         <StepCard {...props.card} />
+        <div className="relative shrink-0 w-20 h-120 overflow-visible">
+          <SnakeLine className={`absolute inset-0 scale-x-50 scale-y-110 -translate-x-1/2 object-contain ${props.indicator.side === 'right' ? 'scale-y-[-1.1]' : ''}`} />
+
+        </div>
         <StepQuestion {...props.questions} />
       </div>
     </div>
@@ -270,7 +288,7 @@ const steps: StepProps[] = [
 
 const RegistrationStepper = () => {
   return (
-    <section className="py-12 px-8">
+    <section className="py-12 px-8 container mx-auto">
     <h2>
       <span className="font-bold text-4xl">Tu ruta hacia la</span>
       <br />
