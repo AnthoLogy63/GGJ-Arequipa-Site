@@ -30,6 +30,16 @@ const RequirementsSection = () => {
 
     return (
         <section className="py-20 px-4 relative overflow-hidden">
+            {/* === FONDO AMBIENTAL (GLOWS) === */}
+            {/* 1. Círculo Grande Morado (Izquierda Arriba) - Da profundidad al título */}
+            <div className="absolute top-[-20%] -left-[10%] w-[700px] h-[700px] bg-[#6E2880] opacity-20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
+
+            {/* 2. Círculo Magenta Pulsante (Derecha Abajo) - Equilibra la composición */}
+            <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-[#F130EE] opacity-10 blur-[100px] rounded-full pointer-events-none animate-pulse"></div>
+
+            {/* 3. Brillo Sutil Central (Ajustado) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-[#2A1C3D] opacity-30 blur-[120px] rounded-full pointer-events-none"></div>
+
             <div className="max-w-6xl mx-auto relative z-10">
 
                 <h2
