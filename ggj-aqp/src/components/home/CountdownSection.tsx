@@ -142,16 +142,17 @@ const CountdownSection = () => {
             <div className="relative max-w-7xl mx-auto text-center w-full">
                 {/* Título estilo neon inclinado con efecto glitch hacker */}
                 <h2 
-                    className="font-black text-transparent mb-20 italic uppercase mx-auto"
+                    className="font-black text-transparent mb-12 md:mb-20 italic uppercase mx-auto px-4"
                     style={{
-                        WebkitTextStroke: '3px #F130EE',
-                        letterSpacing: '0.15em',
-                        fontSize: '75px',
+                        WebkitTextStroke: '2px #F130EE',
+                        letterSpacing: '0.1em',
+                        fontSize: 'clamp(32px, 8vw, 75px)',
                         fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                        width: '467px',
-                        height: '93px',
-                        lineHeight: '93px',
-                        whiteSpace: 'nowrap',
+                        maxWidth: '100%',
+                        width: 'auto',
+                        lineHeight: '1.2',
+                        whiteSpace: 'normal',
+                        wordBreak: 'break-word',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -162,8 +163,9 @@ const CountdownSection = () => {
                 </h2>
 
                 {/* Contenedores de cuenta regresiva - estilo synthwave con decoraciones Cyberpunk HUD */}
-                <div className="flex flex-wrap md:flex-nowrap justify-center gap-[6px] relative" style={{ paddingTop: '3px', paddingBottom: '3px', paddingLeft: '3px', paddingRight: '3px' }}>
-                    {/* ===== DECORACIONES CYBERPUNK HUD ===== */}
+                <div className="flex flex-wrap justify-center gap-2 md:gap-[6px] relative px-2" style={{ paddingTop: '3px', paddingBottom: '3px' }}>
+                    {/* ===== DECORACIONES CYBERPUNK HUD (Solo visible en tablets y desktop) ===== */}
+                    <div className="hidden md:block absolute inset-0 pointer-events-none">
                     
                     {/* Marco superior izquierdo - Rosa con glow intenso */}
                     <div 
@@ -466,6 +468,7 @@ const CountdownSection = () => {
                     {/* Círculo decorativo eliminado para centrar más */}
 
                     {/* ===== FIN DECORACIONES CYBERPUNK HUD ===== */}
+                    </div>
                     
                     {/* Días */}
                     <div 
@@ -479,16 +482,16 @@ const CountdownSection = () => {
                             items-center
                             justify-center
                             relative
+                            w-[160px] md:w-[210px]
+                            h-[130px] md:h-[170px]
                         "
                         style={{
-                            backgroundColor: '#251241',
-                            width: '210px',
-                            height: '170px'
+                            backgroundColor: '#251241'
                         }}
                     >
                         {/* Borde celeste inferior izquierdo */}
                         <div 
-                            className="absolute bottom-0 left-0"
+                            className="absolute bottom-0 left-0 hidden md:block"
                             style={{
                                 width: '90px',
                                 height: '90px',
@@ -501,7 +504,7 @@ const CountdownSection = () => {
                             className="font-black text-[#1DF2F2] mb-0"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                fontSize: '96px',
+                                fontSize: 'clamp(56px, 10vw, 96px)',
                                 lineHeight: '1'
                             }}
                         >
@@ -511,7 +514,7 @@ const CountdownSection = () => {
                             className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                fontSize: '24px',
+                                fontSize: 'clamp(16px, 3vw, 24px)',
                                 lineHeight: '1'
                             }}
                         >
@@ -530,18 +533,18 @@ const CountdownSection = () => {
                             flex-col
                             items-center
                             justify-center
+                            w-[160px] md:w-[210px]
+                            h-[130px] md:h-[170px]
                         "
                         style={{
-                            backgroundColor: '#251241',
-                            width: '210px',
-                            height: '170px'
+                            backgroundColor: '#251241'
                         }}
                     >
                         <div 
                             className="font-black text-[#1DF2F2] mb-0"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                fontSize: '96px',
+                                fontSize: 'clamp(56px, 10vw, 96px)',
                                 lineHeight: '1'
                             }}
                         >
@@ -551,7 +554,7 @@ const CountdownSection = () => {
                             className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                fontSize: '24px',
+                                fontSize: 'clamp(16px, 3vw, 24px)',
                                 lineHeight: '1'
                             }}
                         >
@@ -570,18 +573,18 @@ const CountdownSection = () => {
                             flex-col
                             items-center
                             justify-center
+                            w-[160px] md:w-[210px]
+                            h-[130px] md:h-[170px]
                         "
                         style={{
-                            backgroundColor: '#251241',
-                            width: '210px',
-                            height: '170px'
+                            backgroundColor: '#251241'
                         }}
                     >
                         <div 
                             className="font-black text-[#1DF2F2] mb-0"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                fontSize: '96px',
+                                fontSize: 'clamp(56px, 10vw, 96px)',
                                 lineHeight: '1'
                             }}
                         >
@@ -591,7 +594,7 @@ const CountdownSection = () => {
                             className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                fontSize: '24px',
+                                fontSize: 'clamp(16px, 3vw, 24px)',
                                 lineHeight: '1'
                             }}
                         >
@@ -611,16 +614,16 @@ const CountdownSection = () => {
                             items-center
                             justify-center
                             relative
+                            w-[160px] md:w-[210px]
+                            h-[130px] md:h-[170px]
                         "
                         style={{
-                            backgroundColor: '#251241',
-                            width: '210px',
-                            height: '170px'
+                            backgroundColor: '#251241'
                         }}
                     >
                         {/* Borde celeste superior derecho */}
                         <div 
-                            className="absolute top-0 right-0"
+                            className="absolute top-0 right-0 hidden md:block"
                             style={{
                                 width: '90px',
                                 height: '90px',
@@ -633,7 +636,7 @@ const CountdownSection = () => {
                             className="font-black text-[#1DF2F2] mb-0"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                fontSize: '96px',
+                                fontSize: 'clamp(56px, 10vw, 96px)',
                                 lineHeight: '1'
                             }}
                         >
@@ -643,7 +646,7 @@ const CountdownSection = () => {
                             className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
                             style={{
                                 fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                fontSize: '24px',
+                                fontSize: 'clamp(16px, 3vw, 24px)',
                                 lineHeight: '1'
                             }}
                         >
