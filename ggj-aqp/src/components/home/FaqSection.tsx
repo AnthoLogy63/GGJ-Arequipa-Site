@@ -33,11 +33,13 @@ const FaqSection = () => {
             {/* 1. Mancha Magenta Intensa (Izquierda Centro) - Destaca los adornos laterales */}
             <div className="absolute top-[30%] -left-[150px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"></div>
 
-            {/* 2. Mancha Morada Oscura (Derecha Abajo) - Soporte visual */}
-            <div className="absolute bottom-[-100px] -right-[100px] w-[600px] h-[600px] bg-[#6E2880] opacity-20 blur-[120px] rounded-full pointer-events-none mix-blend-screen"></div>
-
-            {/* 3. Pequeño acento Cyan (Arriba Derecha) - Detalle vibrante */}
-            <div className="absolute top-20 right-10 w-[200px] h-[200px] bg-[#1DF2F2] opacity-[0.05] blur-[80px] rounded-full pointer-events-none animate-pulse"></div>
+            {/* 2. Acento Morado (Arriba Derecha) - Detalle sutil con pulso lento */}
+            <div
+                className="absolute top-20 right-10 w-[200px] h-[200px] bg-[#6E2880] opacity-[0.06] blur-[80px] rounded-full pointer-events-none"
+                style={{
+                    animation: 'pulse 4s ease-in-out infinite'
+                }}
+            ></div>
 
             <div className="w-full max-w-3xl relative">
 
