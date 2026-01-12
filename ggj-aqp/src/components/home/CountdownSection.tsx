@@ -164,19 +164,18 @@ const CountdownSection = () => {
 
                 {/* Contenedores de cuenta regresiva - estilo synthwave con decoraciones Cyberpunk HUD */}
                 <div className="flex flex-wrap justify-center gap-2 md:gap-[6px] relative px-2" style={{ paddingTop: '3px', paddingBottom: '3px' }}>
-                    {/* ===== DECORACIONES CYBERPUNK HUD (Solo visible en tablets y desktop) ===== */}
-                    <div className="hidden md:block absolute inset-0 pointer-events-none">
+                    {/* ===== DECORACIONES CYBERPUNK HUD (Responsive) ===== */}
                     
                     {/* Marco superior izquierdo - Rosa con glow intenso */}
                     <div 
                         className="absolute pointer-events-none"
                         style={{
-                            top: '-20px',
-                            left: '15%',
-                            width: '45px',
-                            height: '45px',
-                            borderTop: '4px solid #F130EE',
-                            borderLeft: '4px solid #F130EE',
+                            top: 'clamp(-15px, -2vw, -20px)',
+                            left: 'clamp(5%, 10vw, 15%)',
+                            width: 'clamp(30px, 5vw, 45px)',
+                            height: 'clamp(30px, 5vw, 45px)',
+                            borderTop: 'clamp(2px, 0.4vw, 4px) solid #F130EE',
+                            borderLeft: 'clamp(2px, 0.4vw, 4px) solid #F130EE',
                             borderTopLeftRadius: '18px',
                             filter: 'drop-shadow(0 0 12px #F130EE) drop-shadow(0 0 20px #F130EE)',
                             zIndex: 20
@@ -187,12 +186,12 @@ const CountdownSection = () => {
                     <div 
                         className="absolute pointer-events-none"
                         style={{
-                            top: '-20px',
-                            right: '15%',
-                            width: '45px',
-                            height: '45px',
-                            borderTop: '4px solid #1DF2F2',
-                            borderRight: '4px solid #1DF2F2',
+                            top: 'clamp(-15px, -2vw, -20px)',
+                            right: 'clamp(5%, 10vw, 15%)',
+                            width: 'clamp(30px, 5vw, 45px)',
+                            height: 'clamp(30px, 5vw, 45px)',
+                            borderTop: 'clamp(2px, 0.4vw, 4px) solid #1DF2F2',
+                            borderRight: 'clamp(2px, 0.4vw, 4px) solid #1DF2F2',
                             borderTopRightRadius: '18px',
                             filter: 'drop-shadow(0 0 12px #1DF2F2) drop-shadow(0 0 20px #1DF2F2)',
                             zIndex: 20
@@ -203,21 +202,21 @@ const CountdownSection = () => {
                     <div 
                         className="absolute pointer-events-none"
                         style={{
-                            bottom: '-20px',
-                            right: '15%',
-                            width: '45px',
-                            height: '45px',
-                            borderBottom: '4px solid #F130EE',
-                            borderRight: '4px solid #F130EE',
+                            bottom: 'clamp(-15px, -2vw, -20px)',
+                            right: 'clamp(5%, 10vw, 15%)',
+                            width: 'clamp(30px, 5vw, 45px)',
+                            height: 'clamp(30px, 5vw, 45px)',
+                            borderBottom: 'clamp(2px, 0.4vw, 4px) solid #F130EE',
+                            borderRight: 'clamp(2px, 0.4vw, 4px) solid #F130EE',
                             borderBottomRightRadius: '18px',
                             filter: 'drop-shadow(0 0 12px #F130EE) drop-shadow(0 0 20px #F130EE)',
                             zIndex: 20
                         }}
                     />
 
-                    {/* Líneas horizontales - Izquierda */}
+                    {/* Líneas horizontales - Izquierda (solo desktop) */}
                     <div 
-                        className="absolute pointer-events-none"
+                        className="absolute pointer-events-none hidden lg:block"
                         style={{
                             top: '18%',
                             left: '180px',
@@ -468,7 +467,6 @@ const CountdownSection = () => {
                     {/* Círculo decorativo eliminado para centrar más */}
 
                     {/* ===== FIN DECORACIONES CYBERPUNK HUD ===== */}
-                    </div>
                     
                     {/* Días */}
                     <div 
