@@ -28,53 +28,51 @@ const FaqSection = () => {
     ];
 
     return (
-        <section className="py-24 px-4 relative bg-[#11091C] flex justify-center">
-
-            {/* Contenedor Principal con 'relative' para que los adornos se peguen a él */}
+        <section className="py-16 px-4 relative bg-[#11091C] flex justify-center">
             <div className="w-full max-w-3xl relative">
 
-                {/* === ZONA DE ADORNOS (Ajustados al milímetro) === */}
+                {/* Decoraciones */}
                 <div className="hidden md:block">
+                    <div className="absolute top-[152px] left-7 w-19 h-[2px] bg-[#1FF2F2] shadow-[0_0_10px_#1FF2F2] rounded-full"></div>
+                    <div className="absolute top-[38%] -left-15 w-4 h-[3px] bg-[#F130EE] rounded-full opacity-80"></div>
+                    <div className="absolute top-[69%] -left-12 w-4 h-[2px] bg-[#1FF2F2] shadow-[0_0_10px_#1FF2F2] rounded-full"></div>
+                    <div className="absolute bottom-8 -left-8 w-[2px] h-24 bg-[#1FF2F2] shadow-[0_0_10px_#1FF2F2] rounded-full"></div>
 
-                    {/* 1. LADO IZQUIERDO */}
-                    {/* Línea Horizontal Cyan (Arriba de la 1ra pregunta) */}
-                    <div className="absolute top-[130px] -left-4 w-16 h-[3px] bg-[#1DF2F2] shadow-[0_0_10px_#1DF2F2] rounded-full"></div>
+                    <div
+                        className="absolute top-[132px] -right-4 w-3 h-3 border-[2px] border-[#F130EE] rotate-37"
+                        style={{ filter: 'drop-shadow(0 0 3px #F130EE) drop-shadow(0 0 1px #F130EE)' }}
+                    ></div>
 
-                    {/* Guion Magenta (Medio) */}
-                    <div className="absolute top-[45%] -left-10 w-4 h-[3px] bg-[#EC469A] rounded-full opacity-80"></div>
+                    <div
+                        className="absolute top-[182px] -right-11 w-2 h-2 border-[2px] border-[#1FF2F2] rotate-45"
+                        style={{ filter: 'drop-shadow(0 0 3px #1FF2F2) drop-shadow(0 0 1px #1FF2F2)' }}
+                    ></div>
 
-                    {/* Línea Vertical Cyan (Abajo - Pegada al final) */}
-                    <div className="absolute bottom-8 -left-8 w-[3px] h-24 bg-[#1DF2F2] shadow-[0_0_10px_#1DF2F2] rounded-full"></div>
+                    <div className="absolute top-[60%] -right-18 w-4 h-[2px] bg-[#F130EE] rounded-full"></div>
+                    <div className="absolute bottom-18 -right-6 w-[2px] h-18 bg-[#F130EE] shadow-[0_0_10px_#F130EE] rounded-full"></div>
 
+                    <div
+                        className="absolute top-[90%] -right-18 w-1 h-1 bg-[#1FF2F2] rounded-full"
+                        style={{ filter: 'drop-shadow(0 0 4px #1FF2F2) drop-shadow(0 0 2px #1FF2F2)' }}
+                    ></div>
 
-                    {/* 2. LADO DERECHO */}
-                    {/* Rombo Grande Hueco Magenta (Arriba) */}
-                    <div className="absolute top-[100px] -right-16 w-8 h-8 border-2 border-[#EC469A] rotate-45 shadow-[0_0_5px_#EC469A] opacity-80"></div>
+                    <div
+                        className="absolute -bottom-8 left-[20%] w-3 h-3| border-[2px] border-[#F130EE] rounded-full"
+                        style={{ filter: 'drop-shadow(0 0 3px #F130EE) drop-shadow(0 0 1px #F130EE)' }}
+                    ></div>
 
-                    {/* Rombo Pequeño Sólido Cyan (Justo debajo del grande) */}
-                    <div className="absolute top-[150px] -right-8 w-3 h-3 bg-[#1DF2F2] rotate-45 shadow-[0_0_5px_#1DF2F2]"></div>
+                    <div
+                        className="absolute -bottom-2 left-[35%] w-1 h-1 bg-[#1FF2F2] rounded-full"
+                        style={{ filter: 'drop-shadow(0 0 4px #1FF2F2) drop-shadow(0 0 2px #1FF2F2)' }}
+                    ></div>
 
-                    {/* Guion Magenta (Medio-Bajo) */}
-                    <div className="absolute top-[65%] -right-10 w-6 h-[3px] bg-[#EC469A] rounded-full"></div>
-
-                    {/* Línea Vertical Magenta (Abajo) */}
-                    <div className="absolute bottom-16 -right-6 w-[3px] h-16 bg-[#EC469A] shadow-[0_0_10px_#EC469A] rounded-full"></div>
-
-
-                    {/* 3. ZONA INFERIOR (Los que faltaban) */}
-                    {/* Rombo pequeñito morado (Centro-Izquierda) */}
-                    <div className="absolute -bottom-8 left-[30%] w-2 h-2 border border-[#EC469A] rotate-45 opacity-60"></div>
-
-                    {/* Guioncito Cyan (Centro-Derecha) */}
-                    <div className="absolute -bottom-6 right-[40%] w-3 h-1 bg-[#1DF2F2] opacity-60"></div>
+                    <div className="absolute -bottom-6 right-[20%] w-4 h-0.5 bg-[#1FF2F2] opacity-90"></div>
                 </div>
 
-                {/* === CONTENIDO === */}
-                <div className="mb-12">
+                <div className="mb-20 -ml-25">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 tracking-wide">
                         Preguntas Frecuentes (FAQ)
                     </h2>
-                    {/* Subtítulo Cyan brillante */}
                     <p className="text-[#1DF2F2] text-lg font-medium tracking-wide drop-shadow-[0_0_2px_rgba(29,242,242,0.5)]">
                         Todo lo que necesitas saber sobre el evento
                     </p>
