@@ -25,7 +25,6 @@ body {
 }
 
 
-/* Animación logo flotante */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
@@ -36,7 +35,6 @@ body {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Triangulitos */
 .tri {
   position: absolute;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -44,13 +42,11 @@ body {
   opacity: 0.9;
 }
 
-/* Formas variadas */
 .tri.small  { width: 6px;  height: 6px; }
 .tri.medium { width: 8px;  height: 10px; }
 .tri.tall   { width: 6px;  height: 14px; }
 .tri.wide   { width: 12px; height: 7px; }
 
-/* Posiciones (alrededor del logo) */
 .t1 { bottom:30px; right:50%; animation-delay:2s; }
 .t2 { top:60px;  left:20%; animation-delay:2.2s; }
 .t3 { top:220px;  right:10%; animation-delay:2.4s; }
@@ -60,9 +56,31 @@ body {
 .t7 { bottom:5%; left:15%; animation-delay:2.2s; }
 .t8 { bottom:8px; right:30%; animation-delay:2.4s; }
 
-/* Animación flotante para los triángulos */
 @keyframes tri-float {
   0%   { transform: translateY(0) rotate(0deg); }
   50%  { transform: translateY(-6px) rotate(10deg); }
   100% { transform: translateY(0) rotate(0deg); }
+}
+
+
+@keyframes glow-pulse {
+  0% {
+    filter: blur(4px);
+    opacity: 0.10;
+    transform: scale(1);
+  }
+  50% {
+    filter: blur(6px);
+    opacity: 0.20;
+    transform: scale(1.15);
+  }
+  100% {
+    filter: blur(8px);
+    opacity: 0.10;
+    transform: scale(1);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
 }

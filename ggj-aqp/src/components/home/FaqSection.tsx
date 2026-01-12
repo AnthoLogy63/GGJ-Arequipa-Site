@@ -28,7 +28,7 @@ const FaqSection = () => {
     ];
 
     return (
-        <section className="py-16 px-4 relative bg-[#11091C] flex justify-center">
+        <section id="faq" className="py-16 px-4 relative bg-[#11091C] flex justify-center">
             <div className="w-full max-w-3xl relative">
 
                 {/* Decoraciones */}
