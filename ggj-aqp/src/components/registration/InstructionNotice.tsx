@@ -10,7 +10,14 @@ const InstructionNotice = () => {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-[#55F4FC]/20 blur-xl"></div>
 
                     <h3 className="text-2xl md:text-3xl font-bold mb-6 tracking-wide font-['Raleway'] text-center">
-                        <span className="bg-gradient-to-r from-[#55F4FC] to-[#F130EE] text-transparent bg-clip-text">
+                        <span
+                            className="text-transparent bg-clip-text"
+                            style={{
+                                backgroundImage: 'linear-gradient(135deg, #55F4FC 0%, #55F4FC 20%, #F130EE 80%, #F130EE 100%)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent'
+                            }}
+                        >
                             IMPORTANTE - LEER
                         </span>
                     </h3>
