@@ -29,13 +29,11 @@ const RequirementsSection = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Título con efecto outline - Zing Rust Demo 64px */}
                 <h2
-                    className="text-5xl md:text-6xl font-black text-center mb-2 tracking-wider"
+                    className="text-6xl font-black text-center mb-2 tracking-wider"
                     style={{
                         color: 'transparent',
                         WebkitTextStroke: '2px #1DF2F2',
-                        fontFamily: 'Zing Rust Demo, sans-serif',
-                        fontSize: '64px',
-                        lineHeight: '1.2'
+                        fontFamily: "'Zing Rust Demo', sans-serif"
                     }}
                 >
                     ANTES DE EMPEZAR

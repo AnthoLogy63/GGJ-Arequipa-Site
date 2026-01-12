@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'Zing Rust Demo';
+    src: url('./assets/fuentes/ZingRustDemo-Base.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #11091C;
     color: white;
