@@ -168,7 +168,7 @@ const CountdownSection = () => {
                     
                     {/* Marco superior izquierdo - Rosa con glow intenso */}
                     <div 
-                        className="absolute pointer-events-none"
+                        className="absolute pointer-events-none hidden lg:block"
                         style={{
                             top: 'clamp(-15px, -2vw, -20px)',
                             left: 'clamp(5%, 10vw, 15%)',
@@ -184,7 +184,7 @@ const CountdownSection = () => {
                     
                     {/* Marco superior derecho - Cian con glow intenso */}
                     <div 
-                        className="absolute pointer-events-none"
+                        className="absolute pointer-events-none hidden lg:block"
                         style={{
                             top: 'clamp(-15px, -2vw, -20px)',
                             right: 'clamp(5%, 10vw, 15%)',
@@ -200,7 +200,7 @@ const CountdownSection = () => {
                     
                     {/* Marco inferior derecho - Rosa con glow intenso */}
                     <div 
-                        className="absolute pointer-events-none"
+                        className="absolute pointer-events-none hidden lg:block"
                         style={{
                             bottom: 'clamp(-15px, -2vw, -20px)',
                             right: 'clamp(5%, 10vw, 15%)',
