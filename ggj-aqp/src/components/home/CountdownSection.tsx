@@ -8,6 +8,10 @@ const CountdownSection = () => {
         seconds: 0
     });
 
+    const [glitchText, setGlitchText] = useState('GAME START IN...');
+    const originalText = 'GAME START IN...';
+    const glitchChars = '!@#$%^&*(){}[]<>?/|\\~`';
+
     useEffect(() => {
         const targetDate = new Date('2026-01-26T00:00:00').getTime();
 
@@ -29,6 +33,27 @@ const CountdownSection = () => {
         const interval = setInterval(updateCountdown, 1000);
 
         return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const glitchInterval = setInterval(() => {
+            if (Math.random() > 0.7) {
+                const textArray = originalText.split('');
+                const glitchedArray = textArray.map((char, index) => {
+                    if (char !== ' ' && Math.random() > 0.7) {
+                        return glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                    }
+                    return char;
+                });
+                setGlitchText(glitchedArray.join(''));
+                
+                setTimeout(() => {
+                    setGlitchText(originalText);
+                }, 100);
+            }
+        }, 2000);
+
+        return () => clearInterval(glitchInterval);
     }, []);
 
     return (
@@ -60,16 +85,60 @@ const CountdownSection = () => {
                         50% { opacity: 1; transform: translateX(2px); }
                         100% { opacity: 0.4; transform: translateX(0); }
                     }
+                    
+                    @keyframes glitch {
+                        0% {
+                            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                                0.025em 0.04em 0 #fffc00;
+                        }
+                        15% {
+                            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                                0.025em 0.04em 0 #fffc00;
+                        }
+                        16% {
+                            text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                                -0.05em -0.05em 0 #fffc00;
+                        }
+                        49% {
+                            text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                                -0.05em -0.05em 0 #fffc00;
+                        }
+                        50% {
+                            text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                                0 -0.04em 0 #fffc00;
+                        }
+                        99% {
+                            text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                                0 -0.04em 0 #fffc00;
+                        }
+                        100% {
+                            text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+                                -0.04em -0.025em 0 #fffc00;
+                        }
+                    }
+                    
+                    @keyframes glitchSkew {
+                        0% { transform: skewX(-5deg); }
+                        10% { transform: skewX(-5deg) skewY(2deg); }
+                        20% { transform: skewX(-5deg); }
+                        30% { transform: skewX(-5deg) skewY(-2deg); }
+                        40% { transform: skewX(-5deg); }
+                        50% { transform: skewX(-5deg) skewY(1deg); }
+                        60% { transform: skewX(-5deg); }
+                        70% { transform: skewX(-5deg) skewY(-1deg); }
+                        80% { transform: skewX(-5deg); }
+                        90% { transform: skewX(-5deg) skewY(1deg); }
+                        100% { transform: skewX(-5deg); }
+                    }
                 `}
             </style>
             <section className="w-full py-32 px-6 relative overflow-hidden flex items-center justify-center min-h-screen" style={{ backgroundColor: '#11091C' }}>
             <div className="relative max-w-7xl mx-auto text-center w-full">
-                {/* Título estilo neon inclinado */}
+                {/* Título estilo neon inclinado con efecto glitch hacker */}
                 <h2 
                     className="font-black text-transparent mb-20 italic uppercase mx-auto"
                     style={{
                         WebkitTextStroke: '3px #F130EE',
-                        transform: 'skewX(-5deg)',
                         letterSpacing: '0.15em',
                         fontSize: '75px',
                         fontFamily: 'Zing Rust Demo, Impact, sans-serif',
@@ -79,10 +148,11 @@ const CountdownSection = () => {
                         whiteSpace: 'nowrap',
                         display: 'flex',
                         alignItems: 'center',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        animation: 'glitchSkew 5s infinite, glitch 3s infinite'
                     }}
                 >
-                    GAME START IN...
+                    {glitchText}
                 </h2>
 
                 {/* Contenedores de cuenta regresiva - estilo synthwave con decoraciones Cyberpunk HUD */}
