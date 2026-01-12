@@ -167,39 +167,7 @@ const CountdownSection = () => {
                 `}
             </style>
             <section className="w-full py-32 px-6 relative overflow-hidden flex items-center justify-center min-h-screen" style={{ backgroundColor: '#11091C' }}>
-            {/* Efectos de fondo glitch */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                {/* Líneas de escaneo */}
-                <div 
-                    className="absolute w-full h-1 opacity-10"
-                    style={{
-                        background: 'linear-gradient(transparent, #1DF2F2, transparent)',
-                        animation: 'scanline 8s linear infinite',
-                        boxShadow: '0 0 10px #1DF2F2'
-                    }}
-                />
-                
-                {/* Efecto de glitch de fondo */}
-                <div 
-                    className="absolute inset-0 opacity-5"
-                    style={{
-                        background: 'repeating-linear-gradient(0deg, #F130EE 0px, transparent 2px, transparent 4px)',
-                        animation: 'backgroundGlitch 8s infinite',
-                        mixBlendMode: 'screen'
-                    }}
-                />
-                
-                {/* Ruido de fondo */}
-                <div 
-                    className="absolute inset-0 opacity-3"
-                    style={{
-                        backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' /%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'0.3\'/%3E%3C/svg%3E")',
-                        backgroundSize: '256px 256px'
-                    }}
-                />
-            </div>
-            
-            <div className="relative max-w-7xl mx-auto text-center w-full z-10">
+            <div className="relative max-w-7xl mx-auto text-center w-full">
                 {/* Título estilo neon inclinado con efecto glitch hacker */}
                 <h2 
                     className="font-black text-transparent mb-12 md:mb-20 italic uppercase mx-auto px-4"
