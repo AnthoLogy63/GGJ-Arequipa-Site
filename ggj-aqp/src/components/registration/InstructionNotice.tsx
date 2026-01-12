@@ -9,13 +9,17 @@ const InstructionNotice = () => {
 
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-[#55F4FC]/20 blur-xl"></div>
 
-                    <h3 className="text-2xl md:text-3xl font-bold mb-4 tracking-wide font-['Raleway'] text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-6 tracking-wide font-['Raleway'] text-center">
                         <span className="bg-gradient-to-r from-[#55F4FC] to-[#F130EE] text-transparent bg-clip-text">
                             IMPORTANTE - LEER
                         </span>
                     </h3>
 
-                    <div className="w-2/3 h-[1px] bg-gray-800/80 mb-6 mx-auto"></div>
+                    <div className="max-w-3xl mx-auto w-full">
+                        <div className="w-full h-[2px] mb-6" style={{
+                            background: 'linear-gradient(90deg, #2A1C3D 16%, #227575 49%, #331B53 86%)'
+                        }}></div>
+                    </div>
 
                     <div className="max-w-3xl mx-auto">
                         <p className="text-gray-300 mb-8 text-sm md:text-base font-['Raleway'] text-left">
