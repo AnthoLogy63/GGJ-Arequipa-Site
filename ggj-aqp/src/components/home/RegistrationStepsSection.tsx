@@ -2,7 +2,7 @@ import React from "react";
 
 const RegistrationStepsSection = () => {
     return (
-        <section className="relative w-full py-40 px-6 overflow-hidden bg-[#110A1C] text-white">
+        <section id="registration" className="relative w-full py-40 px-6 overflow-hidden bg-[#110A1C] text-white">
             <div className="max-w-7xl mx-auto">
                 <div className="mb-20">
                     <h2 className="text-4xl md:text-6xl font-bold mb-2">
@@ -13,10 +13,28 @@ const RegistrationStepsSection = () => {
                     </h2>
                 </div>
 
-                <div className="flex flex-col lg:flex-row justify-between items-start gap-20 lg:gap-8 relative">
+                <div className="flex flex-col lg:flex-row justify-between items-start gap-20 lg:gap-8 relative z-10">
+
+                   <div className="absolute -top-24 -right-30 md:-top-80 md:-right-60 pointer-events-none select-none opacity-50 z-0">
+                        <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[250px] h-[150px] md:w-[550px] md:h-[300px]">
+                            <path d="M95 20 L65 50 L95 80" stroke="#251C35" strokeWidth="12" strokeLinecap="square" />
+                            <path d="M60 20 L30 50 L60 80" stroke="#251C35" strokeWidth="12" strokeLinecap="square" transform="translate(0)" />
+                            <path d="M25 20 L-5 50 L25 80" stroke="#251C35" strokeWidth="12" strokeLinecap="square" transform="translate(0)" />
+                        </svg>
+                    </div>
+
+                    <div className="absolute -bottom-0 -left-30 md:-bottom-50 md:-left-70 pointer-events-none select-none opacity-50 z-0">
+                        <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[150px] h-[150px] md:w-[300px] md:h-[550px]">
+                            <path d="M15 60 L50 90 L85 60" stroke="#251C35" strokeWidth="12" strokeLinecap="square" />
+                            <path d="M15 30 L50 60 L85 30" stroke="#251C35" strokeWidth="12" strokeLinecap="square" transform="translate(0)" />
+                            <path d="M15 0 L50 30 L85 0" stroke="#251C35" strokeWidth="12" strokeLinecap="square" transform="translate(0)" />
+                        </svg>
+                    </div>
 
 
-                    {/* Flechas Desktop */}
+
+
+
                     <div className="hidden lg:block absolute top-[40px] left-[23%]">
                         <svg
                             width="260"
@@ -50,13 +68,12 @@ const RegistrationStepsSection = () => {
                     </div>
 
 
-                    {/* STEP 1 */}
                     <div className="flex-1 flex flex-col items-center text-center w-full z-10">
                         <div className="mb-4 relative">
                             <div
                                 className="absolute inset-0 rounded-full blur-md glow-pulse"
                                 style={{ backgroundColor: "#1DF2F2" }}
-                                />
+                            />
                             <svg
                                 width="100"
                                 height="100"
