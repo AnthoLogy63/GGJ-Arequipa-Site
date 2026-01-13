@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-const ScheduleSection = () => {
-    return (
-        <section id="schedule" style={{ padding: '4rem 2rem' }}>
-            <p>Hola desde ScheduleSection</p>
-        </section>
-    );
-=======
 import { useState } from 'react';
 
 type DaySchedule = {
