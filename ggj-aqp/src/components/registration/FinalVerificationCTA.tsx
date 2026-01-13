@@ -53,14 +53,14 @@ export const FinalVerificationCTA = () => {
         <div className="flex flex-col sm:flex-row gap-5">
           <button
             onClick={() => navigate('/')}
-            className="px-10 py-4 bg-[#6344ff] hover:bg-[#5235eb] text-white font-black rounded-xl transition-all shadow-[0_0_25px_rgba(99,68,255,0.4)] uppercase text-sm tracking-widest"
+            className="cursor-pointer bg-cyan-400 hover:bg-cyan-300 text-black font-black px-8 py-3 rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
           >
             SÍ, ESTOY LISTO
           </button>
 
           <button
             onClick={goToFaqs}
-            className="px-10 py-4 border-2 border-white/20 hover:border-white/50 text-white font-bold rounded-xl transition-all bg-transparent uppercase text-sm tracking-widest"
+            className="cursor-pointer border-2 border-cyan-400/50 hover:border-cyan-400 text-cyan-400 font-bold px-10 py-4 rounded-md transition-all bg-transparent hover:bg-cyan-400/10 uppercase tracking-wider text-sm"
           >
             TENGO DUDAS
           </button>
