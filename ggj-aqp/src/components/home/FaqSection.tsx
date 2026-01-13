@@ -31,7 +31,7 @@ const FaqSection = () => {
         <section id="faq" className="py-16 px-4 relative bg-[#11091C] flex justify-center">
             {/* === FONDO AMBIENTAL (GLOWS) === */}
 
-            <div className="w-full max-w-3xl relative">
+            <div className="w-full max-w-3xl relative overflow-x-hidden md:overflow-visible">
                 {/* 1. Mancha Magenta Intensa (Izquierda Centro) - Con pulso lento */}
                 <div
                     className="absolute top-[50%] -left-[750px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
