@@ -29,10 +29,8 @@ const FaqSection = () => {
 
     return (
         <section id="faq" className="py-16 px-4 relative bg-[#11091C] flex justify-center">
-            {/* === FONDO AMBIENTAL (GLOWS) === */}
-
+            {/* Background glows */}
             <div className="w-full max-w-3xl relative overflow-x-hidden md:overflow-visible">
-                {/* 1. Mancha Magenta Intensa (Izquierda Centro) - Con pulso lento */}
                 <div
                     className="absolute top-[50%] -left-[750px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
                     style={{
@@ -40,7 +38,6 @@ const FaqSection = () => {
                     }}
                 ></div>
 
-                {/* 2. Acento Magenta (Derecha) - Mismo color que izquierda con pulso lento */}
                 <div
                     className="absolute top-[-30%] -right-[750px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
                     style={{
@@ -48,7 +45,6 @@ const FaqSection = () => {
                     }}
                 ></div>
 
-                {/* Decoraciones */}
                 <div className="hidden md:block">
                     <div className="absolute top-[152px] left-7 w-19 h-[2px] bg-[#1FF2F2] shadow-[0_0_10px_#1FF2F2] rounded-full"></div>
                     <div className="absolute top-[38%] -left-15 w-4 h-[3px] bg-[#F130EE] rounded-full opacity-80"></div>
