@@ -29,8 +29,25 @@ const RequirementsSection = () => {
     ];
 
     return (
-        <section className="py-20 px-4 relative overflow-hidden">
-            <div className="max-w-6xl mx-auto relative z-10">
+        <section className="py-60 px-4 relative overflow-hidden">
+            <div className="max-w-6xl mx-auto relative z-10 overflow-x-hidden md:overflow-visible">
+                {/* === FONDO AMBIENTAL (GLOWS) === */}
+                {/* 1. Círculo Magenta Izquierda - Con pulso lento */}
+                <div
+                    className="absolute top-[-50%] -left-[400px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
+                    style={{
+                        animation: 'glowPulseSoft 4s ease-in-out infinite'
+                    }}
+                ></div>
+
+                {/* 2. Círculo Magenta Derecha - Con pulso lento */}
+                <div
+                    className="absolute top-[70%] -right-[500px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
+                    style={{
+                        animation: 'glowPulseSoft 4s ease-in-out infinite'
+                    }}
+                ></div>
+
 
                 <h2
                     className="text-5xl md:text-[64px] font-black text-center mb-2 tracking-wide"
