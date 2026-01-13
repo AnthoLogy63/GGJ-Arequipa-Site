@@ -27,7 +27,7 @@ const scheduleData: Record<string, DaySchedule> = {
       { time: "05:00 PM", location: "Estaciones de Desarrollo", name: "INICIO DE DESARROLLO", desc: "¡Manos a la obra! Comienza la creación de tu juego." },
     ]
   },
-  "DIA 2": { 
+  "DIA 2": {
     title: "DESARROLLO INTENSIVO",
     date: "SAB 31",
     description: "Desarrollo completo, mentorías y actividades de interacción.",
@@ -41,7 +41,7 @@ const scheduleData: Record<string, DaySchedule> = {
 
     ]
   },
-  "DIA 3": { 
+  "DIA 3": {
     title: "CIERRE & SHOWCASE",
     date: "DOM 1",
     description: "Toques finales, presentaciones de proyectos y clausura del evento.",
@@ -53,7 +53,7 @@ const scheduleData: Record<string, DaySchedule> = {
       { time: "05:00 PM", location: "Área de Trabajo Colaborativo", name: "FORMACION DE EQUIPOS & BRAINSTORNING", desc: "Networking activo para formar equipos, sesión de ideación grupal" },
       { time: "05:00 PM", location: "Estaciones de Desarrollo", name: "INICIO DE DESARROLLO", desc: "¡Manos a la obra! Comienza la creación de tu juego." },
     ]
-},
+  },
 };
 
 export const ScheduleSection = () => {
@@ -62,16 +62,16 @@ export const ScheduleSection = () => {
 
   return (
     <section id="schedule" className="relative bg-[#0a0510] text-white overflow-hidden">
-      
+
       {/* SECTOR SUPERIOR*/}
       <div className="relative h-[400px] w-full">
-        <img 
-          src="src\assets\images\backgrounds\Fondo1.webp" 
-          alt="Cyberpunk Arequipa" 
+        <img
+          src="src\assets\images\backgrounds\Fondo1.webp"
+          alt="Cyberpunk Arequipa"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0510] via-transparent to-transparent" />
-        
+
         <div className="relative z-10 max-w-5xl mx-auto pt-20 px-6">
           <h2 className="text-5xl font-bold mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Cronograma del Evento
@@ -128,21 +128,21 @@ export const ScheduleSection = () => {
         </div>
 
         <div className="border-2 border-gray-800 rounded-[40px] p-8 md:p-16 bg-[#0a0510]/80 backdrop-blur-md flex flex-col md:flex-row gap-12 shadow-2xl">
-          
+
           <div className="md:w-2/5">
             <div className="sticky top-10">
-                <h3 className="text-7xl font-black text-cyan-400 leading-none italic mb-4">
-                  {activeDay}
-                </h3>
-                <p className="text-2xl font-bold text-purple-400 mb-6 tracking-tight leading-tight">
-                  {currentDayData.title}
+              <h3 className="text-7xl font-black text-cyan-400 leading-none italic mb-4">
+                {activeDay}
+              </h3>
+              <p className="text-2xl font-bold text-purple-400 mb-6 tracking-tight leading-tight">
+                {currentDayData.title}
+              </p>
+              <div className="space-y-2">
+                <p className="text-xl font-bold">{currentDayData.date}</p>
+                <p className="text-gray-400 leading-relaxed italic">
+                  "{currentDayData.description}"
                 </p>
-                <div className="space-y-2">
-                    <p className="text-xl font-bold">{currentDayData.date}</p>
-                    <p className="text-gray-400 leading-relaxed italic">
-                      "{currentDayData.description}"
-                    </p>
-                </div>
+              </div>
             </div>
           </div>
 
@@ -155,7 +155,7 @@ export const ScheduleSection = () => {
                 { dot: "bg-[#71A5EE]", line: "bg-[#71A5EE]", text: "text-[#71A5EE]" }, // Lavanda/Morado
                 { dot: "bg-[#E43BEA]", line: "bg-[#E43BEA]", text: "text-[#E43BEA]" }, // Rosa neón
                 { dot: "bg-[#F02FE9]", line: "bg-[#F02FE9]", text: "text-[#F02FE9]" }, // Rosa fuerte
-                { dot: "bg-[#EC34E9]", line: "bg-[#EC34E9]", text: "text-[#EC34E9]" }, 
+                { dot: "bg-[#EC34E9]", line: "bg-[#EC34E9]", text: "text-[#EC34E9]" },
               ];
 
               const color = colors[index % colors.length];
@@ -164,13 +164,13 @@ export const ScheduleSection = () => {
               return (
                 <div key={index} className="mb-12 relative last:mb-0 pl-12">
                   {index !== currentDayData.events.length - 1 && (
-                    <div 
-                      className={`absolute left-[7px] top-[24px] w-[2px] h-[calc(100%+30px)] opacity-50 bg-gradient-to-b ${color.line} to-${nextColor.line.replace('bg-', '')}`} 
+                    <div
+                      className={`absolute left-[7px] top-[24px] w-[2px] h-[calc(100%+30px)] opacity-50 bg-gradient-to-b ${color.line} to-${nextColor.line.replace('bg-', '')}`}
                     />
                   )}
 
                   <div className={`absolute left-0 top-1.5 w-4 h-4 rounded-full ${color.dot} z-10 shadow-[0_0_15px_rgba(inherit)] shadow-${color.dot.replace('bg-', '')}`} style={{ boxShadow: '0 0 15px currentColor' }} />
-                  
+
                   <div className="flex flex-col md:flex-row md:items-start gap-8">
                     <span className="text-gray-400 font-mono text-lg min-w-[95px] pt-0.5">
                       {event.time}

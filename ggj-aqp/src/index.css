@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-theme-light-purple: #6e2880;
+  --color-theme-purple: #3f215f;
+  --color-theme-pink: #ec469a;
+  --color-theme-cyan: #1df2f2;
+  --color-theme-blue: #2d1f5a;
+  --color-theme-background: #11091c;
+}
 @font-face {
   font-family: 'Zing Rust Demo';
   src: url('./assets/fuentes/ZingRustDemo-Base.otf') format('opentype');
@@ -13,6 +21,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
 }
 
 @keyframes float {
@@ -32,7 +41,6 @@ body {
 .animate-float {
   animation: float 3.5s ease-in-out infinite;
 }
-
 
 @keyframes float {
   0% {
@@ -141,27 +149,43 @@ body {
   }
 }
 
-
 @keyframes glow-pulse {
   0% {
     filter: blur(4px);
-    opacity: 0.10;
+    opacity: 0.1;
     transform: scale(1);
   }
 
   50% {
     filter: blur(6px);
-    opacity: 0.20;
+    opacity: 0.2;
     transform: scale(1.15);
   }
 
   100% {
     filter: blur(8px);
-    opacity: 0.10;
+    opacity: 0.1;
     transform: scale(1);
   }
 }
 
 .glow-pulse {
   animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulseSoft {
+  0% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.15;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
 }

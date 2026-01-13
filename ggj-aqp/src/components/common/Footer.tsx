@@ -88,12 +88,12 @@ const Footer = () => {
                     <div className="flex flex-col space-y-4">
                         <div className="space-y-1">
                             <span className="text-gray-300">Diseñado por:</span>
-                            <a href="#" className="block text-[#19FFFF] hover:underline font-medium">Alexandra Raquel Quispe Arratea</a>
+                            <a href="https://www.linkedin.com/in/alexandra-raquel-quispe-arratea-bb1aa7396/" className="block text-[#19FFFF] hover:underline font-medium">Quispe Arratea Alexandra Raquel </a>
                         </div>
                         <div className="space-y-1">
                             <span className="text-gray-300">Desarrollado por:</span>
                             <div className="flex flex-col space-y-1">
-                                <a href="#" className="text-[#19FFFF] hover:underline font-medium">Ajra Huacso, Jeans Anthony</a>
+                                <a href="https://www.linkedin.com/in/anthonyajra/" className="text-[#19FFFF] hover:underline font-medium">Ajra Huacso, Jeans Anthony</a>
                                 <a href="#" className="text-[#19FFFF] hover:underline font-medium">Alfaro Buiza, Jesus Alberto</a>
                                 <a href="#" className="text-[#19FFFF] hover:underline font-medium">Aliaga Chaiña, Sandra Gabriela</a>
                                 <a href="#" className="text-[#19FFFF] hover:underline font-medium">Alvarez Astete, Jheeremy Manuel</a>
