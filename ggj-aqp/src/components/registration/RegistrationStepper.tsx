@@ -1,8 +1,9 @@
-import type { ComponentProps } from 'react';
+import { useRef, type ComponentProps } from 'react';
 import listIcon from '../../assets/images/icons/neon-list.png';
 import worldIcon from '../../assets/images/icons/neon-world.png';
 import checkIcon from '../../assets/images/icons/neon-check.png';
 import type React from 'react';
+import { useScroll, useTransform, motion } from 'motion/react';
 
 function Hexagon(props: ComponentProps<'svg'>) {
   return (
@@ -57,23 +58,22 @@ function Hexagon(props: ComponentProps<'svg'>) {
         </filter>
       </defs>
     </svg>
-
   )
 }
 
-function GradientCircle(props: ComponentProps<'svg'>) {
-  return (
-    <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <circle cx="18.5" cy="18.5" r="18.5" fill="url(#paint0_linear_126_1101)"/>
-    <defs>
-    <linearGradient id="paint0_linear_126_1101" x1="2.14158e-07" y1="17.9394" x2="33" y2="17.9394" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#28D7D7"/>
-    <stop offset="1" stop-color="#DA11D7"/>
-    </linearGradient>
-    </defs>
-    </svg>
-  )
-}
+// function GradientCircle(props: ComponentProps<'svg'>) {
+//   return (
+//     <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+//     <circle cx="18.5" cy="18.5" r="18.5" fill="url(#paint0_linear_126_1101)"/>
+//     <defs>
+//     <linearGradient id="paint0_linear_126_1101" x1="2.14158e-07" y1="17.9394" x2="33" y2="17.9394" gradientUnits="userSpaceOnUse">
+//     <stop stop-color="#28D7D7"/>
+//     <stop offset="1" stop-color="#DA11D7"/>
+//     </linearGradient>
+//     </defs>
+//     </svg>
+//   )
+// }
 
 function DistributedDots(props: ComponentProps<'svg'>) {
   return (
@@ -83,10 +83,12 @@ function DistributedDots(props: ComponentProps<'svg'>) {
     <circle cx="2.5" cy="23.5" r="2.5" fill="#F130EE"/>
     <circle cx="2.5" cy="44.5" r="2.5" fill="#F130EE"/>
     <circle cx="2.5" cy="65.5" r="2.5" fill="#F130EE"/>
-    <path d="M21 23.5C21 24.8807 19.8807 26 18.5 26C17.1193 26 16 24.8807 16 23.5C16 22.1193 17.1193 21 18.5 21C19.8807 21 21 22.1193 21 23.5Z" fill="#F130EE"/>
+    <path d="M21 23.5C21 24.8807 19.8807 26 18.5 26C17.1193 26 16 24.8807 16 23.5C16 22.1193 17.1193 21 18.5 21C19.8807 21 21 22.1193 21 23
+.5Z" fill="#F130EE"/>
     <path d="M21 23.5C21 24.8807 19.8807 26 18.5 26C17.1193 26 16 24.8807 16 23.5C16 22.1193 17.1193 21 18.5 21C19.8807 21 21 22.1193 21 23.5Z" fill="#F130EE"/>
     <circle cx="18.5" cy="44.5" r="2.5" fill="#F130EE"/>
     <circle cx="18.5" cy="65.5" r="2.5" fill="#F130EE"/>
+
     <circle cx="18.5" cy="86.5" r="2.5" fill="#F130EE"/>
     </svg>
   )
@@ -110,12 +112,14 @@ interface StepIndicatorProps {
   stepNumber: number;
   side?: 'left' | 'right';
 }
+
 function StepIndicator({
   stepNumber,
   side = 'left',
 }: StepIndicatorProps) {
   return (
     <div className={`flex items-center ${side === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
+      <DistributedDots className={`${side === 'right' ? 'scale-x-[-1] ml-4' : 'mr-4'}`}  />
       <div className="grid grid-cols-1 grid-rows-1 place-items-center">
           <Hexagon className="row-start-1 col-start-1" />
           <div className="row-start-1 col-start-1 text-center">
@@ -124,11 +128,10 @@ function StepIndicator({
             <span className="font-bold text-5xl">{`0${stepNumber}`}</span>
           </div>
       </div>
-      <div className={`flex grow items-center ${side === 'right' ? 'flex-row-reverse translate-x-5' : 'flex-row -translate-x-5' }`}>
-        <hr className="grow border-t-2 border-gray-400 max-w-48" />
-        <GradientCircle className={`${side === 'right' ? 'scale-x-[-1]' : null}`} />
-      </div>
-      <DistributedDots className={`${side === 'right' ? 'scale-x-[-1]' : null}`}  />
+      {/*<div className={`flex items-center ${side === 'right' ? 'flex-row-reverse translate-x-5' : 'flex-row -translate-x-5' }`}>
+        <hr className="w-16 border-t-2 border-gray-400" />
+        <GradientCircle className={`${side === 'right' ? 'scale-x-[-1]' : ''}`} />
+      </div>*/}
     </div>
   )
 }
@@ -142,23 +145,20 @@ interface StepCardProps {
   description: string;
   buttonContent?: string;
 }
+
 function StepCard(props: StepCardProps) {
   return (
-    <div className="flex flex-col items-center gap-y-4 flex-1">
+    <div className="flex flex-col items-center gap-y-4 w-full max-w-87.5 shrink-0 bg-theme-background/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-800/50">
       <img src={props.icon.src} alt={props.icon.alt} className="size-32 aspect-square object-contain" />
       <h3 className="font-bold text-xl text-center">{props.title}</h3>
       <p className="text-center text-gray-400">{props.description}</p>
       {props.buttonContent ? (
         <button className="group relative inline-block p-0.5 rounded-md hover:scale-105 transition-transform">
-
           <div className="absolute inset-0 rounded-md bg-linear-to-r from-theme-light-purple to-theme-cyan" />
-
           <div className="relative h-full w-full bg-theme-background rounded-sm px-6 py-2">
-
             <span className="block text-center bg-clip-text text-transparent bg-linear-to-r from-theme-light-purple to-theme-cyan uppercase font-semibold">
               {props.buttonContent}
             </span>
-
           </div>
         </button>
       ) : null}
@@ -174,7 +174,7 @@ interface StepQuestionProps {
 
 function StepQuestion(props: StepQuestionProps) {
   return (
-    <div className="flex flex-col gap-y-4 flex-1">
+    <div className="flex flex-col gap-y-4 w-full max-w-100 shrink-0">
       <h3 className="text-center text-transparent font-bold text-2xl bg-clip-text bg-linear-to-r from-theme-cyan to-theme-pink">{props.question}</h3>
       <p>{props.answerDescription}</p>
       <div className="h-0.5 bg-linear-to-r from-theme-blue via-theme-cyan to-theme-blue" />
@@ -193,19 +193,198 @@ interface StepProps {
   questions: StepQuestionProps;
 }
 
-function Step(props: StepProps) {
+function BackgroundTrack({ side, stepNumber }: { side: 'left' | 'right', stepNumber: number }) {
   return (
-    <div className="flex flex-col gap-y-16 my-24">
-      <StepIndicator {...props.indicator} />
-      <div className={`flex items-center gap-x-16 ${props.indicator.side === 'right' ? 'flex-row-reverse' : 'flex-row'}`}>
-        <StepCard {...props.card} />
-        <div className="relative shrink-0 w-20 h-120 overflow-visible">
-          <SnakeLine className={`absolute inset-0 scale-x-50 scale-y-110 -translate-x-1/2 object-contain ${props.indicator.side === 'right' ? 'scale-y-[-1.1]' : ''}`} />
-
-        </div>
-        <StepQuestion {...props.questions} />
+    <div className="absolute inset-0 pointer-events-none overflow-hidden flex justify-center items-center">
+      <div className="absolute h-full w-px bg-linear-to-b from-transparent via-theme-cyan/30 to-transparent border-r border-dashed border-theme-cyan/20" />
+      <div className={`absolute top-1/2 -translate-y-1/2 text-[30vh] md:text-[40vh] font-black text-theme-cyan/5 select-none max-w-full ${side === 'left' ? 'md:left-[10%]' : 'md:right-[10%]'}`}>
+        0{stepNumber}
       </div>
     </div>
+  );
+}
+
+// VERSIÓN DESKTOP - Elementos entran desde los lados
+function StepDesktop(props: StepProps) {
+  const targetRef = useRef<HTMLDivElement>(null);
+  const isLeft = props.indicator.side === 'left';
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"]
+  });
+
+  // HEXÁGONO - Entra desde su lado y se queda fijo
+  const hexagonX = useTransform(
+    scrollYProgress,
+    [0, 0.15, 0.85, 1],
+    isLeft ? [-400, 0, 0, 0] : [400, 0, 0, 0]
+  );
+
+  const hexagonOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.12, 0.88, 1],
+    [0, 1, 1, 0.3]
+  );
+
+  // CARD - Entra desde el lado opuesto al hexágono y se detiene
+  const cardX = useTransform(
+    scrollYProgress,
+    [0.05, 0.2, 0.8, 0.95],
+    isLeft ? [800, 0, 0, -300] : [-800, 0, 0, 300]
+  );
+
+  const cardOpacity = useTransform(
+    scrollYProgress,
+    [0.05, 0.18, 0.82, 0.95],
+    [0, 1, 1, 0]
+  );
+
+  // SNAKE LINE - Aparece en el medio
+  const snakeOpacity = useTransform(
+    scrollYProgress,
+    [0.15, 0.25, 0.75, 0.85],
+    [0, 1, 1, 0]
+  );
+
+  // PREGUNTAS - Entra desde el mismo lado que el card
+  const questionX = useTransform(
+    scrollYProgress,
+    [0.2, 0.3, 0.7, 0.9],
+    isLeft ? [800, 0, 0, -300] : [-800, 0, 0, 300]
+  );
+
+  const questionOpacity = useTransform(
+    scrollYProgress,
+    [0.2, 0.28, 0.72, 0.9],
+    [0, 1, 1, 0]
+  );
+
+  return (
+    <div ref={targetRef} className="h-[400vh] w-full relative">
+      <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
+        <BackgroundTrack side={props.indicator.side || 'left'} stepNumber={props.indicator.stepNumber} />
+
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+
+          <div className={`flex items-center justify-center gap-4 lg:gap-8 ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
+
+            {/* HEXÁGONO */}
+            <motion.div
+              style={{ x: hexagonX, opacity: hexagonOpacity }}
+              className="shrink-0"
+            >
+              <StepIndicator {...props.indicator} />
+            </motion.div>
+
+            {/* CONTENIDO */}
+            <div className={`flex items-center gap-8 ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}>
+
+              {/* CARD */}
+              <motion.div
+                style={{ x: cardX, opacity: cardOpacity }}
+                className="shrink-0"
+              >
+                <StepCard {...props.card} />
+              </motion.div>
+
+              {/* SNAKE LINE */}
+              <motion.div
+                style={{ opacity: snakeOpacity }}
+                className="relative shrink-0 w-24 h-64 flex items-center justify-center"
+              >
+                <SnakeLine className={`absolute scale-x-50 scale-y-110 object-contain ${!isLeft ? 'scale-y-[-1.1] rotate-180' : ''}`} />
+              </motion.div>
+
+              {/* PREGUNTAS */}
+              <motion.div
+                style={{ x: questionX, opacity: questionOpacity }}
+                className="shrink-0"
+              >
+                <StepQuestion {...props.questions} />
+              </motion.div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// VERSIÓN MOBILE - Todo el contenido se desliza horizontalmente junto
+function StepMobile(props: StepProps) {
+  const targetRef = useRef<HTMLDivElement>(null);
+  const isLeft = props.indicator.side === 'left';
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Todo el contenedor se mueve horizontalmente como una unidad
+  const containerX = useTransform(
+    scrollYProgress,
+    [0, 0.26, 0.37, 0.63, 0.74, 1],
+    isLeft
+      ? ['0%', '0%', '-33%', '-33%', '-66%', '-66%']
+      : ['-66%', '-66%', '-33%', '-33%', '0%', '0%']
+  );
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.15, 0.85, 1],
+    [0, 1, 1, 0]
+  );
+
+  return (
+    <div ref={targetRef} className="h-[400vh] w-full relative">
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
+        <BackgroundTrack side={props.indicator.side || 'left'} stepNumber={props.indicator.stepNumber} />
+
+        {/* Todo el contenido se mueve junto */}
+        <motion.div
+          style={{ x: containerX, opacity }}
+          className={`z-10 h-full w-[300%] [&>div]:w-1/3 [&>div]:px-8 flex items-center [&>div]:px- ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}
+        >
+
+            {/* HEXÁGONO */}
+            <div className="shrink-0 flex justify-center">
+              <StepIndicator {...props.indicator} />
+            </div>
+
+            {/* CARD */}
+            <div className="shrink-0 flex justify-center">
+              <StepCard {...props.card} />
+            </div>
+
+            {/* PREGUNTAS */}
+            <div className="shrink-0 flex justify-center">
+              <StepQuestion {...props.questions} />
+            </div>
+
+        </motion.div>
+      </div>
+    </div>
+  )
+}
+
+// Componente que elige qué versión mostrar
+function Step(props: StepProps) {
+  return (
+    <>
+      {/* Mobile */}
+      <div className="xl:hidden">
+        <StepMobile {...props} />
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden xl:block">
+        <StepDesktop {...props} />
+      </div>
+    </>
   )
 }
 
@@ -225,14 +404,10 @@ const steps: StepProps[] = [
       question: '¿Por qué necesito este registro?',
       answerDescription: (<>Este formulario es requerido para confirmar tu participación en la sede oficial de <b>Arequipa</b>. Nos permite:</>),
       answerList: [
-        (
-          <>Gestionar el accesos a las <b>instalaciones del evento</b>.</>
-        ),
+        (<>Gestionar el accesos a las <b>instalaciones del evento</b>.</>),
         'Coordinar la logística y recursos necesarios.',
         'Enviarle información específica de la sede.',
-        (
-          <>Preparar tu <b>kit de bienvenida</b>.</>
-        )
+        (<>Preparar tu <b>kit de bienvenida</b>.</>)
       ],
     }
   },
@@ -249,13 +424,10 @@ const steps: StepProps[] = [
     },
     questions: {
       question: '¿Por qué necesito este registro?',
-      answerDescription: (<>La plataforma oficial de <b>Global Game Jam</b> es tu puerta
-        de entrada a la comunidad mundial. Te permite:</>),
+      answerDescription: (<>La plataforma oficial de <b>Global Game Jam</b> es tu puerta de entrada a la comunidad mundial. Te permite:</>),
       answerList: [
         'Subir tu proyecto una vez finalizado el evento.',
-        (
-          <>Acceder a <b>recursos, tutoriales y guías oficiales</b>.</>
-        ),
+        (<>Acceder a <b>recursos, tutoriales y guías oficiales</b>.</>),
         'Conectar con jammers de todo el mundo.',
         'Ver todos los juegos creados en las demás sedes',
         'Obtener tu certificado digital de participación'
@@ -277,9 +449,7 @@ const steps: StepProps[] = [
       answerDescription: (<>Recibirás un <b>email</b> confirmando tu participación con:</>),
       answerList: [
         'Número de registro.',
-        (
-        <>Detalles de <b>acceso</b>.</>
-        ),
+        (<>Detalles de <b>acceso</b>.</>),
         'Lista de materiales recomendados'
       ]
     }
@@ -288,17 +458,17 @@ const steps: StepProps[] = [
 
 const RegistrationStepper = () => {
   return (
-    <section className="py-12 px-8 container mx-auto">
-    <h2>
-      <span className="font-bold text-4xl">Tu ruta hacia la</span>
-      <br />
-      <span className="text-4xl text-theme-cyan font-bold">Arequipa Game Jam.</span>
-      </h2>
-      {
-        steps.map((step, index) => (
+    <section className="py-12 w-full relative">
+      <div className="container mx-auto px-8 relative z-10">
+        <h2 className="mb-12 text-center">
+          <span className="font-bold text-4xl">Tu ruta hacia la</span>
+          <br />
+          <span className="text-4xl text-theme-cyan font-bold">Arequipa Game Jam.</span>
+        </h2>
+        {steps.map((step, index) => (
           <Step key={index} {...step} />
-        ))
-      }
+        ))}
+      </div>
     </section>
   );
 };
