@@ -28,7 +28,7 @@ const FaqSection = () => {
     ];
 
     return (
-        <section id="faq" className="py-16 px-4 relative bg-[#11091C] flex justify-center">
+        <section id="faq" className="py-16 px-4 relative bg-[#11091C] flex justify-center overflow-x-hidden">
             {/* === FONDO AMBIENTAL (GLOWS) === */}
             {/* 1. Mancha Magenta Intensa (Izquierda Centro) - Destaca los adornos laterales */}
             <div className="absolute top-[30%] -left-[150px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"></div>
@@ -36,7 +36,7 @@ const FaqSection = () => {
             <div className="w-full max-w-3xl relative">
                 {/* 2. Acento Magenta (Derecha) - Mismo color que izquierda con pulso lento */}
                 <div
-                    className="absolute top-[15%] -right-[100px] w-[250px] h-[250px] bg-[#F130EE] opacity-[0.08] blur-[90px] rounded-full pointer-events-none"
+                    className="absolute top-[-30%] -right-[800px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
                     style={{
                         animation: 'glowPulseSoft 4s ease-in-out infinite'
                     }}
