@@ -6,22 +6,26 @@ const BENEFITS_INFO = {
         {
             icono: <i className="fi fi-rr-e-learning"></i>,
             titulo: "Aprendizaje Aplicado",
-            descripcion: "Aprende desarrollando un juego desde cero con tutoriales, mentorías y el apoyo constante de personas expertas.",
+            descripcion:
+                "Aprende desarrollando un juego desde cero con tutoriales, mentorías y el apoyo constante de personas expertas.",
         },
         {
             icono: <i className="fi fi-sr-people-network-partner"></i>,
             titulo: "Networking para el Impulso",
-            descripcion: "Conecta con desarrolladores, artistas, diseñadores y músicos. Forma equipos y crea ideas a simple tu red profesional.",
+            descripcion:
+                "Conecta con desarrolladores, artistas, diseñadores y músicos. Forma equipos y crea ideas a simple tu red profesional.",
         },
         {
             icono: <i className="fi fi-rs-lightbulb-setting"></i>,
             titulo: "Un Proyecto Propio",
-            descripcion: "Al finalizar tendrás un juego completo o prototipo funcional que podrás compartir o mostrar en tu portafolio.",
+            descripcion:
+                "Al finalizar tendrás un juego completo o prototipo funcional que podrás compartir o mostrar en tu portafolio.",
         },
         {
             icono: <i className="fi fi-rr-users-medical"></i>,
             titulo: "Comunidad y Experiencia Global",
-            descripcion: "Sé parte de un evento internacional que conecta a miles de creadores en todo el mundo durante 48 horas.",
+            descripcion:
+                "Sé parte de un evento internacional que conecta a miles de creadores en todo el mundo durante 48 horas.",
         },
     ],
 };
@@ -41,12 +45,14 @@ const BenefitsSection = () => {
                 {/* Título */}
                 <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-12">
                     {BENEFITS_INFO.titulo}
-                    <span className="
+                    <span
+                        className="
                         text-[#1DF2F2]
                         drop-shadow-[2px_0_6px_#1DF2F2]
                         drop-shadow-[-2px_0_6px_#1DF2F2]
-                        drop-shadow-[0_0_10px_#1DF2F2]
-                    ">
+                        drop-shadow-[0_0_10px_#186EB4]
+                    "
+                    >
                         {BENEFITS_INFO.tituloDestacado}
                     </span>
                 </h2>
@@ -70,10 +76,11 @@ const BenefitsSection = () => {
                                 lg:p-10
                             "
                             style={{
-                                border: '1px solid transparent',
-                                backgroundImage: 'linear-gradient(#11091C, #11091C), linear-gradient(135deg, #1DF2F2 0%, #0EA5E9 100%)',
-                                backgroundOrigin: 'border-box',
-                                backgroundClip: 'padding-box, border-box',
+                                border: "1px solid transparent",
+                                backgroundImage:
+                                    "linear-gradient(#11091C, #11091C), linear-gradient(135deg, #1DF2F2 0%, #186EB4 100%)",
+                                backgroundOrigin: "border-box",
+                                backgroundClip: "padding-box, border-box",
                             }}
                         >
                             {/* Icono */}
@@ -81,7 +88,7 @@ const BenefitsSection = () => {
                                 <span
                                     className="text-5xl"
                                     style={{
-                                        color: '#1DF2F2'
+                                        color: "#1DF2F2",
                                     }}
                                 >
                                     {beneficio.icono}
@@ -92,7 +99,7 @@ const BenefitsSection = () => {
                             <h3
                                 className="text-xl lg:text-2xl font-bold mb-3 bg-clip-text text-transparent"
                                 style={{
-                                    backgroundImage: 'linear-gradient(90deg, #1DF2F2 0%, #FFFFFF 100%)',
+                                    backgroundImage: "linear-gradient(90deg, #1DF2F2 0%, #186EB4 100%)",
                                 }}
                             >
                                 {beneficio.titulo}

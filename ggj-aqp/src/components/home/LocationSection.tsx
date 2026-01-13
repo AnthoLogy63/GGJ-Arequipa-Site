@@ -7,21 +7,26 @@ const EVENTO_INFO = {
         direccion: "UNSA SOCIALES",
     },
     fecha: {
-        texto: "26, 29 y 30 de Enero 2026",
-        inicio: "26, 29 y 30, Enero 2026",
+        texto: "26, 30 y 31 de Enero 2026",
+        inicio: "26, 30 y 31, Enero 2026",
     },
-    horarios: {
-        inicio: {
-            dia: "Viernes 29",
-            hora: "09:00 HRS",
-            descripcion: "Primer día evento",
+    horarios: [
+        {
+            dia: "Lunes 26",
+            fecha: "26 de Enero 2026",
+            descripcion: "Charla presencial",
         },
-        cierre: {
-            dia: "Sábado 30",
-            hora: "09:00 HRS",
-            descripcion: "Segundo día evento",
+        {
+            dia: "Viernes 30",
+            fecha: "30 de Enero 2026",
+            descripcion: "Primer día de evento",
         },
-    },
+        {
+            dia: "Sábado 31",
+            fecha: "31 de Enero 2026",
+            descripcion: "Segundo día de evento",
+        },
+    ],
     mapa: {
         url: "https://www.google.com/maps/search/JAKU+EMPRENDE+UNSA,+Arequipa",
         embedUrl:
@@ -57,15 +62,13 @@ const Datos = () => {
                     {EVENTO_INFO.lugar.nombre}, {EVENTO_INFO.lugar.direccion}
                 </p>
                 <p className="text-white/80 text-sm">{EVENTO_INFO.fecha.texto}</p>
-                <div className="flex gap-4">
-                    <div>
-                        <p className="text-white/60 text-xs mb-1">{EVENTO_INFO.horarios.inicio.dia.split(" ")[0]}</p>
-                        <p className="text-white font-semibold">{EVENTO_INFO.horarios.inicio.hora}</p>
-                    </div>
-                    <div>
-                        <p className="text-white/60 text-xs mb-1">{EVENTO_INFO.horarios.cierre.dia.split(" ")[0]}</p>
-                        <p className="text-white font-semibold">{EVENTO_INFO.horarios.cierre.hora}</p>
-                    </div>
+                <div className="space-y-3">
+                    {EVENTO_INFO.horarios.map((horario, index) => (
+                        <div key={index}>
+                            <p className="text-white/60 text-xs mb-1">{horario.dia}</p>
+                            <p className="text-white font-semibold text-sm">{horario.descripcion}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
 
@@ -86,38 +89,17 @@ const Datos = () => {
                     </div>
                 </div>
 
-                {/* Fecha */}
-                <div className="flex items-start gap-4">
-                    <i className="fi fi-rr-calendar text-[#D11CE4] text-2xl drop-shadow-[0_0_8px_#D11CE4]"></i>
-                    <div>
-                        <h3 className="text-white font-semibold text-lg mb-1">Fecha</h3>
-                        <p className="text-white/80">{EVENTO_INFO.fecha.texto}</p>
+                {/* Fechas del evento */}
+                {EVENTO_INFO.horarios.map((horario, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                        <i className="fi fi-rr-calendar text-[#D11CE4] text-2xl drop-shadow-[0_0_8px_#D11CE4]"></i>
+                        <div>
+                            <h3 className="text-white font-semibold text-lg mb-1">{horario.dia}</h3>
+                            <p className="text-white/80">{horario.fecha}</p>
+                            <p className="text-white/60 text-sm">{horario.descripcion}</p>
+                        </div>
                     </div>
-                </div>
-
-                {/* Hora de Inicio */}
-                <div className="flex items-start gap-4">
-                    <i className="fi fi-br-time-quarter-to text-[#D11CE4] text-2xl drop-shadow-[0_0_8px_#D11CE4]"></i>
-                    <div>
-                        <h3 className="text-white font-semibold text-lg mb-1">Hora de Inicio</h3>
-                        <p className="text-white/80">
-                            {EVENTO_INFO.horarios.inicio.dia}: {EVENTO_INFO.horarios.inicio.hora}
-                        </p>
-                        <p className="text-white/60 text-sm">{EVENTO_INFO.horarios.inicio.descripcion}</p>
-                    </div>
-                </div>
-
-                {/* Hora de Cierre */}
-                <div className="flex items-start gap-4">
-                    <i className="fi fi-sr-time-quarter-to text-[#D11CE4] text-2xl drop-shadow-[0_0_8px_#D11CE4]"></i>
-                    <div>
-                        <h3 className="text-white font-semibold text-lg mb-1">Hora de Cierre</h3>
-                        <p className="text-white/80">
-                            {EVENTO_INFO.horarios.cierre.dia}: {EVENTO_INFO.horarios.cierre.hora}
-                        </p>
-                        <p className="text-white/60 text-sm">{EVENTO_INFO.horarios.cierre.descripcion}</p>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     );
