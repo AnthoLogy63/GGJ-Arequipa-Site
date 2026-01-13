@@ -1,9 +1,67 @@
 import { useRef, type ComponentProps } from 'react';
-import listIcon from '../../assets/images/icons/neon-list.png';
-import worldIcon from '../../assets/images/icons/neon-world.png';
-import checkIcon from '../../assets/images/icons/neon-check.png';
 import type React from 'react';
 import { useScroll, useTransform, motion } from 'motion/react';
+
+function ListIcon() {
+  return (
+    <svg
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#1DF2F2"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="drop-shadow-[0_0_10px_#1DF2F2]"
+    >
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+        <rect x="8" y="2" width="8" height="4" rx="1" />
+        <path d="M9 8h6" />
+        <path d="M9 12h6" />
+        <path d="M9 16h6" />
+    </svg>
+  )
+}
+
+function WorldIcon() {
+  return (
+    <svg
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#F130EE"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="drop-shadow-[0_0_10px_#F130EE]"
+    >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  )
+}
+
+function CheckIcon() {
+  return (
+    <svg
+        width="100"
+        height="100"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#39FF14"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="drop-shadow-[0_0_10px_#39FF14]"
+    >
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  )
+}
 
 function Hexagon(props: ComponentProps<'svg'>) {
   return (
@@ -137,10 +195,7 @@ function StepIndicator({
 }
 
 interface StepCardProps {
-  icon: {
-    src: string;
-    alt: string;
-  };
+  icon: React.ReactNode
   title: string;
   description: string;
   buttonContent?: string;
@@ -149,7 +204,7 @@ interface StepCardProps {
 function StepCard(props: StepCardProps) {
   return (
     <div className="flex flex-col items-center gap-y-4 w-full max-w-87.5 shrink-0 bg-theme-background/50 backdrop-blur-sm p-6 rounded-2xl border border-gray-800/50">
-      <img src={props.icon.src} alt={props.icon.alt} className="size-32 aspect-square object-contain" />
+      {props.icon}
       <h3 className="font-bold text-xl text-center">{props.title}</h3>
       <p className="text-center text-gray-400">{props.description}</p>
       {props.buttonContent ? (
@@ -392,10 +447,7 @@ const steps: StepProps[] = [
   {
     indicator: { stepNumber: 1, side: 'left' },
     card: {
-      icon: {
-        src: listIcon,
-        alt: 'Icono de lista'
-      },
+      icon: <ListIcon />,
       title: 'Registro de Sede Arequipa',
       description: 'Llena el formulario local para confirmar tu participación',
       buttonContent: 'Completar Registro UNSA'
@@ -414,10 +466,7 @@ const steps: StepProps[] = [
   {
     indicator: { stepNumber: 2, side: 'right' },
     card: {
-      icon: {
-        src: worldIcon,
-        alt: 'Icono de mundo'
-      },
+      icon: <WorldIcon />,
       title: 'Registro Global Game Jam',
       description: 'Crea tu cuenta en la plataforma oficial del evento',
       buttonContent: 'Ir a la plataforma global'
@@ -437,10 +486,7 @@ const steps: StepProps[] = [
   {
     indicator: { stepNumber: 3, side: 'left' },
     card: {
-      icon: {
-        src: checkIcon,
-        alt: 'Icono de check'
-      },
+      icon: <CheckIcon />,
       title: '¡Espera tu confirmación!',
       description: 'Te enviaremos un email con todos los detalles'
     },
