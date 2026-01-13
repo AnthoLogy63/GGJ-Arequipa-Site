@@ -1,20 +1,38 @@
 @import "tailwindcss";
 
+@theme {
+  --color-theme-light-purple: #6e2880;
+  --color-theme-purple: #3f215f;
+  --color-theme-pink: #ec469a;
+  --color-theme-cyan: #1df2f2;
+  --color-theme-blue: #2d1f5a;
+  --color-theme-background: #11091c;
+}
+@font-face {
+  font-family: 'Zing Rust Demo';
+  src: url('./assets/fuentes/ZingRustDemo-Base.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-    background-color: #11091C;
-    color: white;
-    margin: 0;
-    padding: 0;
-    font-family: 'Raleway', sans-serif;
+  background-color: #11091C;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  overflow-x: hidden;
 }
 
 @keyframes float {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -24,19 +42,24 @@ body {
   animation: float 3.5s ease-in-out infinite;
 }
 
-
-/* Animación logo flotante */
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Triangulitos */
 .tri {
   position: absolute;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -44,25 +67,125 @@ body {
   opacity: 0.9;
 }
 
-/* Formas variadas */
-.tri.small  { width: 6px;  height: 6px; }
-.tri.medium { width: 8px;  height: 10px; }
-.tri.tall   { width: 6px;  height: 14px; }
-.tri.wide   { width: 12px; height: 7px; }
+.tri.small {
+  width: 6px;
+  height: 6px;
+}
 
-/* Posiciones (alrededor del logo) */
-.t1 { bottom:30px; right:50%; animation-delay:2s; }
-.t2 { top:60px;  left:20%; animation-delay:2.2s; }
-.t3 { top:220px;  right:10%; animation-delay:2.4s; }
-.t4 { top:180px; left:15%; animation-delay:2.6s; }
-.t5 { top:15%; right:160px; animation-delay:1.8s; }
-.t6 { top:20%; right:106px;  animation-delay:2s; }
-.t7 { bottom:5%; left:15%; animation-delay:2.2s; }
-.t8 { bottom:8px; right:30%; animation-delay:2.4s; }
+.tri.medium {
+  width: 8px;
+  height: 10px;
+}
 
-/* Animación flotante para los triángulos */
+.tri.tall {
+  width: 6px;
+  height: 14px;
+}
+
+.tri.wide {
+  width: 12px;
+  height: 7px;
+}
+
+.t1 {
+  bottom: 30px;
+  right: 50%;
+  animation-delay: 2s;
+}
+
+.t2 {
+  top: 60px;
+  left: 20%;
+  animation-delay: 2.2s;
+}
+
+.t3 {
+  top: 220px;
+  right: 10%;
+  animation-delay: 2.4s;
+}
+
+.t4 {
+  top: 180px;
+  left: 15%;
+  animation-delay: 2.6s;
+}
+
+.t5 {
+  top: 15%;
+  right: 160px;
+  animation-delay: 1.8s;
+}
+
+.t6 {
+  top: 20%;
+  right: 106px;
+  animation-delay: 2s;
+}
+
+.t7 {
+  bottom: 5%;
+  left: 15%;
+  animation-delay: 2.2s;
+}
+
+.t8 {
+  bottom: 8px;
+  right: 30%;
+  animation-delay: 2.4s;
+}
+
 @keyframes tri-float {
-  0%   { transform: translateY(0) rotate(0deg); }
-  50%  { transform: translateY(-6px) rotate(10deg); }
-  100% { transform: translateY(0) rotate(0deg); }
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(10deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0% {
+    filter: blur(4px);
+    opacity: 0.1;
+    transform: scale(1);
+  }
+
+  50% {
+    filter: blur(6px);
+    opacity: 0.2;
+    transform: scale(1.15);
+  }
+
+  100% {
+    filter: blur(8px);
+    opacity: 0.1;
+    transform: scale(1);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulseSoft {
+  0% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.15;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
 }
