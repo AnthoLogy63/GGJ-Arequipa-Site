@@ -11,15 +11,12 @@ export const CallToActionMid = () => {
 
   return (
     <section className="relative py-16 px-6 overflow-hidden">
-      {/* Fondo con degradado radial para dar profundidad */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0f071a] via-[#1a0b2e] to-[#0f071a]" />
-      
-      {/* Decoración sutil de fondo (opcional) */}
+
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
 
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-        
-        {/* Lado Izquierdo: Texto Principal */}
+
         <div className="text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
             ¿Listo <br /> 
@@ -27,7 +24,6 @@ export const CallToActionMid = () => {
           </h2>
         </div>
 
-        {/* Centro: Mensaje Motivador y Botones */}
         <div className="flex flex-col items-center md:items-start max-w-lg">
           <p className="text-gray-300 text-lg mb-8 text-center md:text-left">
             No dejes pasar la oportunidad de ser parte del evento gamedev más importante de Arequipa.
@@ -50,7 +46,6 @@ export const CallToActionMid = () => {
           </div>
         </div>
 
-        {/* Lado Derecho: Icono de Mando */}
         <div className="hidden lg:block">
           <img 
             src="src\assets\images\backgrounds\controller-icon.png" 
