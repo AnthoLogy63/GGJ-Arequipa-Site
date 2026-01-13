@@ -7,7 +7,7 @@ export const FinalVerificationCTA = () => {
     navigate('/');
 
     setTimeout(() => {
-      const faqSection = document.getElementById('FaqSection');
+      const faqSection = document.getElementById('faq');
       if (faqSection) {
         faqSection.scrollIntoView({ behavior: 'smooth' });
       } else {
