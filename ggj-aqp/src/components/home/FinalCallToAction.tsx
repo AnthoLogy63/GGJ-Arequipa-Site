@@ -27,11 +27,11 @@ const FinalCallToAction = () => {
                         </div>
 
                         <div className="hidden mt-20 lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <button onClick={() => window.location.href = '/inscripcion'} className="px-8 py-4 rounded-xl bg-[#54F4FC] text-black font-semibold hover:bg-[#54F4FC]/75 transition">
+                            <button onClick={() => window.location.href = '/inscripcion'} className="px-8 py-4 rounded-xl bg-[#54F4FC] text-black font-semibold hover:cursor-pointer hover:scale-105 transition">
                                 QUIERO SER PARTE
                             </button>
 
-                            <button className="px-8 py-4 rounded-xl border border-[#54F4FC] text-[#54F4FC] font-semibold hover:bg-[#54F4FC]/15 transition">
+                            <button onClick={() => window.location.href = '#'} className="px-8 py-4 rounded-xl border border-[#54F4FC] text-[#54F4FC] font-semibold hover:bg-[#54F4FC]/15 hover:scale-105 hover:cursor-pointer transition">
                                 TALK WITH US
                             </button>
                         </div>
