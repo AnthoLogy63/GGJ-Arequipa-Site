@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const ScheduleSection = () => {
     return (
         <section id="schedule" style={{ padding: '4rem 2rem' }}>
@@ -6,6 +7,8 @@ const ScheduleSection = () => {
         </section>
     );
 =======
+=======
+>>>>>>> origin/feature/jheeremy
 import { useState } from 'react';
 
 type DaySchedule = {
@@ -18,6 +21,9 @@ type DaySchedule = {
     name: string;
     desc: string;
   }>;
+<<<<<<< HEAD
+>>>>>>> origin/feature/jheeremy
+=======
 >>>>>>> origin/feature/jheeremy
 };
 
