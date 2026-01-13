@@ -4,7 +4,7 @@ const InstructionNotice = () => {
     return (
         <div className="w-full max-w-5xl mx-auto p-4">
             <div className="relative overflow-x-hidden md:overflow-visible">
-                {/* Círculo Magenta Derecha - Con pulso lento */}
+                {/* Background glows */}
                 <div
                     className="absolute top-[-100%] -right-[530px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
                     style={{
@@ -12,7 +12,6 @@ const InstructionNotice = () => {
                     }}
                 ></div>
 
-                {/* === FONDO AMBIENTAL SUTIL === */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl max-h-[500px] bg-[#F130EE] opacity-[0.03] blur-[90px] rounded-full pointer-events-none"></div>
 
                 <div className="relative rounded-2xl p-[2px] bg-gradient-to-br from-[#55F4FC] to-[#F130EE]">
