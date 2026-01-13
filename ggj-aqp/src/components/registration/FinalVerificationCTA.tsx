@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const FinalVerificationCTA = () => {
   const navigate = useNavigate();
@@ -50,13 +50,14 @@ export const FinalVerificationCTA = () => {
           </h2>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-5">
-          <button
-            onClick={() => navigate('/')}
-            className="cursor-pointer bg-cyan-400 hover:bg-cyan-300 text-black font-black px-8 py-3 rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
-          >
-            SÍ, ESTOY LISTO
-          </button>
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            <Link
+              to="/"
+              onClick={() => window.scrollTo(0, 0)}
+              className="cursor-pointer bg-cyan-400 hover:bg-cyan-300 text-black font-black px-8 py-5 rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
+            >
+              Inscribirme ahora
+            </Link>
 
           <button
             onClick={goToFaqs}
