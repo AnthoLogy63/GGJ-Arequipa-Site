@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from 'react';
 
 type DaySchedule = {
@@ -11,14 +10,6 @@ type DaySchedule = {
     name: string;
     desc: string;
   }>;
-=======
-const ScheduleSection = () => {
-    return (
-        <section id="schedule" style={{ padding: '4rem 2rem' }}>
-            <p>Hola desde ScheduleSection</p>
-        </section>
-    );
->>>>>>> origin/dev
 };
 
 const scheduleData: Record<string, DaySchedule> = {
