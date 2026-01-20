@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import fondoImage from '@/assets/images/backgrounds/Fondo1.webp';
 
 type DaySchedule = {
   title: string;
@@ -66,7 +67,7 @@ export const ScheduleSection = () => {
       {/* SECTOR SUPERIOR*/}
       <div className="relative h-[400px] w-full">
         <img
-          src="src\assets\images\backgrounds\Fondo1.webp"
+          src={fondoImage}
           alt="Cyberpunk Arequipa"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
@@ -99,7 +100,7 @@ export const ScheduleSection = () => {
                                 hover:text-black
                                 hover:shadow-[0_0_20px_#F130EE]
                             "
-                            style={{ borderColor: "#F130EE" }}>
+            style={{ borderColor: "#F130EE" }}>
             DESCARGAR CRONOGRAMA PDF
           </button>
         </div>
@@ -109,22 +110,21 @@ export const ScheduleSection = () => {
 
         <div className="flex gap-3 mb-6">
           <div className="w-full overflow-x-auto pb-4 scrollbar-hide">
-  <div className="flex flex-row md:justify-center gap-3 min-w-max px-4">
-    {Object.keys(scheduleData).map((day) => (
-      <button
-        key={day}
-        onClick={() => setActiveDay(day)}
-        className={`cursor-pointer px-6 md:px-10 py-3 rounded-xl font-bold transition-all border-2 text-sm md:text-base whitespace-nowrap ${
-          activeDay === day
-            ? "border-pink-500 bg-pink-500/10 shadow-[0_0_20px_rgba(236,72,153,0.4)] text-white"
-            : "border-gray-800 bg-gray-900/50 text-gray-500 hover:border-gray-600"
-        }`}
-      >
-        {day}
-      </button>
-    ))}
-  </div>
-</div>
+            <div className="flex flex-row md:justify-center gap-3 min-w-max px-4">
+              {Object.keys(scheduleData).map((day) => (
+                <button
+                  key={day}
+                  onClick={() => setActiveDay(day)}
+                  className={`cursor-pointer px-6 md:px-10 py-3 rounded-xl font-bold transition-all border-2 text-sm md:text-base whitespace-nowrap ${activeDay === day
+                      ? "border-pink-500 bg-pink-500/10 shadow-[0_0_20px_rgba(236,72,153,0.4)] text-white"
+                      : "border-gray-800 bg-gray-900/50 text-gray-500 hover:border-gray-600"
+                    }`}
+                >
+                  {day}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="border-2 border-gray-800 rounded-[40px] p-8 md:p-16 bg-[#0a0510]/80 backdrop-blur-md flex flex-col md:flex-row gap-12 shadow-2xl">
