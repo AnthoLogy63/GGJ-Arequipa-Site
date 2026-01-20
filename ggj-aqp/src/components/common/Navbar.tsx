@@ -82,7 +82,7 @@ const Navbar = () => {
                                 Sobre el evento
                             </button>
                             <button
-                                onClick={() => scrollToSection('contact')}
+                                onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
                                 className="bg-transparent border-none cursor-pointer text-white text-[0.9rem] font-medium transition-colors duration-300 hover:text-[#D334E9] md:text-[1rem] w-full md:w-auto"
                             >
                                 Contacto
@@ -90,7 +90,12 @@ const Navbar = () => {
                             <Link
                                 to="/inscripcion"
                                 style={{ textDecoration: 'none' }}
-                                onClick={() => setIsMenuOpen(false)}
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    setTimeout(() => {
+                                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    }, 100);
+                                }}
                                 className="w-full md:w-auto"
                             >
                                 <button className="bg-[#D334E9] text-white border-none py-[0.5rem] px-[1.4rem] rounded-[50px] font-bold text-[0.9rem] cursor-pointer uppercase transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] shadow-[0_4px_6px_rgba(211,52,233,0.3)] hover:scale-105 hover:-translate-y-[2px] hover:shadow-[0_10px_20px_rgba(211,52,233,0.5)] hover:bg-[#e045f5] active:scale-95 active:shadow-[0_2px_4px_rgba(211,52,233,0.3)] w-full md:w-auto md:text-[1rem] md:py-[0.6rem] md:px-[1rem]">
