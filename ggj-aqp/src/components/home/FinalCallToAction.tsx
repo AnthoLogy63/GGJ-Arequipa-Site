@@ -27,13 +27,23 @@ const FinalCallToAction = () => {
                         </div>
 
                         <div className="hidden mt-20 lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <button onClick={() => window.location.href = '/inscripcion'} className="px-8 py-4 rounded-xl bg-[#54F4FC] text-black font-semibold hover:cursor-pointer hover:scale-105 transition">
+                            <button
+                                onClick={() => {
+                                    const element = document.getElementById('registration');
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className="px-8 py-4 rounded-xl bg-[#54F4FC] text-black font-semibold hover:cursor-pointer hover:scale-105 transition"
+                            >
                                 QUIERO SER PARTE
                             </button>
 
-                            <button onClick={() => window.location.href = '#'} className="px-8 py-4 rounded-xl border border-[#54F4FC] text-[#54F4FC] font-semibold hover:bg-[#54F4FC]/15 hover:scale-105 hover:cursor-pointer transition">
-                                TALK WITH US
-                            </button>
+                            <a href="https://www.instagram.com/acm.unsa/" target="_blank" rel="noopener noreferrer">
+                                <button className="px-8 py-4 rounded-xl border border-[#54F4FC] text-[#54F4FC] font-semibold hover:bg-[#54F4FC]/15 hover:scale-105 hover:cursor-pointer transition">
+                                    HABLA CON NOSOTROS
+                                </button>
+                            </a>
                         </div>
                     </div>
 
@@ -72,7 +82,15 @@ const FinalCallToAction = () => {
                 </div>
 
                 <div className="mt-12 lg:hidden">
-                    <button className="w-full px-8 py-5 rounded-xl bg-[#54F4FC] text-black font-semibold text-lg">
+                    <button
+                        onClick={() => {
+                            const element = document.getElementById('registration');
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                        className="w-full px-8 py-5 rounded-xl bg-[#54F4FC] text-black font-semibold text-lg"
+                    >
                         QUIERO SER PARTE
                     </button>
                 </div>
