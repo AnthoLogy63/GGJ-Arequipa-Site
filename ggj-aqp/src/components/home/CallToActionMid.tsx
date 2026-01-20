@@ -32,14 +32,15 @@ export const CallToActionMid = () => {
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <Link
               to="/inscripcion"
-              className="bg-cyan-400 hover:bg-cyan-300 text-black font-black px-8 py-3 rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
+              onClick={() => window.scrollTo(0, 0)}
+              className="cursor-pointer bg-cyan-400 hover:bg-cyan-300 text-black font-black px-8 py-3 rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
             >
               Inscribirme ahora
             </Link>
             
             <button
               onClick={scrollToSchedule}
-              className="border-2 border-cyan-400/50 hover:border-cyan-400 text-cyan-400 font-bold px-8 py-3 rounded-md transition-all bg-transparent hover:bg-cyan-400/10 uppercase tracking-wider text-sm"
+              className="cursor-pointer border-2 border-cyan-400/50 hover:border-cyan-400 text-cyan-400 font-bold px-8 py-3 rounded-md transition-all bg-transparent hover:bg-cyan-400/10 uppercase tracking-wider text-sm"
             >
               Ver Cronograma
             </button>

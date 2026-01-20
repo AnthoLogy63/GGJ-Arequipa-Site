@@ -101,8 +101,9 @@ const RegistrationStepsSection = () => {
                             Llena el formulario local para confirmar tu participación
                         </p>
 
-                        <button
-                            className="
+                        <a href="https://forms.fillout.com/t/mkgbTWNZ6Dus" target="_blank" rel="noopener noreferrer">
+                            <button
+                                className="
                                 select-none    
                                 w-full max-w-[250px]
                                 h-[60px]
@@ -121,11 +122,13 @@ const RegistrationStepsSection = () => {
                                 hover:bg-[#1DF2F2]
                                 hover:text-black
                                 hover:shadow-[0_0_20px_#1DF2F2]
-                            "
-                            style={{ borderColor: "#1DF2F2" }}
-                        >
-                            Formulario Local
-                        </button>
+                                "
+                                style={{ borderColor: "#1DF2F2" }}
+                            >
+                                Formulario Local
+                            </button>
+                        </a>
+
                     </div>
 
                     {/* STEP 2 */}

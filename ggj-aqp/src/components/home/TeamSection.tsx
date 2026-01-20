@@ -29,8 +29,7 @@ const team = [
 const TeamSection = () => {
     return (
         <section className="relative py-20 px-6">
-            {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#12091f] via-[#1b1030] to-[#12091f]" />
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#12091f] via-[#1b1030] to-[#12091f]" />
 
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Title */}
@@ -50,6 +49,10 @@ const TeamSection = () => {
                                 backdrop-blur
                                 p-6
                                 text-center
+                                hover:scale-101 
+                                hover:bg-white/10
+
+                                transition
                             "
                         >
                             {/* Image */}
@@ -63,7 +66,7 @@ const TeamSection = () => {
 
                             {/* Twitter button */}
                             <div className="flex justify-center -mt-6">
-                                <div className="bg-[#7C4DFF] rounded-full p-3 shadow-lg">
+                                <a className="bg-[#7C4DFF] rounded-full p-3 shadow-lg hover:scale-105 transition hover:cursor-pointer" href="#">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="h-4 w-4 text-white"
@@ -72,7 +75,7 @@ const TeamSection = () => {
                                     >
                                         <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.724-.949.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.557 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                                     </svg>
-                                </div>
+                                </a>
                             </div>
 
                             {/* Text */}

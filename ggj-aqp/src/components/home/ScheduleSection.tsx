@@ -10,6 +10,7 @@ type DaySchedule = {
     name: string;
     desc: string;
   }>;
+
 };
 
 const scheduleData: Record<string, DaySchedule> = {
@@ -78,7 +79,27 @@ export const ScheduleSection = () => {
           <p className="text-cyan-400 text-lg font-medium mb-6">
             3 días de Creatividad, Código y Comunidad.
           </p>
-          <button className="border-2 border-pink-500 text-pink-500 font-bold px-6 py-2 rounded-md hover:bg-pink-500 hover:text-white transition-all shadow-[0_0_15px_rgba(236,72,153,0.3)]">
+          <button className="
+                                select-none
+                                w-full max-w-[300px]
+                                h-[60px]
+                                px-4
+                                rounded
+                                font-bold
+                                uppercase
+                                tracking-wider
+                                text-xs md:text-sm
+                                cursor-pointer
+                                border
+                                bg-transparent
+                                text-[#FFA1FE]
+                                transition-all duration-300
+                                hover:scale-105
+                                hover:bg-[#fa48f7]
+                                hover:text-black
+                                hover:shadow-[0_0_20px_#F130EE]
+                            "
+                            style={{ borderColor: "#F130EE" }}>
             DESCARGAR CRONOGRAMA PDF
           </button>
         </div>
@@ -87,18 +108,23 @@ export const ScheduleSection = () => {
       <div className="relative z-10 max-w-5xl mx-auto px-6 -mt-10 pb-20">
 
         <div className="flex gap-3 mb-6">
-          {Object.keys(scheduleData).map((day) => (
-            <button
-              key={day}
-              onClick={() => setActiveDay(day)}
-              className={`px-10 py-3 rounded-xl font-bold transition-all border-2 ${activeDay === day
-                  ? "border-pink-500 bg-pink-500/10 shadow-[0_0_20px_rgba(236,72,153,0.4)] text-white"
-                  : "border-gray-800 bg-gray-900/50 text-gray-500 hover:border-gray-600"
-                }`}
-            >
-              {day}
-            </button>
-          ))}
+          <div className="w-full overflow-x-auto pb-4 scrollbar-hide">
+  <div className="flex flex-row md:justify-center gap-3 min-w-max px-4">
+    {Object.keys(scheduleData).map((day) => (
+      <button
+        key={day}
+        onClick={() => setActiveDay(day)}
+        className={`cursor-pointer px-6 md:px-10 py-3 rounded-xl font-bold transition-all border-2 text-sm md:text-base whitespace-nowrap ${
+          activeDay === day
+            ? "border-pink-500 bg-pink-500/10 shadow-[0_0_20px_rgba(236,72,153,0.4)] text-white"
+            : "border-gray-800 bg-gray-900/50 text-gray-500 hover:border-gray-600"
+        }`}
+      >
+        {day}
+      </button>
+    ))}
+  </div>
+</div>
         </div>
 
         <div className="border-2 border-gray-800 rounded-[40px] p-8 md:p-16 bg-[#0a0510]/80 backdrop-blur-md flex flex-col md:flex-row gap-12 shadow-2xl">
