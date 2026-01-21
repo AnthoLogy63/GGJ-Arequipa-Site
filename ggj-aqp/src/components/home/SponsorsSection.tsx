@@ -1,31 +1,39 @@
-import { useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
-import reddit from "@/assets/sponsors/reddit.svg";
-import facebook from "@/assets/sponsors/facebook.svg";
-import skype from "@/assets/sponsors/skype.svg";
-import linkedin from "@/assets/sponsors/linkedin.svg";
-import android from "@/assets/sponsors/android.svg";
-import youtube from "@/assets/sponsors/youtube.svg";
+import asme3 from "@/assets/sponsors/ASME-UNSA-OFICIAL-negro.webp";
+import ieee from "@/assets/sponsors/ieee-unsa.webp";
+import ingenia  from "@/assets/sponsors/Logo-principal-horizontal-color-Ingenia-UNSA.webp";
+import acm_ucsp from "@/assets/sponsors/ucsp_acm_logo_nobg.webp";
+import volcano2 from "@/assets/sponsors/Volcano-Game-Lab-2.webp";
+import ceis from "@/assets/sponsors/CEIS LOGO.webp";
+import mapachio from "@/assets/sponsors/mapachio.webp";
+import seventh_beat from "@/assets/sponsors/7thbeatfdn-bg-color.webp";
+import ieee_wie from "@/assets/sponsors/ieee_unsa_wie_rgb_stacked_k.webp";
+import pgj from "@/assets/sponsors/PGJ - logo-13.webp";
+
 
 const sponsors = [
-  { name: "Reddit", logo: reddit },
-  { name: "Facebook", logo: facebook },
-  { name: "Skype", logo: skype },
-  { name: "LinkedIn", logo: linkedin },
-  { name: "Android", logo: android },
-  { name: "YouTube", logo: youtube },
+  { name: "ASME UNSA", logo: asme3 },
+  { name: "IEEE UNSA", logo: ieee },
+  { name: "INGENIA", logo: ingenia },
+  { name: "ACM UCSP", logo: acm_ucsp},
+  { name: "VOLCANO GAME", logo: volcano2},
+  { name: "CEIS", logo: ceis},
+  { name: "MAPACHIO", logo: mapachio},
+  { name: "7TH BEATH FOUNDATION", logo: seventh_beat},
+  { name: "IEEE WIE UNSA", logo: ieee_wie},
+  { name: "PERU GAME JAM", logo: pgj},
 ];
 
 const SponsorsSection = () => {
   const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
-      dragFree: true,
       containScroll: false,
+      watchDrag: false,
     },
-    [AutoScroll({ playOnInit: true, speed: 1, stopOnInteraction: false })]
+    [AutoScroll({ playOnInit: true, speed: 1, stopOnInteraction: true })]
   );
 
   return (
@@ -54,23 +62,21 @@ const SponsorsSection = () => {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-          {/* MOBILE: layout fluido */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-15">
           <div className="flex flex-wrap justify-center gap-12 lg:hidden">
             {sponsors.map((sponsor) => (
               <img
                 key={sponsor.name}
                 src={sponsor.logo}
                 alt={sponsor.name}
-                className="h-14 w-auto brightness-0"
+                className="h-14 w-auto"
               />
             ))}
           </div>
 
-          {/* DESKTOP: carrusel */}
           <div
             ref={emblaRef}
-            className="hidden lg:block relative overflow-hidden
+            className="hidden lg:block relative overflow-hidden 
               [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]
               [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]
             "
@@ -81,7 +87,8 @@ const SponsorsSection = () => {
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    className="h-15 w-auto brightness-0 duration-200 hover:brightness-100"
+                    title={sponsor.name}
+                    className="h-20 w-auto duration-200"
                   />
                 </div>
               ))}

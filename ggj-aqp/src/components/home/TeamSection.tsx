@@ -1,29 +1,64 @@
-import max from "@/assets/team/Image.png";
-import sarah from "@/assets/team/Image.png";
-import david from "@/assets/team/Image.png";
-import michael from "@/assets/team/Image.png";
+import fernando from "@/assets/team/Fernando Peralta.webp";
+import romina from "@/assets/team/RominaCamargo.webp";
+import sharon from "@/assets/team/SHARON MISHEL CONDORI PANIGUARA.webp";
+import jose from "@/assets/team/Jose Ismael Cahuana Turpo.webp";
+import jeans from "@/assets/team/JEANS ANTHONY AJRA HUACSO.webp";
+import edson from "@/assets/team/EDSON PEDRO MIRANDA CALLO.webp";
+import sandra from "@/assets/team/SANDRA GABRIELA ALIAGA CHAIÑA.webp";
+import tania from "@/assets/team/TANIA LUZ AYQUE PURACA.webp";
 
 const team = [
   {
-    name: "Max",
-    role: "Comunicación y Diseño",
-    image: max,
+    name: "Tania Ayque",
+    role: "Presidente ACM UNSA",
+    image: tania,
+    link: "https://www.linkedin.com/in/tniia?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
   },
   {
-    name: "Sarah Pepe",
-    role: "Coordinación y Logística",
-    image: sarah,
+    name: "Romina Camargo",
+    role: "Vicepresidenta ACM UNSA",
+    image: romina,
+    link: "https://www.linkedin.com/in/romina-giuliana-camargo-hilachoque-4b2a32350/"
+  },
+    {
+    name: "Sandra Aliaga",
+    role: "Secretaria ACM UNSA",
+    image: sandra,
+    link: "https://www.linkedin.com/in/sandra-aliaga-03663a324/"
+  },
+
+  {
+    name: "Sharon Condori",
+    role: "Tesorera ACM UNSA",
+    image: sharon,
+    link: "https://www.linkedin.com/in/sharon-mishel-condori-paniguara-a60b5a270/"
   },
   {
-    name: "David Dias",
-    role: "Gestión",
-    image: david,
+    name: "Fernando Peralta",
+    role: "Presidente ACM UCSP",
+    image: fernando,
+    link: "https://www.linkedin.com/in/fernandoperaltab/"
   },
   {
-    name: "Michael Turner",
-    role: "Asesor Legal",
-    image: michael,
+    name: "Edson Miranda",
+    role: "Miembro ACM UNSA",
+    image: edson,
+    link: "http://www.linkedin.com/in/edsonmc"
   },
+  {
+    name: "Anthony Ajra",
+    role: "Tesorero IEEE UNSA",
+    image: jeans,
+    link: "https://www.linkedin.com/in/anthonyajra/"
+  },
+  {
+    name: "Jose Cahuana",
+    role: "Director Volcán Game Lab",
+    image: jose,
+    link: "https://fallthem000.itch.io/"
+  },
+
+
 ];
 
 const TeamSection = () => {
@@ -60,20 +95,27 @@ const TeamSection = () => {
                                 <img
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-full h-auto max-h-[300px] md:h-[320px] object-contain md:object-cover"
+                                    className="w-full h-auto max-h-[400px] md:h-[320px] object-contain md:object-cover"
                                 />
                             </div>
 
-                            {/* Twitter button */}
+                            {/* button */}
                             <div className="flex justify-center -mt-6">
-                                <a className="bg-[#7C4DFF] rounded-full p-3 shadow-lg hover:scale-105 transition hover:cursor-pointer" href="#">
+                                <a className="bg-[#7C4DFF] rounded-full p-3 shadow-lg hover:scale-105 transition hover:cursor-pointer" href={member.link} target="_blank">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="h-4 w-4 text-white"
                                         viewBox="0 0 24 24"
                                         fill="currentColor"
                                     >
-                                        <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.724-.949.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.557 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                      {member.name == "Jose Cahuana" ?
+                                      (
+                                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 
+           10-4.477 10-10S17.523 2 12 2zm7.938 9h-3.017a16.023 16.023 0 0 0-1.214-5.218A8.01 8.01 0 0 1 19.938 11zM12 4a14.04 14.04 0 0 1 1.75 5H10.25A14.04 14.04 0 0 1 12 4zM4.062 13h3.017a16.023 16.023 0 0 0 1.214 5.218A8.01 8.01 0 0 1 4.062 13zm0-2a8.01 8.01 0 0 1 4.231-5.218A16.023 16.023 0 0 0 7.078 11H4.062zm5.188 2h5.5a14.08 14.08 0 0 1-2.75 5 14.08 14.08 0 0 1-2.75-5zm5.747-2H9.003a14.08 14.08 0 0 1 2.75-5 14.08 14.08 0 0 1 2.75 5zm.192 7.218A16.023 16.023 0 0 0 16.922 13h3.017a8.01 8.01 0 0 1-4.231 5.218z" />
+                                      ):
+                                      (
+                                        <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.21 8.66h4.55v14.56H.21V8.66zM8.25 8.66h4.36v1.99h.06c.61-1.16 2.1-2.39 4.32-2.39 4.62 0 5.47 3.04 5.47 6.99v8.97h-4.54v-7.94c0-1.89-.03-4.33-2.64-4.33-2.64 0-3.04 2.06-3.04 4.19v8.08H8.25V8.66z" />
+                                      )}
                                     </svg>
                                 </a>
                             </div>
