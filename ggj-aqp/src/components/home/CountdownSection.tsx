@@ -9,11 +9,11 @@ const CountdownSection = () => {
     });
 
     const [glitchText, setGlitchText] = useState('GAME START IN...');
-    const originalText = 'GAME START IN...';
+    const [originalText, setOriginalText] = useState('GAME START IN...');
     const glitchChars = '!@#$%^&*(){}[]<>?/|\\~`';
 
     useEffect(() => {
-        const targetDate = new Date('2026-01-26T00:00:00').getTime();
+        const targetDate = new Date('2026-01-26T14:00:00').getTime();
 
         const updateCountdown = () => {
             const now = new Date().getTime();
@@ -26,6 +26,15 @@ const CountdownSection = () => {
                     minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
                     seconds: Math.floor((difference % (1000 * 60)) / 1000)
                 });
+            } else {
+                setTimeLeft({
+                    days: 0,
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0
+                });
+                setOriginalText('THE CHALLENGE HAS BEGUN!');
+                setGlitchText('THE CHALLENGE HAS BEGUN!');
             }
         };
 
