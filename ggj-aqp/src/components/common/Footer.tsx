@@ -1,5 +1,5 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import iconLogo from '../../assets/logos/AQP-GGJ_icon.svg';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import iconLogo from "../../assets/logos/AQP-GGJ_icon.svg";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -7,19 +7,19 @@ const Footer = () => {
     const navigate = useNavigate();
 
     const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: "smooth" });
         }
     };
 
     const handleNavigation = (e: React.MouseEvent, id: string) => {
         e.preventDefault();
-        if (location.pathname === '/') {
+        if (location.pathname === "/") {
             scrollToSection(id);
         } else {
             navigate(`/#${id}`);
@@ -38,8 +38,10 @@ const Footer = () => {
                     {/* Column 1: Brand */}
                     <div className="flex flex-col items-center md:items-start space-y-4">
                         <h3 className="font-bold text-xl leading-tight text-center md:text-left">
-                            AREQUIPA<br />
-                            GAME JAM<br />
+                            AREQUIPA
+                            <br />
+                            GAME JAM
+                            <br />
                             {currentYear}
                         </h3>
                         <div className="w-32 h-32 relative flex justify-center items-center">
@@ -57,10 +59,42 @@ const Footer = () => {
                     <div className="flex flex-col space-y-4">
                         <h4 className="font-bold text-lg mb-2">Links Rápidos</h4>
                         <ul className="space-y-2 text-gray-300">
-                            <li><a href="#about" onClick={(e) => handleNavigation(e, 'about')} className="hover:text-[#19FFFF] transition-colors cursor-pointer">Qué es GGJ</a></li>
-                            <li><a href="#registration" onClick={(e) => handleNavigation(e, 'registration')} className="hover:text-[#19FFFF] transition-colors cursor-pointer">Inscripción</a></li>
-                            <li><a href="#schedule" onClick={(e) => handleNavigation(e, 'schedule')} className="hover:text-[#19FFFF] transition-colors cursor-pointer">Cronograma</a></li>
-                            <li><a href="#faq" onClick={(e) => handleNavigation(e, 'faq')} className="hover:text-[#19FFFF] transition-colors cursor-pointer">FAQ</a></li>
+                            <li>
+                                <a
+                                    href="#about"
+                                    onClick={e => handleNavigation(e, "about")}
+                                    className="hover:text-[#19FFFF] transition-colors cursor-pointer"
+                                >
+                                    Qué es GGJ
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#registration"
+                                    onClick={e => handleNavigation(e, "registration")}
+                                    className="hover:text-[#19FFFF] transition-colors cursor-pointer"
+                                >
+                                    Inscripción
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#schedule"
+                                    onClick={e => handleNavigation(e, "schedule")}
+                                    className="hover:text-[#19FFFF] transition-colors cursor-pointer"
+                                >
+                                    Cronograma
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#faq"
+                                    onClick={e => handleNavigation(e, "faq")}
+                                    className="hover:text-[#19FFFF] transition-colors cursor-pointer"
+                                >
+                                    FAQ
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
@@ -86,8 +120,20 @@ const Footer = () => {
                             <span className="text-gray-300">Diseñado por:</span>
                             <div className="flex items-center space-x-2">
                                 <span className="text-[#19FFFF]">Quispe Arratea Alexandra Raquel</span>
-                                <a href="https://www.linkedin.com/in/alexandra-raquel-quispe-arratea-bb1aa7396/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-[#19FFFF]" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" /></svg>
+                                <a
+                                    href="https://www.linkedin.com/in/alexandra-raquel-quispe-arratea-bb1aa7396/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:opacity-80"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="w-5 h-5 text-[#19FFFF]"
+                                        fill="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" />
+                                    </svg>
                                 </a>
                             </div>
                         </div>
@@ -95,75 +141,192 @@ const Footer = () => {
                         <div className="space-y-1">
                             <span className="text-gray-300">Desarrollado por:</span>
                             <div className="flex flex-col space-y-3 text-[#19FFFF]">
-
                                 <div className="flex items-center space-x-2">
                                     <span>Ajra Huacso, Jeans Anthony</span>
-                                    <a href="https://www.linkedin.com/in/anthonyajra/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" /></svg>
+                                    <a
+                                        href="https://www.linkedin.com/in/anthonyajra/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" />
+                                        </svg>
                                     </a>
-                                    <a href="https://github.com/AnthoLogy63" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.1-.7.1-.7-1.1-.1-1.6-1.1-1.6-1.1-.7-1.2.1-1.1.1-1.1 1.2.1 1.8 1.2 1.8 1.2.7 1.3 1.8 1 2.3.8.1-.6.4-1 .7-1.3-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.3 0 4.5-2.6 5.4-5.1 5.7.4.3.8.9.8 1.9v2.8c0 .3.2.7.8.6C20.7 21.4 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z" /></svg>
+                                    <a
+                                        href="https://github.com/AnthoLogy63"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.1-.7.1-.7-1.1-.1-1.6-1.1-1.6-1.1-.7-1.2.1-1.1.1-1.1 1.2.1 1.8 1.2 1.8 1.2.7 1.3 1.8 1 2.3.8.1-.6.4-1 .7-1.3-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.3 0 4.5-2.6 5.4-5.1 5.7.4.3.8.9.8 1.9v2.8c0 .3.2.7.8.6C20.7 21.4 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z" />
+                                        </svg>
                                     </a>
                                 </div>
 
                                 <div className="flex items-center space-x-2">
                                     <span>Alfaro Buiza, Jesus Alberto</span>
-                                    <a href="https://www.linkedin.com/in/jesus-alfaro-buiza/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" /></svg>
+                                    <a
+                                        href="https://www.linkedin.com/in/jesus-alfaro-buiza/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" />
+                                        </svg>
                                     </a>
                                 </div>
 
                                 <div className="flex items-center space-x-2">
                                     <span>Aliaga Chaiña, Sandra Gabriela</span>
-                                    <a href="https://github.com/sandra-aliaga" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.1-.7.1-.7-1.1-.1-1.6-1.1-1.6-1.1-.7-1.2.1-1.1.1-1.1 1.2.1 1.8 1.2 1.8 1.2.7 1.3 1.8 1 2.3.8.1-.6.4-1 .7-1.3-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.3 0 4.5-2.6 5.4-5.1 5.7.4.3.8.9.8 1.9v2.8c0 .3.2.7.8.6C20.7 21.4 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z" /></svg>
+                                    <a
+                                        href="https://www.linkedin.com/in/sandra-aliaga-03663a324/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" />
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="https://github.com/sandra-aliaga"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.1-.7.1-.7-1.1-.1-1.6-1.1-1.6-1.1-.7-1.2.1-1.1.1-1.1 1.2.1 1.8 1.2 1.8 1.2.7 1.3 1.8 1 2.3.8.1-.6.4-1 .7-1.3-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.3 0 4.5-2.6 5.4-5.1 5.7.4.3.8.9.8 1.9v2.8c0 .3.2.7.8.6C20.7 21.4 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z" />
+                                        </svg>
                                     </a>
                                 </div>
 
                                 <div className="flex items-center space-x-2">
                                     <span>Alvarez Astete, Jheeremy Manuel</span>
-                                    <a href="https://www.linkedin.com/in/jhenma36/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" /></svg>
+                                    <a
+                                        href="https://www.linkedin.com/in/jhenma36/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" />
+                                        </svg>
                                     </a>
                                 </div>
 
                                 <div className="flex items-center space-x-2">
                                     <span>Garambel Marin, Fernando Miguel</span>
-                                    <a href="https://www.linkedin.com/in/fernando-miguel-garambel-marin-ab2b652aa" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" /></svg>
+                                    <a
+                                        href="https://www.linkedin.com/in/fernando-miguel-garambel-marin-ab2b652aa"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" />
+                                        </svg>
                                     </a>
                                 </div>
 
                                 <div className="flex items-center space-x-2">
                                     <span>Luque Condori, Luis Guillermo</span>
-                                    <a href="https://www.linkedin.com/in/luis-guillermo-luque-condori/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" /></svg>
+                                    <a
+                                        href="https://www.linkedin.com/in/luis-guillermo-luque-condori/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" />
+                                        </svg>
                                     </a>
                                 </div>
 
                                 <div className="flex items-center space-x-2">
                                     <span>Sequeiros Condori, Luis Gustavo</span>
-                                    <a href="https://github.com/gustadev24" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.1-.7.1-.7-1.1-.1-1.6-1.1-1.6-1.1-.7-1.2.1-1.1.1-1.1 1.2.1 1.8 1.2 1.8 1.2.7 1.3 1.8 1 2.3.8.1-.6.4-1 .7-1.3-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.3 0 4.5-2.6 5.4-5.1 5.7.4.3.8.9.8 1.9v2.8c0 .3.2.7.8.6C20.7 21.4 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z" /></svg>
+                                    <a
+                                        href="https://github.com/gustadev24"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.1-.7.1-.7-1.1-.1-1.6-1.1-1.6-1.1-.7-1.2.1-1.1.1-1.1 1.2.1 1.8 1.2 1.8 1.2.7 1.3 1.8 1 2.3.8.1-.6.4-1 .7-1.3-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.3 0 4.5-2.6 5.4-5.1 5.7.4.3.8.9.8 1.9v2.8c0 .3.2.7.8.6C20.7 21.4 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z" />
+                                        </svg>
                                     </a>
-                                    <a href="https://www.linkedin.com/in/luisgustavoseq/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" /></svg>
+                                    <a
+                                        href="https://www.linkedin.com/in/luisgustavoseq/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:opacity-80"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-5 h-5"
+                                            fill="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z" />
+                                        </svg>
                                     </a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
                 <hr className="border-white/25 my-8 " />
 
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-400">
-                    <div className="order-3 md:order-1">
-                        © {currentYear} Global Game Jam Arequipa
-                    </div>
+                    <div className="order-3 md:order-1">© {currentYear} Global Game Jam Arequipa</div>
 
                     <div className="order-1 md:order-2 flex items-center gap-2">
                         <span>Con</span>
@@ -174,25 +337,39 @@ const Footer = () => {
                     </div>
 
                     <div className="order-2 md:order-3 flex items-center gap-6">
-                        <a href="https://www.linkedin.com/company/acm-student-chapter-universidad-nacional-de-san-agust%C3%ADn-de-arequipa/" target="_blank" rel="noopener noreferrer" className="text-[#19FFFF]/80 hover:text-[#19FFFF] transform hover:scale-110 transition-all">
+                        <a
+                            href="https://www.linkedin.com/company/acm-student-chapter-universidad-nacional-de-san-agust%C3%ADn-de-arequipa/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#19FFFF]/80 hover:text-[#19FFFF] transform hover:scale-110 transition-all"
+                        >
                             <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68" />
                             </svg>
                         </a>
 
-                        <a href="https://www.facebook.com/profile.php?id=61556748924313" target="_blank" rel="noopener noreferrer" className="text-[#E045F5]/80 hover:text-[#E045F5] transform hover:scale-110 transition-all">
+                        <a
+                            href="https://www.facebook.com/profile.php?id=61556748924313"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#E045F5]/80 hover:text-[#E045F5] transform hover:scale-110 transition-all"
+                        >
                             <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
                                 <path d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5 3.657 9.127 8.438 9.878v-6.987H7.898v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.127 22 17 22 12z" />
                             </svg>
                         </a>
 
-                        <a href="https://www.instagram.com/acm.unsa/" target="_blank" rel="noopener noreferrer" className="text-[#9C27B0]/80 hover:text-[#9C27B0] transform hover:scale-110 transition-all">
+                        <a
+                            href="https://www.instagram.com/acm.unsa/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#9C27B0]/80 hover:text-[#9C27B0] transform hover:scale-110 transition-all"
+                        >
                             <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
                                 <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z" />
                             </svg>
                         </a>
                     </div>
-
                 </div>
             </div>
         </footer>
