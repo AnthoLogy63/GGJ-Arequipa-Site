@@ -26,7 +26,7 @@ const AboutSection = () => {
             {/* Contenido */}
             <div className="relative max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row items-center gap-12 ml-0 lg:ml-6">
-                    
+
                     {/* Izquierda */}
                     <div className="w-full lg:w-3/5 text-white">
                         <h2 className="text-4xl md:text-6xl font-bold pr-20">
@@ -42,8 +42,8 @@ const AboutSection = () => {
                                 drop-shadow-[-px_0_6px_#1DF2F2]
                                 drop-shadow-[0_0_10px_#1DF2F2]
                             "
-                            >
-                                48 horas de creatividad pura en el corazón de Arequipa
+                        >
+                            48 horas de creatividad pura en el corazón de Arequipa
                         </p>
 
                         {/* Descripción */}
@@ -57,47 +57,51 @@ const AboutSection = () => {
                         </p>
 
                         <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                            <button
-                                className="
-                                    px-8 py-2
-                                    text-base md:text-lg font-semibold
-                                    text-[#A3FFFE]
-                                    border-2
-                                    border-[#29F7F5]
-                                    rounded
-                                    transition-all
-                                    duration-300
-                                    cursor-pointer
-                                    select-none
-                                    hover:text-black
-                                    hover:bg-[#29F7F5]
-                                    hover:shadow-[0_0_18px_#29F7F5]
-                                    hover:scale-105
-                                "
+                            <a href="https://luma.com/mouj3jcc" target="_blank" rel="noopener noreferrer">
+                                <button
+                                    className="
+                                        px-8 py-2
+                                        text-base md:text-lg font-semibold
+                                        text-[#A3FFFE]
+                                        border-2
+                                        border-[#29F7F5]
+                                        rounded
+                                        transition-all
+                                        duration-300
+                                        cursor-pointer
+                                        select-none
+                                        hover:text-black
+                                        hover:bg-[#29F7F5]
+                                        hover:shadow-[0_0_18px_#29F7F5]
+                                        hover:scale-105
+                                    "
                                 >
-                            Tema sorpresa
-                            </button>
-
-                            <button
-                                className="
-                                    px-8 py-2
-                                    text-base md:text-lg font-semibold
-                                    text-[#FFA1FE]
-                                    border-2
-                                    border-[#F130EE]
-                                    rounded
-                                    transition-all
-                                    duration-300
-                                    cursor-pointer
-                                    select-none
-                                    hover:text-black
-                                    hover:bg-[#F130EE]
-                                    hover:shadow-[0_0_18px_#F130EE]
-                                    hover:scale-105
-                                "
-                                >
-                                Ediciones pasadas
+                                    Tema sorpresa
                                 </button>
+                            </a>
+
+                            <a href="https://globalgamejam.org/games" target="_blank" rel="noopener noreferrer">
+                                <button
+                                    className="
+                                        px-8 py-2
+                                        text-base md:text-lg font-semibold
+                                        text-[#FFA1FE]
+                                        border-2
+                                        border-[#F130EE]
+                                        rounded
+                                        transition-all
+                                        duration-300
+                                        cursor-pointer
+                                        select-none
+                                        hover:text-black
+                                        hover:bg-[#F130EE]
+                                        hover:shadow-[0_0_18px_#F130EE]
+                                        hover:scale-105
+                                    "
+                                >
+                                    Ediciones pasadas
+                                </button>
+                            </a>
 
                         </div>
                     </div>
@@ -105,19 +109,19 @@ const AboutSection = () => {
                     {/* Derecha*/}
                     <div className="w-full lg:w-2/5 flex justify-center relative pt-8 lg:pt-0">
                         <div className="-translate-y-6 relative">
-                            <span className="tri small t1" style={{backgroundColor:"#1DF2F2"}}></span>
-                            <span className="tri tall t2" style={{backgroundColor:"#D11CE4"}}></span>
-                            <span className="tri wide t3" style={{backgroundColor:"#6E2880"}}></span>
-                            <span className="tri medium t4" style={{backgroundColor:"#1DF2F2"}}></span>
-                            <span className="tri tall t5" style={{backgroundColor:"#D11CE4"}}></span>
-                            <span className="tri small t6" style={{backgroundColor:"#6E2880"}}></span>
-                            <span className="tri medium t7" style={{backgroundColor:"#1DF2F2"}}></span>
-                            <span className="tri wide t8" style={{backgroundColor:"#D11CE4"}}></span>
+                            <span className="tri small t1" style={{ backgroundColor: "#1DF2F2" }}></span>
+                            <span className="tri tall t2" style={{ backgroundColor: "#D11CE4" }}></span>
+                            <span className="tri wide t3" style={{ backgroundColor: "#6E2880" }}></span>
+                            <span className="tri medium t4" style={{ backgroundColor: "#1DF2F2" }}></span>
+                            <span className="tri tall t5" style={{ backgroundColor: "#D11CE4" }}></span>
+                            <span className="tri small t6" style={{ backgroundColor: "#6E2880" }}></span>
+                            <span className="tri medium t7" style={{ backgroundColor: "#1DF2F2" }}></span>
+                            <span className="tri wide t8" style={{ backgroundColor: "#D11CE4" }}></span>
 
                             <img
-                            src={logo}
-                            alt="Global Game Jam Arequipa Logo"
-                            className="
+                                src={logo}
+                                alt="Global Game Jam Arequipa Logo"
+                                className="
                                 w-[420px]
                                 sm:w-[480px]
                                 md:w-[540px]

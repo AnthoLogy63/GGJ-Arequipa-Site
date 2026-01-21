@@ -14,7 +14,7 @@ export const FinalVerificationCTA = () => {
         const faqSectionAlt = document.getElementById('faq-section');
         faqSectionAlt?.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 150); 
+    }, 150);
   };
 
   return (
@@ -23,7 +23,7 @@ export const FinalVerificationCTA = () => {
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
 
       <div className="absolute inset-0 pointer-events-none">
-        <div 
+        <div
           className="absolute left-0 bottom-0 w-1/2 h-full opacity-25"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%236d28d9' fill-opacity='0.2'/%3E%3C/svg%3E")`,
@@ -32,7 +32,7 @@ export const FinalVerificationCTA = () => {
             WebkitMaskImage: 'linear-gradient(to right, black, transparent)'
           }}
         />
-        <div 
+        <div
           className="absolute right-0 bottom-0 w-1/2 h-full opacity-25"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%236d28d9' fill-opacity='0.2'/%3E%3C/svg%3E")`,
@@ -51,13 +51,19 @@ export const FinalVerificationCTA = () => {
         </div>
 
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            <Link
-              to="/"
-              onClick={() => window.scrollTo(0, 0)}
-              className="cursor-pointer bg-cyan-400 hover:bg-cyan-300 text-black font-black px-8 py-5 rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
-            >
-              Inscribirme ahora
-            </Link>
+          <Link
+            to="#"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById('registration-stepper');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="cursor-pointer bg-cyan-400 hover:bg-cyan-300 text-black font-black px-8 py-5 rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(34,211,238,0.4)] uppercase tracking-wider text-sm"
+          >
+            Inscribirme ahora
+          </Link>
 
           <button
             onClick={goToFaqs}
