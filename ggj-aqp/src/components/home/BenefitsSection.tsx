@@ -39,8 +39,17 @@ const BenefitsSection = () => {
                 px-6
                 bg-[#11091C]
                 relative
+                overflow-hidden
             "
         >
+            {/* Bola de luz decorativa */}
+            <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-20 pointer-events-none"
+                style={{
+                    background: "radial-gradient(circle, #1DF2F2 0%, #186EB4 30%, transparent 70%)",
+                    filter: "blur(60px)",
+                }}
+            />
             <div className="max-w-7xl mx-auto">
                 {/* Título */}
                 <h2 className="text-3xl md:text-5xl font-bold text-white text-center mb-12">

@@ -3,8 +3,8 @@ const EVENTO_INFO = {
     titulo: "Ubicación y Fecha",
     subtitulo: "Prepárate para 48 horas de pura creación",
     lugar: {
-        nombre: "JAKU EMPRENDE UNSA",
-        direccion: "UNSA SOCIALES",
+        nombre: "CIALE UNSA",
+        direccion: "UNSA INGENIERIAS - Ingeniería Industrial",
     },
     fecha: {
         texto: "26, 30 y 31 de Enero 2026",
@@ -28,9 +28,9 @@ const EVENTO_INFO = {
         },
     ],
     mapa: {
-        url: "https://www.google.com/maps/search/JAKU+EMPRENDE+UNSA,+Arequipa",
+        url: "https://www.google.com/maps/search/Centro+de+Investigación+Aplicada+y+Laboratorios+Especializados+(CIALE)",
         embedUrl:
-            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.3345700229333!2d-71.5188982!3d-16.4078259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b6113bb0b57%3A0x8264f3b4a347b806!2sJAKU%20EMPRENDE%20UNSA!5e0!3m2!1ses!2spe!4v1768172124648!5m2!1ses!2spe",
+            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.4227098826204!2d-71.52565179999999!3d-16.403344399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b0047b4c235%3A0x6f66678ad6a49eda!2sCentro%20de%20Investigaci%C3%B3n%20Aplicada%20y%20Laboratorios%20Especializados%20(CIALE)!5e0!3m2!1ses!2spe!4v1768957988153!5m2!1ses!2spe",
     },
 };
 
