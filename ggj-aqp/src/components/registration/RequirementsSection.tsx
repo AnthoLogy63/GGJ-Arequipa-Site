@@ -29,8 +29,23 @@ const RequirementsSection = () => {
     ];
 
     return (
-        <section className="py-20 px-4 relative overflow-hidden">
-            <div className="max-w-6xl mx-auto relative z-10">
+        <section className="py-60 px-4 relative overflow-hidden">
+            <div className="max-w-6xl mx-auto relative z-10 overflow-x-hidden md:overflow-visible">
+                {/* Background glows */}
+                <div
+                    className="absolute top-[-50%] -left-[400px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
+                    style={{
+                        animation: 'glowPulseSoft 4s ease-in-out infinite'
+                    }}
+                ></div>
+
+                <div
+                    className="absolute top-[70%] -right-[500px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
+                    style={{
+                        animation: 'glowPulseSoft 4s ease-in-out infinite'
+                    }}
+                ></div>
+
 
                 <h2
                     className="text-5xl md:text-[64px] font-black text-center mb-2 tracking-wide"
@@ -82,7 +97,6 @@ const RequirementsSection = () => {
                     ))}
                 </div>
 
-                {/* Decorative dots */}
                 <div className="absolute top-[7%] right-5 hidden xl:flex flex-col gap-y-3 opacity-80">
                     <div className="w-[5px] h-[5px] rounded-full bg-[#9671F3]"></div>
 
@@ -107,7 +121,6 @@ const RequirementsSection = () => {
                 </div>
             </div>
 
-            {/* Ambient glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#6E2880] opacity-[0.05] blur-[100px] pointer-events-none rounded-full"></div>
 
         </section>

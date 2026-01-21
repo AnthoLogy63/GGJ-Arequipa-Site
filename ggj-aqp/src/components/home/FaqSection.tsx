@@ -10,28 +10,45 @@ const FaqSection = () => {
 
     const faqs = [
         {
-            question: "¿Necesito tener un equipo para inscribirme?",
-            answer: "No. Puedes venir solo y formar equipo aquí. Habrá dinámicas para facilitar la conexión."
+            question: "¿Cómo ingreso / qué documento presento?",
+            answer: "DNI obligatorio para el ingreso"
         },
         {
-            question: "¿Necesito saber programar?",
-            answer: "No. Se necesitan todo tipo de perfiles: artistas 2D/3D, músicos, diseñadores de sonido, escritores, diseñadores de juegos y organizadores. ¡Toda habilidad es bienvenida!"
+            question: "¿Existe la modalidad espectador?",
+            answer: "No, el evento es para participantes"
         },
         {
-            question: "¿Habrá comida y bebida?",
-            answer: "Sí, cubriremos snacks, bebidas, pizza, etc. para mantener a los jammers energizados durante el evento."
+            question: "Si no asisto, ¿mi vacante pasa a otra persona?",
+            answer: "No, es con lista y DNI"
         },
         {
-            question: "¿Qué debo llevar?",
-            answer: "Tu laptop o PC, periféricos (ratón, teclado, tableta gráfica), audífonos y cualquier software con el que te sientas cómodo. Y mucha energía."
+            question: "¿Necesito equipo o puedo participar de forma individual? ¿De cuántos integrantes?",
+            answer: "Las inscripciones son individuales pero el día lunes 26 ayudaremos a formar equipos. Se desarrolla en equipos de 3 a 5 personas."
+        },
+        {
+            question: "Participación interdisciplinaria",
+            answer: "Los equipos son interdisciplinarios, pueden participar estudiantes de comunicación, diseño, publicidad, ilustración, entre otros."
         }
     ];
 
     return (
         <section id="faq" className="py-16 px-4 relative bg-[#11091C] flex justify-center">
-            <div className="w-full max-w-3xl relative">
+            {/* Background glows */}
+            <div className="w-full max-w-3xl relative overflow-x-hidden md:overflow-visible">
+                <div
+                    className="absolute top-[50%] -left-[750px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
+                    style={{
+                        animation: 'glowPulseSoft 4s ease-in-out infinite'
+                    }}
+                ></div>
 
-                {/* Decoraciones */}
+                <div
+                    className="absolute top-[-30%] -right-[750px] w-[500px] h-[500px] bg-[#F130EE] opacity-[0.08] blur-[100px] rounded-full pointer-events-none"
+                    style={{
+                        animation: 'glowPulseSoft 4s ease-in-out infinite'
+                    }}
+                ></div>
+
                 <div className="hidden md:block">
                     <div className="absolute top-[152px] left-7 w-19 h-[2px] bg-[#1FF2F2] shadow-[0_0_10px_#1FF2F2] rounded-full"></div>
                     <div className="absolute top-[38%] -left-15 w-4 h-[3px] bg-[#F130EE] rounded-full opacity-80"></div>
