@@ -117,6 +117,9 @@ const Footer = () => {
                                 <a href="https://github.com/sandra-aliaga" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.1-.7.1-.7-1.1-.1-1.6-1.1-1.6-1.1-.7-1.2.1-1.1.1-1.1 1.2.1 1.8 1.2 1.8 1.2.7 1.3 1.8 1 2.3.8.1-.6.4-1 .7-1.3-2.5-.3-5.1-1.3-5.1-5.7 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.9 1.2 2 1.2 3.3 0 4.5-2.6 5.4-5.1 5.7.4.3.8.9.8 1.9v2.8c0 .3.2.7.8.6C20.7 21.4 24 17.1 24 12c0-6.3-5.2-11.5-12-11.5z"/></svg>
                                 </a>
+                                <a href="https://www.linkedin.com/in/sandra-aliaga-03663a324/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.6v2.2h.1c.5-.9 1.7-1.8 3.5-1.8 3.8 0 4.5 2.5 4.5 5.8V24h-4v-6.5c0-1.5-.03-3.5-2.1-3.5-2.1 0-2.4 1.6-2.4 3.4V24h-4V8z"/></svg>
+                                </a>
                             </div>
 
                             <div className="flex items-center space-x-2">
