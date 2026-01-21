@@ -1,6 +1,6 @@
 import fernando from "@/assets/team/Fernando Peralta.webp";
-import sharon from "@/assets/team/RominaCamargo.webp";
-import romina from "@/assets/team/SHARON MISHEL CONDORI PANIGUARA.webp";
+import romina from "@/assets/team/RominaCamargo.webp";
+import sharon from "@/assets/team/SHARON MISHEL CONDORI PANIGUARA.webp";
 import jose from "@/assets/team/Jose Ismael Cahuana Turpo.webp";
 import jeans from "@/assets/team/JEANS ANTHONY AJRA HUACSO.webp";
 import edson from "@/assets/team/EDSON PEDRO MIRANDA CALLO.webp";
@@ -8,12 +8,6 @@ import sandra from "@/assets/team/SANDRA GABRIELA ALIAGA CHAIÑA.webp";
 import tania from "@/assets/team/TANIA LUZ AYQUE PURACA.webp";
 
 const team = [
-  {
-    name: "Fernando Peralta",
-    role: "Presidente ACM UCSP",
-    image: fernando,
-    link: "https://www.linkedin.com/in/fernandoperaltab/"
-  },
   {
     name: "Tania Ayque",
     role: "Presidente ACM UNSA",
@@ -38,6 +32,12 @@ const team = [
     role: "Tesorera ACM UNSA",
     image: sharon,
     link: "https://www.linkedin.com/in/sharon-mishel-condori-paniguara-a60b5a270/"
+  },
+  {
+    name: "Fernando Peralta",
+    role: "Presidente ACM UCSP",
+    image: fernando,
+    link: "https://www.linkedin.com/in/fernandoperaltab/"
   },
   {
     name: "Edson Miranda",

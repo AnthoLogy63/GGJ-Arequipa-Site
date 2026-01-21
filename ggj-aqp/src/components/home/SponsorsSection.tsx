@@ -7,7 +7,11 @@ import ingenia  from "@/assets/sponsors/Logo-principal-horizontal-color-Ingenia-
 import acm_ucsp from "@/assets/sponsors/ucsp_acm_logo_nobg.webp";
 import volcano2 from "@/assets/sponsors/Volcano-Game-Lab-2.webp";
 import ceis from "@/assets/sponsors/CEIS LOGO.webp";
-import mapachito from "@/assets/sponsors/mapachio.webp";
+import mapachio from "@/assets/sponsors/mapachio.webp";
+import seventh_beat from "@/assets/sponsors/7thbeatfdn-bg-color.webp";
+import ieee_wie from "@/assets/sponsors/ieee_unsa_wie_rgb_stacked_k.webp";
+import pgj from "@/assets/sponsors/PGJ - logo-13.webp";
+
 
 const sponsors = [
   { name: "ASME UNSA", logo: asme3 },
@@ -16,7 +20,10 @@ const sponsors = [
   { name: "ACM UCSP", logo: acm_ucsp},
   { name: "VOLCANO GAME", logo: volcano2},
   { name: "CEIS", logo: ceis},
-  { name: "MAPACHITO", logo: mapachito},
+  { name: "MAPACHIO", logo: mapachio},
+  { name: "7TH BEATH FOUNDATION", logo: seventh_beat},
+  { name: "IEEE WIE UNSA", logo: ieee_wie},
+  { name: "PERU GAME JAM", logo: pgj},
 ];
 
 const SponsorsSection = () => {
@@ -55,7 +62,7 @@ const SponsorsSection = () => {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-15">
           <div className="flex flex-wrap justify-center gap-12 lg:hidden">
             {sponsors.map((sponsor) => (
               <img
@@ -80,7 +87,8 @@ const SponsorsSection = () => {
                   <img
                     src={sponsor.logo}
                     alt={sponsor.name}
-                    className="h-17 w-auto duration-200"
+                    title={sponsor.name}
+                    className="h-20 w-auto duration-200"
                   />
                 </div>
               ))}
