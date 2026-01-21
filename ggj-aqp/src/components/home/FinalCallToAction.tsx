@@ -37,12 +37,12 @@ const FinalCallToAction = () => {
                         </div>
                     </div>
 
-                    <div className="flex-1 relative sm:mt-5 sm:pl-8 pb-28 pt-5 md:pr-15 flex justify-center">
+                    <div className="flex-1 relative sm:mt-7 sm:px-8 pb-28 pt-5 flex justify-center">
                         <div className="relative">
                             <img
                                 src={ctaImage}
                                 alt="Global Game Jam"
-                                className="w-[280px] sm:w-[340px] md:w-[350px] rounded-xl shadow-2xl rotate-[1deg]"
+                                className="w-[280px] sm:w-[340px] md:w-[350px] rounded-xl shadow-2xl rotate-[5deg]"
                             />
 
                             <img
