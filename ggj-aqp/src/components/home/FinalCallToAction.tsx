@@ -1,7 +1,7 @@
-import ctaImage from "@/assets/finalCallToAction/fotoPersonas.png";
-import ggjLogo from "@/assets/finalCallToAction/ggjImagen.png";
-import coraImage from "@/assets/finalCallToAction/corazon.png";
-import mandoImage from "@/assets/finalCallToAction/mando.png";
+import ctaImage from "@/assets/finalCallToAction/fotoPersonas.webp";
+import ggjLogo from "@/assets/finalCallToAction/ggjImagen.webp";
+import coraImage from "@/assets/finalCallToAction/corazon.webp";
+import mandoImage from "@/assets/finalCallToAction/mando.webp";
 
 const FinalCallToAction = () => {
     return (
