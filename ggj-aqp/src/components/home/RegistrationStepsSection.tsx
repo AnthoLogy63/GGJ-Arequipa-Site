@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const RegistrationStepsSection = () => {
     return (
@@ -15,7 +15,7 @@ const RegistrationStepsSection = () => {
 
                 <div className="flex flex-col lg:flex-row justify-between items-start gap-20 lg:gap-8 relative z-10">
 
-                   <div className="absolute -top-24 -right-30 md:-top-80 md:-right-60 pointer-events-none select-none opacity-50 z-0">
+                    <div className="absolute -top-24 -right-30 md:-top-80 md:-right-60 pointer-events-none select-none opacity-50 z-0">
                         <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[250px] h-[150px] md:w-[550px] md:h-[300px]">
                             <path d="M95 20 L65 50 L95 80" stroke="#251C35" strokeWidth="12" strokeLinecap="square" />
                             <path d="M60 20 L30 50 L60 80" stroke="#251C35" strokeWidth="12" strokeLinecap="square" transform="translate(0)" />
@@ -163,31 +163,33 @@ const RegistrationStepsSection = () => {
                             Crea tu cuenta en la plataforma oficial del evento
                         </p>
 
-                        <button
-                            className="
-                                select-none
-                                w-full max-w-[250px]
-                                h-[60px]
-                                px-4
-                                rounded
-                                font-bold
-                                uppercase
-                                tracking-wider
-                                text-xs md:text-sm
-                                cursor-pointer
-                                border
-                                bg-transparent
-                                text-[#FFA1FE]
-                                transition-all duration-300
-                                hover:scale-105
-                                hover:bg-[#fa48f7]
-                                hover:text-black
-                                hover:shadow-[0_0_20px_#F130EE]
-                            "
-                            style={{ borderColor: "#F130EE" }}
-                        >
-                            Formulario Global
-                        </button>
+                        <a href="https://globalgamejam.org/jam-sites/2026/arequipa-game-jam-2026" target="_blank" rel="noopener noreferrer">
+                            <button
+                                className="
+                                    select-none
+                                    w-full max-w-[250px]
+                                    h-[60px]
+                                    px-4
+                                    rounded
+                                    font-bold
+                                    uppercase
+                                    tracking-wider
+                                    text-xs md:text-sm
+                                    cursor-pointer
+                                    border
+                                    bg-transparent
+                                    text-[#FFA1FE]
+                                    transition-all duration-300
+                                    hover:scale-105
+                                    hover:bg-[#fa48f7]
+                                    hover:text-black
+                                    hover:shadow-[0_0_20px_#F130EE]
+                                "
+                                style={{ borderColor: "#F130EE" }}
+                            >
+                                Formulario Global
+                            </button>
+                        </a>
                     </div>
 
                     {/* STEP 3 */}
@@ -221,31 +223,37 @@ const RegistrationStepsSection = () => {
                             Te enviaremos un email con todos los detalles
                         </p>
 
-                        <button
-                            className="
-                                select-none
-                                w-full max-w-[250px]
-                                h-[60px]
-                                px-4
-                                rounded
-                                font-bold
-                                uppercase
-                                tracking-wider
-                                text-xs md:text-sm
-                                cursor-pointer
-                                border
-                                bg-transparent
-                                text-[#80FF66]
-                                transition-all duration-300
-                                hover:scale-105
-                                hover:bg-[#64ff47]
-                                hover:text-black
-                                hover:shadow-[0_0_20px_#39FF14]
-                            "
-                            style={{ borderColor: "#39FF14" }}
-                        >
-                            Ver Guía Completa de Inscripción
-                        </button>
+                        <Link to="/inscripcion" onClick={() => {
+                            setTimeout(() => {
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }, 100);
+                        }}>
+                            <button
+                                className="
+                                    select-none
+                                    w-full max-w-[250px]
+                                    h-[60px]
+                                    px-4
+                                    rounded
+                                    font-bold
+                                    uppercase
+                                    tracking-wider
+                                    text-xs md:text-sm
+                                    cursor-pointer
+                                    border
+                                    bg-transparent
+                                    text-[#80FF66]
+                                    transition-all duration-300
+                                    hover:scale-105
+                                    hover:bg-[#64ff47]
+                                    hover:text-black
+                                    hover:shadow-[0_0_20px_#39FF14]
+                                "
+                                style={{ borderColor: "#39FF14" }}
+                            >
+                                Ver Guía Completa de Inscripción
+                            </button>
+                        </Link>
                     </div>
                 </div>
 

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import controllerIcon from '@/assets/images/backgrounds/controller-icon.png';
 
 
 export const CallToActionMid = () => {
@@ -19,7 +20,7 @@ export const CallToActionMid = () => {
 
         <div className="text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-            ¿Listo <br /> 
+            ¿Listo <br />
             <span className="text-white">para el desafío?</span>
           </h2>
         </div>
@@ -28,7 +29,7 @@ export const CallToActionMid = () => {
           <p className="text-gray-300 text-lg mb-8 text-center md:text-left">
             No dejes pasar la oportunidad de ser parte del evento gamedev más importante de Arequipa.
           </p>
-          
+
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
             <Link
               to="/inscripcion"
@@ -37,7 +38,7 @@ export const CallToActionMid = () => {
             >
               Inscribirme ahora
             </Link>
-            
+
             <button
               onClick={scrollToSchedule}
               className="cursor-pointer border-2 border-cyan-400/50 hover:border-cyan-400 text-cyan-400 font-bold px-8 py-3 rounded-md transition-all bg-transparent hover:bg-cyan-400/10 uppercase tracking-wider text-sm"
@@ -48,15 +49,15 @@ export const CallToActionMid = () => {
         </div>
 
         <div className="hidden lg:block">
-          <img 
-            src="src\assets\images\backgrounds\controller-icon.png" 
-            alt="Game Controller" 
+          <img
+            src={controllerIcon}
+            alt="Game Controller"
             className="w-32 h-32 object-contain animate-pulse opacity-80 rotate-10"
             style={{ filter: 'drop-shadow(0 0 15px rgba(168, 85, 247, 0.4))' }}
           />
         </div>
       </div>
-      
+
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
     </section>
   );
