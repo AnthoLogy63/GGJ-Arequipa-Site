@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ggj-arequipa.vercel.app/sitemap.xml
