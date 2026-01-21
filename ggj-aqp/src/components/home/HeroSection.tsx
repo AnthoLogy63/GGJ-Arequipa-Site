@@ -1,4 +1,4 @@
-import fondoHero from "../../assets/images/backgrounds/FondoHero.png";
+import fondoHero from "../../assets/images/backgrounds/FondoHero.webp";
 import imagenLateral from "../../assets/logos/AQP-GGJ_logo-h.svg";
 
 const HeroSection = () => {
