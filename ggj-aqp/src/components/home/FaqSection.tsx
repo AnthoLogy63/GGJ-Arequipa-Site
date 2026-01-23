@@ -10,24 +10,24 @@ const FaqSection = () => {
 
     const faqs = [
         {
-            question: "¿Cómo ingreso / qué documento presento?",
-            answer: "DNI obligatorio para el ingreso"
+            question: "¿Cómo ingreso al evento? ¿Qué documento debo presentar?",
+            answer: "Solo necesitas traer tu DNI, ya que lo usaremos para verificar tu identidad con nuestra lista de personas inscritas. Es obligatorio para el ingreso, así que no lo olvides."
         },
         {
             question: "¿Existe la modalidad espectador?",
-            answer: "No, el evento es para participantes"
+            answer: "No, este evento está pensado para que todos vivan la experiencia al máximo. La Game Jam es 100% participativa, por lo que no contamos con modalidad de espectador. ¡Te animamos a inscribirte y formar parte de la creación de un videojuego desde cero!"
         },
         {
             question: "Si no asisto, ¿mi vacante pasa a otra persona?",
-            answer: "No, es con lista y DNI"
+            answer: "No. Las vacantes son personales, se asignan mediante una lista oficial y se validan con DNI el día del evento. Si no puedes asistir, lamentablemente tu cupo no podrá ser transferido a otra persona."
         },
         {
-            question: "¿Necesito equipo o puedo participar de forma individual? ¿De cuántos integrantes?",
-            answer: "Las inscripciones son individuales pero el día lunes 26 ayudaremos a formar equipos. Se desarrolla en equipos de 3 a 5 personas."
+            question: "¿Necesito tener un equipo o puedo participar de forma individual?",
+            answer: "¡Puedes participar sin problema! Las inscripciones son individuales, y el lunes 26 ayudaremos a formar equipos entre los participantes. La Game Jam se desarrolla en equipos de 3 a 5 personas, así que no te preocupes si vienes solo/a, ¡aquí encontrarás con quién crear!"
         },
         {
-            question: "Participación interdisciplinaria",
-            answer: "Los equipos son interdisciplinarios, pueden participar estudiantes de comunicación, diseño, publicidad, ilustración, entre otros."
+            question: "¿Pueden participar personas de otras carreras o disciplinas?",
+            answer: "¡Claro que sí! La Game Jam fomenta el trabajo interdisciplinario. En los equipos pueden participar estudiantes y entusiastas de comunicación, diseño, publicidad, ilustración, entre otras áreas. ¡La diversidad de ideas hace mejores juegos!"
         }
     ];
 

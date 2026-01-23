@@ -21,7 +21,7 @@ const scheduleData: Record<string, DaySchedule> = {
     description: "Bienvenida, revelación del tema y arranque del desarrollo.",
     events: [
       { time: "02:00 PM", location: "Auditorio Principal", tiempo: "5 min", desc: "Palabras de inauguración del evento por parte del Director de la Dirección de Innovación y Transferencia Tecnológica, Mag. Jesús Silva Fernández." },
-      { time: "02:05 PM", location: "Auditorio Principal", tiempo: "10 min", desc: "Acogida por parte del staff. Se acompañará a los participantes y se proyectará un conteo regresivo de inicio (10 minutos)." },
+      { time: "02:05 PM", location: "Auditorio Principal", tiempo: "10 min", desc: "Acogida por parte del staff. Se acompañará a los participantes y se proyectará un conteo regresivo de inicio." },
       { time: "02:15 PM", location: "Auditorio Principal", tiempo: "10 min", desc: "Presentación del Laboratorio de Investigación." },
       { time: "02:25 PM", location: "Auditorio Principal", tiempo: "10 min", desc: "Presentación del Centro de Escalamiento." },
       { time: "02:35 PM", location: "Auditorio Principal", tiempo: "15 min", desc: "Charla de bienvenida a los participantes de la Game Jam." },
@@ -35,13 +35,12 @@ const scheduleData: Record<string, DaySchedule> = {
   },
   "DIA 2": {
     title: "DESARROLLO INTENSIVO",
-    date: "VIE 30",
+    date: "JUE 29",
     description: "Desarrollo completo, mentorías y actividades de interacción.",
     events: [
       { time: "09:00 AM", location: "Auditorio Principal", tiempo: "45 min", desc: "Registro de participantes y entrega de merchandising." },
       { time: "09:45 AM", location: "Auditorio Principal", tiempo: "15 min", desc: "Bienvenida." },
-      { time: "10:00 AM", location: "Auditorio Principal", tiempo: "30 min", desc: "Charla: Prototipado en Godot." },
-      { time: "10:30 AM", location: "Auditorio Principal", tiempo: "30 min", desc: "Charla: Prototipado en Unity." },
+      { time: "10:00 AM", location: "Auditorio Principal", tiempo: "60 min", desc: "Charla: Introducción a presentaciones y pitch." },
       { time: "11:00 AM", location: "Transicion", tiempo: "15 min", desc: "Traslado del auditorio al salón (descanso)." },
       { time: "11:15 AM", location: "Salón", tiempo: "135 min", desc: "Mentoría + trabajo en equipo (avance del videojuego)." },
       { time: "13:30 PM", location: "Salón", tiempo: "90 min", desc: "Hora de almuerzo." },
@@ -51,12 +50,13 @@ const scheduleData: Record<string, DaySchedule> = {
   },
   "DIA 3": {
     title: "CIERRE & SHOWCASE",
-    date: "SAB 31",
+    date: "VIE 30",
     description: "Toques finales, presentaciones de proyectos y clausura del evento.",
     events: [
       { time: "09:00 AM", location: "Auditorio Principal", tiempo: "45 min", desc: "Registro de participantes y entrega de merchandising." },
       { time: "09:45 AM", location: "Auditorio Principal", tiempo: "15 min", desc: "Bienvenida." },
-      { time: "10:00 AM", location: "Auditorio Principal", tiempo: "60 min", desc: "Charla: Introducción a presentaciones y pitch" },
+      { time: "10:00 AM", location: "Auditorio Principal", tiempo: "30 min", desc: "Charla: Prototipado en Godot." },
+      { time: "10:30 AM", location: "Auditorio Principal", tiempo: "30 min", desc: "Charla: Prototipado en Unity." },
       { time: "11:00 AM", location: "Transicion", tiempo: "15 min", desc: "Traslado del auditorio al salón (descanso)." },
       { time: "11:15 AM", location: "Salón", tiempo: "135 min", desc: "Mentoría + trabajo en equipo (avance del videojuego)." },
       { time: "13:30 PM", location: "Salón", tiempo: "90 min", desc: "Hora de almuerzo." },
@@ -178,30 +178,39 @@ export const ScheduleSection = () => {
               const nextColor = colors[(index + 1) % colors.length];
 
               return (
-                <div key={index} className="mb-12 relative last:mb-0 pl-12">
-                  {index !== currentDayData.events.length - 1 && (
-                    <div
-                      className={`absolute left-[7px] top-[24px] w-[2px] h-[calc(100%+30px)] opacity-50 bg-gradient-to-b ${color.line} to-${nextColor.line.replace('bg-', '')}`}
-                    />
-                  )}
+                <div key={index} className="mb-8 md:mb-12 relative last:mb-0 pl-8 md:pl-12">
+                {index !== currentDayData.events.length - 1 && (
+                  <div
+                    className={`absolute left-[7px] top-[24px] w-[2px] h-[calc(100%+20px)] md:h-[calc(100%+30px)] opacity-50 bg-gradient-to-b ${color.line} to-${nextColor.line.replace('bg-', '')}`}
+                  />
+                )}
 
-                  <div className={`absolute left-0 top-1.5 w-4 h-4 rounded-full ${color.dot} z-10 shadow-[0_0_15px_rgba(inherit)] shadow-${color.dot.replace('bg-', '')}`} style={{ boxShadow: '0 0 15px currentColor' }} />
+                <div 
+                  className={`absolute left-0 top-1.5 w-4 h-4 rounded-full ${color.dot} z-10`} 
+                  style={{ boxShadow: '0 0 15px currentColor' }} 
+                />
 
-                  <div className="flex flex-col md:flex-row md:items-start gap-8">
-                    <span className="text-gray-400 font-mono text-lg min-w-[95px] pt-0.5">
-                      {event.time}
-                    </span>
+                <div className="flex flex-col md:flex-row md:items-start gap-2 md:gap-8">
 
-                    <div className="flex-1">
-                      <p className={`${color.text} text-gray-250 text-[13px] font-bold tracking-[0.15em] uppercase mb-1`}>
-                        {event.location}
+                  <span className="text-gray-400 font-mono text-base md:text-lg min-w-max md:min-w-[95px] pt-0.5">
+                    {event.time}
+                  </span>
+
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                      <p className={`${color.text} text-[11px] md:text-[13px] font-bold tracking-[0.15em] uppercase`}>
+                        {event.location} 
                       </p>
-                      <p className="text-[16px] text-gray-200 text-sm leading-relaxed">
-                        {event.desc}
-                      </p>
+                      <span className="text-gray-500 text-xs hidden md:inline">•</span>
+                      <a className="text-gray-500 text-xs italic">{event.tiempo}</a>
                     </div>
+
+                    <p className="text-[14px] md:text-[16px] text-gray-200 leading-relaxed max-w-full md:max-w-2xl">
+                      {event.desc}
+                    </p>
                   </div>
                 </div>
+              </div>
               );
             })}
           </div>
