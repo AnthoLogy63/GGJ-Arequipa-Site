@@ -21,7 +21,7 @@ const scheduleData: Record<string, DaySchedule> = {
     description: "Bienvenida, revelación del tema y arranque del desarrollo.",
     events: [
       { time: "02:00 PM", location: "Auditorio Principal", tiempo: "5 min", desc: "Palabras de inauguración del evento por parte del Director de la Dirección de Innovación y Transferencia Tecnológica, Mag. Jesús Silva Fernández." },
-      { time: "02:05 PM", location: "Auditorio Principal", tiempo: "10 min", desc: "Acogida por parte del staff. Se acompañará a los participantes y se proyectará un conteo regresivo de inicio (10 minutos)." },
+      { time: "02:05 PM", location: "Auditorio Principal", tiempo: "10 min", desc: "Acogida por parte del staff. Se acompañará a los participantes y se proyectará un conteo regresivo de inicio." },
       { time: "02:15 PM", location: "Auditorio Principal", tiempo: "10 min", desc: "Presentación del Laboratorio de Investigación." },
       { time: "02:25 PM", location: "Auditorio Principal", tiempo: "10 min", desc: "Presentación del Centro de Escalamiento." },
       { time: "02:35 PM", location: "Auditorio Principal", tiempo: "15 min", desc: "Charla de bienvenida a los participantes de la Game Jam." },
@@ -35,13 +35,12 @@ const scheduleData: Record<string, DaySchedule> = {
   },
   "DIA 2": {
     title: "DESARROLLO INTENSIVO",
-    date: "VIE 30",
+    date: "JUE 29",
     description: "Desarrollo completo, mentorías y actividades de interacción.",
     events: [
       { time: "09:00 AM", location: "Auditorio Principal", tiempo: "45 min", desc: "Registro de participantes y entrega de merchandising." },
       { time: "09:45 AM", location: "Auditorio Principal", tiempo: "15 min", desc: "Bienvenida." },
-      { time: "10:00 AM", location: "Auditorio Principal", tiempo: "30 min", desc: "Charla: Prototipado en Godot." },
-      { time: "10:30 AM", location: "Auditorio Principal", tiempo: "30 min", desc: "Charla: Prototipado en Unity." },
+      { time: "10:00 AM", location: "Auditorio Principal", tiempo: "60 min", desc: "Charla: Introducción a presentaciones y pitch." },
       { time: "11:00 AM", location: "Transicion", tiempo: "15 min", desc: "Traslado del auditorio al salón (descanso)." },
       { time: "11:15 AM", location: "Salón", tiempo: "135 min", desc: "Mentoría + trabajo en equipo (avance del videojuego)." },
       { time: "13:30 PM", location: "Salón", tiempo: "90 min", desc: "Hora de almuerzo." },
@@ -51,12 +50,13 @@ const scheduleData: Record<string, DaySchedule> = {
   },
   "DIA 3": {
     title: "CIERRE & SHOWCASE",
-    date: "SAB 31",
+    date: "VIE 30",
     description: "Toques finales, presentaciones de proyectos y clausura del evento.",
     events: [
       { time: "09:00 AM", location: "Auditorio Principal", tiempo: "45 min", desc: "Registro de participantes y entrega de merchandising." },
       { time: "09:45 AM", location: "Auditorio Principal", tiempo: "15 min", desc: "Bienvenida." },
-      { time: "10:00 AM", location: "Auditorio Principal", tiempo: "60 min", desc: "Charla: Introducción a presentaciones y pitch" },
+      { time: "10:00 AM", location: "Auditorio Principal", tiempo: "30 min", desc: "Charla: Prototipado en Godot." },
+      { time: "10:30 AM", location: "Auditorio Principal", tiempo: "30 min", desc: "Charla: Prototipado en Unity." },
       { time: "11:00 AM", location: "Transicion", tiempo: "15 min", desc: "Traslado del auditorio al salón (descanso)." },
       { time: "11:15 AM", location: "Salón", tiempo: "135 min", desc: "Mentoría + trabajo en equipo (avance del videojuego)." },
       { time: "13:30 PM", location: "Salón", tiempo: "90 min", desc: "Hora de almuerzo." },
@@ -194,8 +194,8 @@ export const ScheduleSection = () => {
 
                     <div className="flex-1">
                       <p className={`${color.text} text-gray-250 text-[13px] font-bold tracking-[0.15em] uppercase mb-1`}>
-                        {event.location}
-                      </p>
+                        {event.location} 
+                      </p><a className="text-gray-400 text-sm mb-2 inline-block">{event.tiempo}</a>
                       <p className="text-[16px] text-gray-200 text-sm leading-relaxed">
                         {event.desc}
                       </p>
