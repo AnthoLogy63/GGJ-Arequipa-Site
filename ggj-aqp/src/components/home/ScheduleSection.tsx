@@ -178,30 +178,39 @@ export const ScheduleSection = () => {
               const nextColor = colors[(index + 1) % colors.length];
 
               return (
-                <div key={index} className="mb-12 relative last:mb-0 pl-12">
-                  {index !== currentDayData.events.length - 1 && (
-                    <div
-                      className={`absolute left-[7px] top-[24px] w-[2px] h-[calc(100%+30px)] opacity-50 bg-gradient-to-b ${color.line} to-${nextColor.line.replace('bg-', '')}`}
-                    />
-                  )}
+                <div key={index} className="mb-8 md:mb-12 relative last:mb-0 pl-8 md:pl-12">
+                {index !== currentDayData.events.length - 1 && (
+                  <div
+                    className={`absolute left-[7px] top-[24px] w-[2px] h-[calc(100%+20px)] md:h-[calc(100%+30px)] opacity-50 bg-gradient-to-b ${color.line} to-${nextColor.line.replace('bg-', '')}`}
+                  />
+                )}
 
-                  <div className={`absolute left-0 top-1.5 w-4 h-4 rounded-full ${color.dot} z-10 shadow-[0_0_15px_rgba(inherit)] shadow-${color.dot.replace('bg-', '')}`} style={{ boxShadow: '0 0 15px currentColor' }} />
+                <div 
+                  className={`absolute left-0 top-1.5 w-4 h-4 rounded-full ${color.dot} z-10`} 
+                  style={{ boxShadow: '0 0 15px currentColor' }} 
+                />
 
-                  <div className="flex flex-col md:flex-row md:items-start gap-8">
-                    <span className="text-gray-400 font-mono text-lg min-w-[95px] pt-0.5">
-                      {event.time}
-                    </span>
+                <div className="flex flex-col md:flex-row md:items-start gap-2 md:gap-8">
 
-                    <div className="flex-1">
-                      <p className={`${color.text} text-gray-250 text-[13px] font-bold tracking-[0.15em] uppercase mb-1`}>
+                  <span className="text-gray-400 font-mono text-base md:text-lg min-w-max md:min-w-[95px] pt-0.5">
+                    {event.time}
+                  </span>
+
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                      <p className={`${color.text} text-[11px] md:text-[13px] font-bold tracking-[0.15em] uppercase`}>
                         {event.location} 
-                      </p><a className="text-gray-400 text-sm mb-2 inline-block">{event.tiempo}</a>
-                      <p className="text-[16px] text-gray-200 text-sm leading-relaxed">
-                        {event.desc}
                       </p>
+                      <span className="text-gray-500 text-xs hidden md:inline">•</span>
+                      <a className="text-gray-500 text-xs italic">{event.tiempo}</a>
                     </div>
+
+                    <p className="text-[14px] md:text-[16px] text-gray-200 leading-relaxed max-w-full md:max-w-2xl">
+                      {event.desc}
+                    </p>
                   </div>
                 </div>
+              </div>
               );
             })}
           </div>
