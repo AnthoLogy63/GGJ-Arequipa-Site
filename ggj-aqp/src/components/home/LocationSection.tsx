@@ -3,8 +3,8 @@ const EVENTO_INFO = {
     titulo: "Ubicación y Fecha",
     subtitulo: "Prepárate para 48 horas de pura creación",
     lugar: {
-        nombre: "CIALE UNSA",
-        direccion: "UNSA INGENIERIAS - Ingeniería Industrial",
+        nombre: "Escuela de Ingeniería Mecánica",
+        direccion: "UNSA INGENIERIAS - Escuela de Ingeniería Mecánica",
     },
     fecha: {
         texto: "26, 30 y 31 de Enero 2026",
@@ -17,21 +17,21 @@ const EVENTO_INFO = {
             descripcion: "Charla presencial",
         },
         {
-            dia: "Viernes 30",
-            fecha: "30 de Enero 2026",
+            dia: "Jueves 29",
+            fecha: "29 de Enero 2026",
             descripcion: "Primer día de evento",
         },
         {
-            dia: "Sábado 31",
-            fecha: "31 de Enero 2026",
+            dia: "Viernes 30",
+            fecha: "30 de Enero 2026",
             descripcion: "Segundo día de evento",
         },
     ],
     mapa: {
-        url: "https://www.google.com/maps/search/Centro+de+Investigación+Aplicada+y+Laboratorios+Especializados+(CIALE)",
-        embedUrl:
-            "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.4227098826204!2d-71.52565179999999!3d-16.403344399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b0047b4c235%3A0x6f66678ad6a49eda!2sCentro%20de%20Investigaci%C3%B3n%20Aplicada%20y%20Laboratorios%20Especializados%20(CIALE)!5e0!3m2!1ses!2spe!4v1768957988153!5m2!1ses!2spe",
+        url: "https://maps.app.goo.gl/MiTjPGpbS5BMuBr39",
+        embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d274.25388009883153!2d-71.52668354441536!3d-16.40488113439216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424affc01dd3f7%3A0xd77a737c344a3020!2sEscuela%20Profesional%20de%20Ingenier%C3%ADa%20Mec%C3%A1nica%2C%20Paucarpata%20325%2C%20Arequipa%2004001!5e0!3m2!1ses-419!2spe!4v1769216652741!5m2!1ses-419!2spe"
     },
+
 };
 
 const Titulo_y_descripcion = () => {

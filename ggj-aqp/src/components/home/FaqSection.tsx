@@ -14,8 +14,8 @@ const FaqSection = () => {
             answer: "Solo necesitas traer tu DNI, ya que lo usaremos para verificar tu identidad con nuestra lista de personas inscritas. Es obligatorio para el ingreso, así que no lo olvides."
         },
         {
-            question: "¿Existe la modalidad espectador?",
-            answer: "No, este evento está pensado para que todos vivan la experiencia al máximo. La Game Jam es 100% participativa, por lo que no contamos con modalidad de espectador. ¡Te animamos a inscribirte y formar parte de la creación de un videojuego desde cero!"
+            question: "¿Existe la modalidad espectador o virtual?",
+            answer: "No, este evento está pensado para que todos vivan la experiencia al máximo. La Game Jam es 100% participativa, por lo que no contamos con modalidad de espectador o virtual. ¡Te animamos a inscribirte y formar parte de la creación de un videojuego desde cero!"
         },
         {
             question: "Si no asisto, ¿mi vacante pasa a otra persona?",
@@ -23,7 +23,7 @@ const FaqSection = () => {
         },
         {
             question: "¿Necesito tener un equipo o puedo participar de forma individual?",
-            answer: "¡Puedes participar sin problema! Las inscripciones son individuales, y el lunes 26 ayudaremos a formar equipos entre los participantes. La Game Jam se desarrolla en equipos de 3 a 5 personas, así que no te preocupes si vienes solo/a, ¡aquí encontrarás con quién crear!"
+            answer: "Las inscripciones son individuales; el lunes 26 ayudaremos a formar equipos entre los participantes que lo deseen. Nuestra recomendación es que participen en equipos de 3 a 5 personas con roles equilibrados (programación, diseño, arte, etc.); Sin embargo, puedes participar solo o con personas que ya conozcas y formar grupos como prefieras."
         },
         {
             question: "¿Pueden participar personas de otras carreras o disciplinas?",
