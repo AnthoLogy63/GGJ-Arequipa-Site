@@ -1,70 +1,6 @@
-import { useState, useEffect } from 'react';
+import cerebroImg from '../../assets/postmorten/cerebro.svg';
 
 const CountdownSection = () => {
-    const [timeLeft, setTimeLeft] = useState({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0
-    });
-
-    const [glitchText, setGlitchText] = useState('GAME START IN...');
-    const [originalText, setOriginalText] = useState('GAME START IN...');
-    const glitchChars = '!@#$%^&*(){}[]<>?/|\\~`';
-
-    useEffect(() => {
-        const targetDate = new Date('2026-01-26T14:00:00').getTime();
-
-        const updateCountdown = () => {
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-
-            if (difference > 0) {
-                setTimeLeft({
-                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                    hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                    minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-                    seconds: Math.floor((difference % (1000 * 60)) / 1000)
-                });
-            } else {
-                setTimeLeft({
-                    days: 0,
-                    hours: 0,
-                    minutes: 0,
-                    seconds: 0
-                });
-                setOriginalText('THE CHALLENGE HAS BEGUN!');
-                setGlitchText('THE CHALLENGE HAS BEGUN!');
-            }
-        };
-
-        updateCountdown();
-        const interval = setInterval(updateCountdown, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    useEffect(() => {
-        const glitchInterval = setInterval(() => {
-            if (Math.random() > 0.7) {
-                const textArray = originalText.split('');
-                const glitchedArray = textArray.map((char) => {
-                    if (char !== ' ' && Math.random() > 0.7) {
-                        return glitchChars[Math.floor(Math.random() * glitchChars.length)];
-                    }
-                    return char;
-                });
-                setGlitchText(glitchedArray.join(''));
-
-                setTimeout(() => {
-                    setGlitchText(originalText);
-                }, 50);
-            }
-        }, 1200);
-
-        return () => clearInterval(glitchInterval);
-    }, []);
-
     return (
         <>
             <style>
@@ -175,29 +111,140 @@ const CountdownSection = () => {
                     }
                 `}
             </style>
-            <section className="w-full py-32 px-6 relative overflow-hidden flex items-center justify-center min-h-screen" style={{ backgroundColor: '#11091C' }}>
-                <div className="relative max-w-7xl mx-auto text-center w-full">
-                    {/* Título estilo neon inclinado con efecto glitch hacker */}
-                    <h2
-                        className="font-black text-transparent mb-12 md:mb-20 italic uppercase mx-auto px-4"
-                        style={{
-                            WebkitTextStroke: '2px #F130EE',
-                            letterSpacing: '0.1em',
-                            fontSize: 'clamp(32px, 8vw, 75px)',
-                            fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                            maxWidth: '100%',
-                            width: 'auto',
-                            lineHeight: '1.2',
-                            whiteSpace: 'normal',
-                            wordBreak: 'break-word',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            animation: 'glitchSkew 5s infinite, glitch 3s infinite'
-                        }}
-                    >
-                        {glitchText}
-                    </h2>
+            <section className="w-full py-32 px-6 relative overflow-hidden min-h-screen" style={{ backgroundColor: '#11091C' }}>
+                <div className="relative max-w-7xl mx-auto w-full">
+                    {/* Contenedor flex con imagen y textos */}
+                    <div className="flex items-start gap-12 mb-16">
+                        {/* Imagen del cerebro con decoraciones */}
+                        <div className="flex-shrink-0 relative">
+                            <img 
+                                src={cerebroImg} 
+                                alt="Cerebro" 
+                                className="w-96 h-96 object-contain"
+                                style={{ animation: 'float 3s ease-in-out infinite' }}
+                            />
+                            
+                            {/* Partículas decorativas alrededor del cerebro */}
+                            {/* Rombos flotantes */}
+                            <div
+                                className="absolute pointer-events-none"
+                                style={{
+                                    top: '10%',
+                                    right: '5%',
+                                    width: '16px',
+                                    height: '16px',
+                                    border: '2px solid #F130EE',
+                                    transform: 'rotate(45deg)',
+                                    filter: 'drop-shadow(0 0 6px #F130EE)',
+                                    animation: 'floatDiamond 3s ease-in-out infinite'
+                                }}
+                            />
+                            <div
+                                className="absolute pointer-events-none"
+                                style={{
+                                    top: '25%',
+                                    left: '-5%',
+                                    width: '12px',
+                                    height: '12px',
+                                    border: '2px solid #1DF2F2',
+                                    transform: 'rotate(45deg)',
+                                    filter: 'drop-shadow(0 0 6px #1DF2F2)',
+                                    animation: 'floatDiamond 3.5s ease-in-out infinite 0.5s'
+                                }}
+                            />
+                            <div
+                                className="absolute pointer-events-none"
+                                style={{
+                                    bottom: '20%',
+                                    right: '-5%',
+                                    width: '14px',
+                                    height: '14px',
+                                    border: '2px solid #F130EE',
+                                    transform: 'rotate(45deg)',
+                                    filter: 'drop-shadow(0 0 6px #F130EE)',
+                                    animation: 'floatDiamond 3.2s ease-in-out infinite 0.8s'
+                                }}
+                            />
+                            <div
+                                className="absolute pointer-events-none"
+                                style={{
+                                    bottom: '10%',
+                                    left: '10%',
+                                    width: '10px',
+                                    height: '10px',
+                                    border: '2px solid #1DF2F2',
+                                    transform: 'rotate(45deg)',
+                                    filter: 'drop-shadow(0 0 6px #1DF2F2)',
+                                    animation: 'floatDiamond 3.8s ease-in-out infinite 1s'
+                                }}
+                            />
+                            <div
+                                className="absolute pointer-events-none"
+                                style={{
+                                    top: '50%',
+                                    left: '-10%',
+                                    width: '12px',
+                                    height: '12px',
+                                    border: '2px solid #F130EE',
+                                    transform: 'rotate(45deg)',
+                                    filter: 'drop-shadow(0 0 6px #F130EE)',
+                                    animation: 'floatDiamond 3.3s ease-in-out infinite 0.3s'
+                                }}
+                            />
+                            <div
+                                className="absolute pointer-events-none"
+                                style={{
+                                    top: '70%',
+                                    right: '10%',
+                                    width: '10px',
+                                    height: '10px',
+                                    border: '2px solid #1DF2F2',
+                                    transform: 'rotate(45deg)',
+                                    filter: 'drop-shadow(0 0 6px #1DF2F2)',
+                                    animation: 'floatDiamond 3.6s ease-in-out infinite 0.6s'
+                                }}
+                            />
+                        </div>
+
+                        {/* Textos a la derecha */}
+                        <div className="flex-1 text-left">
+                            <h2
+                                className="font-bold text-white mb-6"
+                                style={{
+                                    fontSize: '64px',
+                                    fontFamily: 'Raleway, sans-serif',
+                                    lineHeight: '1.2'
+                                }}
+                            >
+                                El PostMortem esta en desarrollo
+                            </h2>
+                            
+                            <p
+                                className="font-bold mb-6"
+                                style={{
+                                    fontSize: '24px',
+                                    fontFamily: 'Raleway, sans-serif',
+                                    color: '#1DF2F2'
+                                }}
+                            >
+                                Analizando la rebelion creativa
+                            </p>
+
+                            <p
+                                className="text-white"
+                                style={{
+                                    fontSize: '18px',
+                                    fontFamily: 'Raleway, sans-serif',
+                                    lineHeight: '1.6',
+                                    maxWidth: '700px'
+                                }}
+                            >
+                                <span className="font-bold">¡La energía de la Arequipa Game Jam 2026 fue increíble!</span>
+                                <br />
+                                Estamos recopilando todas las estadísticas, los proyectos, las anécdotas y los mejores momentos para compartirlos contigo. Vuelve pronto para descubrir el resumen completo de esta maratón de desarrollo.
+                            </p>
+                        </div>
+                    </div>
 
                     {/* Contenedores de cuenta regresiva - estilo synthwave con decoraciones Cyberpunk HUD */}
                     <div className="flex flex-wrap justify-center gap-2 md:gap-[6px] relative px-2" style={{ paddingTop: '3px', paddingBottom: '3px' }}>
@@ -505,7 +552,7 @@ const CountdownSection = () => {
 
                         {/* ===== FIN DECORACIONES CYBERPUNK HUD ===== */}
 
-                        {/* Días */}
+                        {/* 48+ Horas de Código */}
                         <div
                             className="
                             rounded-2xl
@@ -543,21 +590,22 @@ const CountdownSection = () => {
                                     lineHeight: '1'
                                 }}
                             >
-                                {timeLeft.days.toString().padStart(2, '0')}
+                                48+
                             </div>
                             <div
-                                className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
+                                className="text-white uppercase tracking-widest font-bold mt-1"
                                 style={{
                                     fontFamily: 'Zing Rust Demo, Impact, sans-serif',
-                                    fontSize: 'clamp(16px, 3vw, 24px)',
-                                    lineHeight: '1'
+                                    fontSize: 'clamp(14px, 2.5vw, 20px)',
+                                    lineHeight: '1.2',
+                                    textAlign: 'center'
                                 }}
                             >
-                                DÍAS
+                                HORAS DE<br />CÓDIGO
                             </div>
                         </div>
 
-                        {/* Horas */}
+                        {/* 120 Jammers */}
                         <div
                             className="
                             rounded-2xl
@@ -583,21 +631,21 @@ const CountdownSection = () => {
                                     lineHeight: '1'
                                 }}
                             >
-                                {timeLeft.hours.toString().padStart(2, '0')}
+                                120
                             </div>
                             <div
-                                className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
+                                className="text-white uppercase tracking-widest font-bold mt-1"
                                 style={{
                                     fontFamily: 'Zing Rust Demo, Impact, sans-serif',
                                     fontSize: 'clamp(16px, 3vw, 24px)',
                                     lineHeight: '1'
                                 }}
                             >
-                                HORAS
+                                JAMMERS
                             </div>
                         </div>
 
-                        {/* Minutos */}
+                        {/* 25 Proyectos */}
                         <div
                             className="
                             rounded-2xl
@@ -623,21 +671,21 @@ const CountdownSection = () => {
                                     lineHeight: '1'
                                 }}
                             >
-                                {timeLeft.minutes.toString().padStart(2, '0')}
+                                25
                             </div>
                             <div
-                                className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
+                                className="text-white uppercase tracking-widest font-bold mt-1"
                                 style={{
                                     fontFamily: 'Zing Rust Demo, Impact, sans-serif',
                                     fontSize: 'clamp(16px, 3vw, 24px)',
                                     lineHeight: '1'
                                 }}
                             >
-                                MINUTOS
+                                PROYECTOS
                             </div>
                         </div>
 
-                        {/* Segundos */}
+                        {/* Infinito - Creatividad */}
                         <div
                             className="
                             rounded-2xl
@@ -675,19 +723,43 @@ const CountdownSection = () => {
                                     lineHeight: '1'
                                 }}
                             >
-                                {timeLeft.seconds.toString().padStart(2, '0')}
+                                ∞
                             </div>
                             <div
-                                className="text-[#1DF2F2] uppercase tracking-widest font-bold mt-1"
+                                className="text-white uppercase tracking-widest font-bold mt-1"
                                 style={{
                                     fontFamily: 'Zing Rust Demo, Impact, sans-serif',
                                     fontSize: 'clamp(16px, 3vw, 24px)',
                                     lineHeight: '1'
                                 }}
                             >
-                                SEGUNDOS
+                                CREATIVIDAD
                             </div>
                         </div>
+                    </div>
+
+                    {/* Botón Síguenos en Redes */}
+                    <div className="flex justify-center mt-12">
+                        <button
+                            onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+                            className="px-8 py-4 rounded-lg font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-pointer"
+                            style={{
+                                fontFamily: 'Montserrat, sans-serif',
+                                fontSize: '18px',
+                                border: '3px solid #1DF2F2',
+                                color: '#1DF2F2',
+                                backgroundColor: 'transparent',
+                                boxShadow: '0 0 20px rgba(29, 242, 242, 0.3)',
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.boxShadow = '0 0 30px rgba(29, 242, 242, 0.6)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.boxShadow = '0 0 20px rgba(29, 242, 242, 0.3)';
+                            }}
+                        >
+                            SÍGUENOS EN REDES
+                        </button>
                     </div>
                 </div>
             </section>
