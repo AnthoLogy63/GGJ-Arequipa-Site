@@ -2,6 +2,7 @@ import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import HeroSection from '../components/home/HeroSection';
 import CountdownSection from '../components/home/CountdownSection';
+import GallerySection from '../components/home/GallerySection';
 import AboutSection from '../components/home/AboutSection';
 import RegistrationStepsSection from '../components/home/RegistrationStepsSection';
 import ScheduleSection from '../components/home/ScheduleSection';
@@ -19,6 +20,7 @@ const Home = () => {
             <Navbar />
             <HeroSection />
             <CountdownSection />
+            <GallerySection />
             <AboutSection />
             <RegistrationStepsSection />
             <ScheduleSection />

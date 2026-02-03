@@ -1,4 +1,7 @@
 import cerebroImg from '../../assets/postmorten/cerebro.svg';
+import focoImg from '../../assets/postmorten/foco.svg';
+import mandoImg from '../../assets/postmorten/mando.svg';
+import tazaImg from '../../assets/postmorten/taza.svg';
 
 const CountdownSection = () => {
     return (
@@ -111,10 +114,141 @@ const CountdownSection = () => {
                     }
                 `}
             </style>
-            <section className="w-full py-32 px-6 relative overflow-hidden min-h-screen" style={{ backgroundColor: '#11091C' }}>
+            <section className="w-full py-32 px-6 relative overflow-hidden min-h-screen" style={{ background: 'radial-gradient(circle, #1a0d2e 0%, #0a0510 100%)' }}>
+                {/* Partículas animadas de fondo */}
+                <div className="absolute inset-0 pointer-events-none">
+                    {/* Círculos flotantes */}
+                    {[...Array(25)].map((_, i) => (
+                        <div
+                            key={`circle-${i}`}
+                            className="absolute rounded-full"
+                            style={{
+                                width: `${Math.random() * 4 + 2}px`,
+                                height: `${Math.random() * 4 + 2}px`,
+                                background: i % 3 === 0 ? '#F130EE' : i % 3 === 1 ? '#1DF2F2' : '#9EFFFF',
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 100}%`,
+                                opacity: Math.random() * 0.5 + 0.3,
+                                animation: `float ${Math.random() * 3 + 2}s ease-in-out infinite`,
+                                animationDelay: `${Math.random() * 2}s`
+                            }}
+                        />
+                    ))}
+                    
+                    {/* Diamantes */}
+                    {[...Array(18)].map((_, i) => (
+                        <div
+                            key={`diamond-${i}`}
+                            className="absolute"
+                            style={{
+                                width: `${Math.random() * 6 + 3}px`,
+                                height: `${Math.random() * 6 + 3}px`,
+                                background: i % 2 === 0 ? '#8C8CF0' : '#FFA4FE',
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 100}%`,
+                                opacity: Math.random() * 0.4 + 0.2,
+                                animation: `floatDiamond ${Math.random() * 4 + 3}s ease-in-out infinite`,
+                                animationDelay: `${Math.random() * 2}s`,
+                                transform: 'rotate(45deg)'
+                            }}
+                        />
+                    ))}
+                    
+                    {/* Cuadraditos */}
+                    {[...Array(20)].map((_, i) => (
+                        <div
+                            key={`square-${i}`}
+                            className="absolute"
+                            style={{
+                                width: `${Math.random() * 5 + 3}px`,
+                                height: `${Math.random() * 5 + 3}px`,
+                                background: i % 3 === 0 ? '#F130EE' : i % 3 === 1 ? '#95FFFF' : '#F8A1F6',
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 100}%`,
+                                opacity: Math.random() * 0.4 + 0.2,
+                                animation: `float ${Math.random() * 3 + 2.5}s ease-in-out infinite`,
+                                animationDelay: `${Math.random() * 2}s`
+                            }}
+                        />
+                    ))}
+                    
+                    {/* Líneas horizontales sutiles */}
+                    {[...Array(12)].map((_, i) => (
+                        <div
+                            key={`line-h-${i}`}
+                            className="absolute h-px"
+                            style={{
+                                width: `${Math.random() * 200 + 100}px`,
+                                background: `linear-gradient(90deg, transparent, ${i % 2 === 0 ? '#F130EE' : '#1DF2F2'}, transparent)`,
+                                left: `${Math.random() * 80}%`,
+                                top: `${Math.random() * 100}%`,
+                                opacity: 0.2,
+                                animation: `pulse ${Math.random() * 3 + 2}s ease-in-out infinite`,
+                                animationDelay: `${Math.random() * 2}s`
+                            }}
+                        />
+                    ))}
+                    
+                    {/* Líneas verticales */}
+                    {[...Array(15)].map((_, i) => (
+                        <div
+                            key={`line-v-${i}`}
+                            className="absolute w-px"
+                            style={{
+                                height: `${Math.random() * 150 + 80}px`,
+                                background: `linear-gradient(180deg, transparent, ${i % 3 === 0 ? '#9EFFFF' : i % 3 === 1 ? '#FFA4FE' : '#8C8CF0'}, transparent)`,
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 90}%`,
+                                opacity: 0.15,
+                                animation: `fadeInOut ${Math.random() * 4 + 3}s ease-in-out infinite`,
+                                animationDelay: `${Math.random() * 2}s`
+                            }}
+                        />
+                    ))}
+                </div>
+                
                 <div className="relative max-w-7xl mx-auto w-full">
                     {/* Contenedor flex con imagen y textos */}
                     <div className="flex items-start gap-12 mb-16">
+                        {/* Textos a la izquierda */}
+                        <div className="flex-1 text-left">
+                            <h2
+                                className="font-bold text-white mb-6"
+                                style={{
+                                    fontSize: '64px',
+                                    fontFamily: 'Raleway, sans-serif',
+                                    lineHeight: '1.2'
+                                }}
+                            >
+                                El PostMortem esta en desarrollo
+                            </h2>
+                            
+                            <p
+                                className="font-bold mb-6"
+                                style={{
+                                    fontSize: '24px',
+                                    fontFamily: 'Raleway, sans-serif',
+                                    color: '#1DF2F2'
+                                }}
+                            >
+                                Analizando la rebelion creativa
+                            </p>
+
+                            <p
+                                className="text-white"
+                                style={{
+                                    fontSize: '18px',
+                                    fontFamily: 'Raleway, sans-serif',
+                                    lineHeight: '1.6',
+                                    maxWidth: '700px'
+                                }}
+                            >
+                                <span className="font-bold">¡La energía de la Arequipa Game Jam 2026 fue increíble!</span>
+                                <br />
+                                Estamos recopilando todas las estadísticas, los proyectos, las anécdotas y los mejores momentos para compartirlos contigo. Vuelve pronto para descubrir el resumen completo de esta maratón de desarrollo.
+                            </p>
+                        </div>
+
                         {/* Imagen del cerebro con decoraciones */}
                         <div className="flex-shrink-0 relative">
                             <img 
@@ -205,49 +339,319 @@ const CountdownSection = () => {
                                 }}
                             />
                         </div>
+                    </div>
 
-                        {/* Textos a la derecha */}
-                        <div className="flex-1 text-left">
-                            <h2
-                                className="font-bold text-white mb-6"
-                                style={{
-                                    fontSize: '64px',
-                                    fontFamily: 'Raleway, sans-serif',
-                                    lineHeight: '1.2'
-                                }}
-                            >
-                                El PostMortem esta en desarrollo
-                            </h2>
+                    {/* Métricas Visuales - 7 Paralelogramos */}
+                    <div className="relative px-4 py-16">
+                        <div className="flex gap-4 max-w-7xl mx-auto justify-center items-start">
                             
-                            <p
-                                className="font-bold mb-6"
-                                style={{
-                                    fontSize: '24px',
-                                    fontFamily: 'Raleway, sans-serif',
-                                    color: '#1DF2F2'
-                                }}
-                            >
-                                Analizando la rebelion creativa
-                            </p>
+                            {/* Columna 1 - Card 1 y Card 2 */}
+                            <div className="flex flex-col gap-4">
+                                {/* CARD 1 - Paralelogramo Rosado */}
+                                <div 
+                                    className="relative"
+                                    style={{
+                                        width: '280px',
+                                        height: '300px',
+                                        background: 'rgba(241, 48, 238, 0.15)',
+                                        border: '3px solid #F130EE',
+                                        transform: 'skewX(-10deg) rotate(-5deg)',
+                                        boxShadow: '0 0 20px rgba(241, 48, 238, 0.4), inset 0 0 20px rgba(241, 48, 238, 0.15)',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                >
+                                    <div style={{ transform: 'skewX(10deg)' }}>
+                                        <div 
+                                            style={{ 
+                                                fontFamily: 'Montserrat, sans-serif',
+                                                fontSize: '96px',
+                                                fontWeight: '800',
+                                                color: '#FFFFFF',
+                                                lineHeight: '1',
+                                                textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                                                marginBottom: '12px',
+                                                textAlign: 'center'
+                                            }}
+                                        >
+                                            +80
+                                        </div>
+                                        <div 
+                                            style={{ 
+                                                fontFamily: 'Montserrat, sans-serif',
+                                                fontSize: '16px',
+                                                fontWeight: '600',
+                                                color: '#FFFFFF',
+                                                textAlign: 'center',
+                                                textShadow: '0 0 5px rgba(255, 255, 255, 0.5)',
+                                                letterSpacing: '0.5px'
+                                            }}
+                                        >
+                                            Jammer Apasionados
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <p
-                                className="text-white"
+                                {/* CARD 2 - Paralelogramo pequeño con logo foco */}
+                                <div 
+                                    className="relative"
+                                    style={{
+                                        width: '180px',
+                                        height: '160px',
+                                        background: 'linear-gradient(135deg, rgba(241, 48, 238, 0.15), rgba(140, 140, 240, 0.15), rgba(29, 242, 242, 0.15))',
+                                        border: '3px solid transparent',
+                                        borderImage: 'linear-gradient(135deg, #F130EE, #8C8CF0, #1DF2F2) 1',
+                                        transform: 'skewX(-10deg) rotate(-5deg)',
+                                        boxShadow: '0 0 20px rgba(241, 48, 238, 0.3), 0 0 20px rgba(29, 242, 242, 0.3), inset 0 0 20px rgba(140, 140, 240, 0.15)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        transition: 'all 0.3s ease',
+                                        marginTop: '-40px',
+                                        marginLeft: '80px',
+                                        zIndex: 1
+                                    }}
+                                >
+                                    <div style={{ transform: 'skewX(10deg)' }}>
+                                        <img 
+                                            src={focoImg} 
+                                            alt="Foco" 
+                                            style={{
+                                                width: '160px',
+                                                height: '160px'
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Columna 2 - Card 3 y Card 4 */}
+                            <div className="flex flex-col gap-4 relative">
+                                {/* CARD 3 - Paralelogramo con mando (derecha superior) */}
+                                <div 
+                                    className="relative"
+                                    style={{
+                                        width: '180px',
+                                        height: '160px',
+                                        background: 'linear-gradient(135deg, rgba(241, 48, 238, 0.15), rgba(140, 140, 240, 0.15), rgba(29, 242, 242, 0.15))',
+                                        border: '3px solid',
+                                        borderImageSource: 'linear-gradient(to top right, #F130EE 0%, #8C8CF0 50%, #1DF2F2 100%)',
+                                        borderImageSlice: 1,
+                                        transform: 'skewX(-10deg) rotate(-5deg)',
+                                        boxShadow: '0 0 20px rgba(241, 48, 238, 0.3), 0 0 20px rgba(29, 242, 242, 0.3), inset 0 0 20px rgba(140, 140, 240, 0.15)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        transition: 'all 0.3s ease',
+                                        marginLeft: '30px'
+                                    }}
+                                >
+                                    <div style={{ transform: 'skewX(10deg)' }}>
+                                        <img 
+                                            src={mandoImg} 
+                                            alt="Mando" 
+                                            style={{
+                                                width: '160px',
+                                                height: '160px'
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* CARD 4 - Paralelogramo café (cian, debajo de card 3) */}
+                                <div 
+                                    className="relative"
+                                    style={{
+                                        width: '300px',
+                                        height: '220px',
+                                        background: 'rgba(149, 255, 255, 0.15)',
+                                        border: '3px solid #95FFFF',
+                                        transform: 'skewX(-10deg) rotate(-5deg)',
+                                        boxShadow: '0 0 20px rgba(149, 255, 255, 0.4), inset 0 0 20px rgba(149, 255, 255, 0.15)',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        transition: 'all 0.3s ease',
+                                        marginTop: '40px',
+                                        marginLeft: '-40px',
+                                        zIndex: 10
+                                    }}
+                                >
+                                    <div style={{ transform: 'skewX(10deg)' }}>
+                                        <div 
+                                            style={{ 
+                                                fontFamily: 'Montserrat, sans-serif',
+                                                fontSize: '96px',
+                                                fontWeight: '800',
+                                                color: '#FFFFFF',
+                                                lineHeight: '1',
+                                                textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                                                marginBottom: '12px',
+                                                textAlign: 'center'
+                                            }}
+                                        >
+                                            +200
+                                        </div>
+                                        <div 
+                                            style={{ 
+                                                fontFamily: 'Montserrat, sans-serif',
+                                                fontSize: '16px',
+                                                fontWeight: '600',
+                                                color: '#FFFFFF',
+                                                textAlign: 'center',
+                                                textShadow: '0 0 5px rgba(255, 255, 255, 0.5)',
+                                                letterSpacing: '0.5px'
+                                            }}
+                                        >
+                                            Tazas de Café<br/>Consumidos
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Columna 3 - Card 5 y Card 6 */}
+                            <div className="flex flex-col gap-4 relative">
+                                {/* CARD 5 - Paralelogramo Prototipos (cian claro, izquierda) */}
+                                <div 
+                                    className="relative"
+                                    style={{
+                                        width: '220px',
+                                        height: '320px',
+                                        background: 'rgba(158, 255, 255, 0.15)',
+                                        border: '3px solid #9EFFFF',
+                                        transform: 'skewX(-10deg) rotate(-5deg)',
+                                        boxShadow: '0 0 20px rgba(158, 255, 255, 0.4), inset 0 0 20px rgba(158, 255, 255, 0.15)',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        transition: 'all 0.3s ease',
+                                        marginTop: '-80px',
+                                        marginLeft: '-25px'
+                                    }}
+                                >
+                                    <div style={{ transform: 'skewX(10deg)' }}>
+                                        <div 
+                                            style={{ 
+                                                fontFamily: 'Montserrat, sans-serif',
+                                                fontSize: '96px',
+                                                fontWeight: '800',
+                                                color: '#FFFFFF',
+                                                lineHeight: '1',
+                                                textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                                                marginBottom: '12px',
+                                                textAlign: 'center'
+                                            }}
+                                        >
+                                            15
+                                        </div>
+                                        <div 
+                                            style={{ 
+                                                fontFamily: 'Montserrat, sans-serif',
+                                                fontSize: '16px',
+                                                fontWeight: '600',
+                                                color: '#FFFFFF',
+                                                textAlign: 'center',
+                                                textShadow: '0 0 5px rgba(255, 255, 255, 0.5)',
+                                                letterSpacing: '0.5px'
+                                            }}
+                                        >
+                                            Prototipos<br/>Creados
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* CARD 6 - Paralelogramo Tema Sorpresa (rosado claro, debajo) */}
+                                <div 
+                                    className="relative"
+                                    style={{
+                                        width: '320px',
+                                        height: '200px',
+                                        background: 'rgba(255, 164, 254, 0.15)',
+                                        border: '3px solid #FFA4FE',
+                                        transform: 'skewX(-10deg) rotate(-5deg)',
+                                        boxShadow: '0 0 20px rgba(255, 164, 254, 0.4), inset 0 0 20px rgba(255, 164, 254, 0.15)',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        transition: 'all 0.3s ease',
+                                        marginTop: '-30px',
+                                        marginLeft: '80px'
+                                    }}
+                                >
+                                    <div style={{ transform: 'skewX(10deg)' }}>
+                                        <div 
+                                            style={{ 
+                                                fontFamily: 'Raleway, sans-serif',
+                                                fontSize: '60px',
+                                                fontWeight: '800',
+                                                color: 'transparent',
+                                                WebkitTextStroke: '3px #FF8FE8',
+                                                lineHeight: '1',
+                                                textShadow: '0 0 15px rgba(255, 143, 232, 0.6)',
+                                                marginBottom: '12px',
+                                                textAlign: 'center',
+                                                textTransform: 'uppercase'
+                                            }}
+                                        >
+                                            MÁSCARA
+                                        </div>
+                                        <div 
+                                            style={{ 
+                                                fontFamily: 'Montserrat, sans-serif',
+                                                fontSize: '16px',
+                                                fontWeight: '600',
+                                                color: '#FFFFFF',
+                                                textAlign: 'center',
+                                                textShadow: '0 0 5px rgba(255, 255, 255, 0.5)',
+                                                letterSpacing: '0.5px'
+                                            }}
+                                        >
+                                            Fue el Tema<br/>Sorpresa
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* CARD 7 - Paralelogramo con taza (al costado del card 5) */}
+                            <div 
+                                className="relative"
                                 style={{
-                                    fontSize: '18px',
-                                    fontFamily: 'Raleway, sans-serif',
-                                    lineHeight: '1.6',
-                                    maxWidth: '700px'
+                                    width: '240px',
+                                    height: '220px',
+                                    background: 'rgba(248, 161, 246, 0.15)',
+                                    border: '3px solid #F8A1F6',
+                                    transform: 'skewX(-10deg) rotate(-5deg)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    transition: 'all 0.3s ease',
+                                    marginTop: '-40px',
+                                    marginLeft: '-200px'
                                 }}
                             >
-                                <span className="font-bold">¡La energía de la Arequipa Game Jam 2026 fue increíble!</span>
-                                <br />
-                                Estamos recopilando todas las estadísticas, los proyectos, las anécdotas y los mejores momentos para compartirlos contigo. Vuelve pronto para descubrir el resumen completo de esta maratón de desarrollo.
-                            </p>
+                                <div style={{ transform: 'skewX(10deg)' }}>
+                                    <img 
+                                        src={tazaImg} 
+                                        alt="Taza" 
+                                        style={{
+                                            width: '180px',
+                                            height: '180px'
+                                        }}
+                                    />
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                     {/* Contenedores de cuenta regresiva - estilo synthwave con decoraciones Cyberpunk HUD */}
-                    <div className="flex flex-wrap justify-center gap-2 md:gap-[6px] relative px-2" style={{ paddingTop: '3px', paddingBottom: '3px' }}>
+                    <div className="flex flex-wrap justify-center gap-2 md:gap-[6px] relative px-2" style={{ paddingTop: '3px', paddingBottom: '3px', display: 'none' }}>
                         {/* ===== DECORACIONES CYBERPUNK HUD (Responsive) ===== */}
 
                         {/* Marco superior izquierdo - Rosa con glow intenso */}
