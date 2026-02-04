@@ -2,12 +2,23 @@ import clsx, {type ClassValue} from 'clsx';
 import { Download, Gamepad2, Info } from 'lucide-react';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
+import GamejamLogo from '../../assets/logos/AQP-GGJ_logo.svg';
+import HallOfMasks from '../../assets/games/hall-of-masks.webp';
+import TwoSides from '../../assets/games/two-sides.webp';
+import EvilExorcist from '../../assets/games/evil-exorcist.webp';
+import Animalia from '../../assets/games/animalia.webp';
+import Psycho from '../../assets/games/psycho.webp';
+import _1930TwoSides from '../../assets/games/1930-two-sides.webp';
+import ElConflicto from '../../assets/games/el-conflicto.webp';
+import Delogic from '../../assets/games/delogic.webp';
+import Hide_Gan_GO from '../../assets/games/hide-gan-go.webp';
+import DeliveryMan from '../../assets/games/delivery-man.webp';
 
 interface Game {
   id: number;
   name: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
   liveDemoUrl?: string;
   downloadUrl?: string;
   moreInfoUrl?: string;
@@ -20,90 +31,112 @@ function cn(...classes: ClassValue[]) {
 
 function CardButton({className, ...props}: React.ComponentProps<'button'>) {
   return (
-    <button className={cn('inline-flex px-4 py-2.5 gap-x-2 text-white font-semibold text-xl rounded-md hover:shadow-lg transition-all duration-200 hover:scale-110 items-center', className)} {...props} />
+    <button className={cn('inline-flex px-3 h-10 py-2.5 gap-x-2 font-semibold text-shadow-md rounded-md transition-all duration-200 hover:scale-105 items-center justify-center', className)} {...props} />
   );
 }
 
 const GamesSection: React.FC = () => {
-  // Mock data with realistic game jam entries
   const games: Game[] = [
     {
       id: 1,
-      name: 'Shadow Mask',
-      description: 'Un juego de plataformas donde la máscara te da poderes oscuros',
-      imageUrl: 'https://via.placeholder.com/415x415/6E2880/FFFFFF?text=Shadow+Mask',
-      liveDemoUrl: '#',
-      tags: ['Plataformas', '2D'],
+      name: 'Hall of Masks',
+      imageUrl: HallOfMasks,
+      tags: ['3D', 'Acción', 'Aventura', 'Primera persona', 'Platformer', 'Español', 'Inglés', 'Web', 'MS Windows', 'Godot'],
+      description: 'A shifting nexus beyond reality, where identity is power and form is illusion.',
+      liveDemoUrl: 'https://dev1d123.itch.io/hall-of-masks',
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/833636/exec/GGJ2026.zip?VersionId=tZSMWb40qcd95T0H93sNMijGeicaxytN',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/hall-masks-3',
     },
     {
       id: 2,
-      name: 'Carnival of Souls',
-      description: 'Explora un carnaval místico donde las máscaras cobran vida',
-      imageUrl: 'https://via.placeholder.com/415x415/3F215F/FFFFFF?text=Carnival',
-      liveDemoUrl: '#',
-      downloadUrl: '#',
-      tags: ['Aventura', 'Puzzle'],
+      name: 'Two sides',
+      description: 'Two Sides is a Cold War-style espionage simulation where you play as a communications operator caught between two warring factions in the fictional nation of Valcora.',
+      tags: ['2D', 'Puzzle', 'Simulación', 'Estrategia', 'Español', 'MS Windows', 'Web', 'Godot'],
+      imageUrl: TwoSides,
+      liveDemoUrl: 'https://rickbones112.itch.io/two-sides',
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/872893/exec/2sidesWindows.tar?VersionId=oAAbXk.FKu9Mpbv1AOh9xrNeBUPZ9ijN',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/two-sides-6',
     },
     {
       id: 3,
-      name: 'Mask Runner',
-      description: 'Corre a través de Arequipa evitando obstáculos con máscaras mágicas',
-      imageUrl: 'https://via.placeholder.com/415x415/EC469A/FFFFFF?text=Mask+Runner',
-      liveDemoUrl: '#',
-      moreInfoUrl: '#',
-      tags: ['Endless Runner', 'Casual'],
+      name: 'Evil Exorcist',
+      description: 'Estás atrapado en el bosque, pero no estás solo. "El Cambiacaras" te acecha, una entidad que altera su comportamiento con cada máscara que viste. Para sobrevivir, posees una máscara maldita que te hace invisible a sus ojos, pero usarla tiene un precio terrible: tu propia cordura.',
+      tags: ['3D', 'Primera persona', 'Español', 'MS Windows', 'Unity', 'Cosas extrañas'],
+      imageUrl: EvilExorcist,
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/885834/exec/release_0.zip?VersionId=pA7_8modLXquVMEc3BY1jQGaMl05TfW9',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/faces-forest-5',
     },
     {
       id: 4,
-      name: 'The Last Disguise',
-      description: 'Un juego de sigilo donde cambias de identidad con diferentes máscaras',
-      imageUrl: 'https://via.placeholder.com/415x415/1DF2F2/000000?text=Last+Disguise',
-      downloadUrl: '#',
-      tags: ['Stealth', 'Strategy'],
+      name: 'Animalia',
+      description: 'A classic platform game where you can transform into three animals, each one with its unique set of abilites!, allowing the player to pass the levels.',
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/870914/exec/Animalia.zip?VersionId=jP_F_XrIfFyeZXyuxBB6dviWwoYZBb7A',
+      tags: ['2D', 'Platformer', 'Inglés', 'MS Windows', 'Godot'],
+      imageUrl: Animalia,
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/animalia-6',
     },
     {
       id: 5,
-      name: 'Ritual Andino',
-      description: 'Descubre los secretos ancestrales de las máscaras ceremoniales',
-      imageUrl: 'https://via.placeholder.com/415x415/2D1F5A/FFFFFF?text=Ritual+Andino',
-      liveDemoUrl: '#',
-      downloadUrl: '#',
-      moreInfoUrl: '#',
-      tags: ['Cultural', 'Educativo'],
+      name: 'La mascara del calvo',
+      description: '  Eres un hombre secuestrado por un culto hacia la calvicie, donde tu eres el principal sacrificio, recolecta los trozos de la mascara sagrada y escapa con vida, no dejes que te atrapen o te romperán la cabeza',
+      tags: ['2D', 'Puzzle', 'Top-down', 'Español', 'MS Windows', 'Godot'],
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/870812/exec/La%20mascara%20del%20calvo_0.zip?VersionId=gKFh6Z6.PCOUefquC1.BZnCV85m2RTxk',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/la-mascara-del-calvo-1',
     },
     {
       id: 6,
-      name: 'Face Swap Chaos',
-      description: 'Un party game donde intercambias máscaras y habilidades con otros jugadores',
-      imageUrl: 'https://via.placeholder.com/415x415/6E2880/FFFFFF?text=Face+Swap',
-      liveDemoUrl: '#',
-      tags: ['Party', 'Multiplayer'],
+      name: 'Psycho',
+      description: 'Psycho is a platform game that tells the story of a man who, during a difficult time, lost his family and entered treatment using masks to avoid blaming himself for their deaths. He realizes he is being used as a subject for study and wants to escape by using the masks without losing his sanity. He searches for medications that will help him counteract the effects of the masks and flee the psychiatric hospital.',
+      imageUrl: Psycho,
+      tags: ['2D', 'Aventura', 'Platformer', 'Out of Sight', 'Encuentro aleatorio', 'Español', 'MS Windows', 'Unity'],
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/330252/exec/SpychoGame.zip?VersionId=oeuMckIJElnXo82adt3uov4OOUn6MQ9l',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/psycho-8',
     },
     {
       id: 7,
-      name: 'Masked Memories',
-      description: 'Una novela visual sobre recuerdos ocultos detrás de máscaras familiares',
-      imageUrl: 'https://via.placeholder.com/415x415/3F215F/FFFFFF?text=Memories',
-      liveDemoUrl: '#',
-      downloadUrl: '#',
-      tags: ['Visual Novel', 'Story'],
+      name: '1930: Two Sides',
+      description: 'In Valcora, a country fractured by civil war, information is the deadliest weapon. Six months ago, the government fell. Now, Valcora is torn between two opposing forces: "El Nuevo Orden", a military junta demanding absolute obedience, and "La Llama Libre", a chaotic constellation of rebels and opportunists. The capital is crumbling, resources are scarce, and trust is extinct.',
+      imageUrl: _1930TwoSides,
+      tags: ['2D', 'Casual', 'Estrategia', 'Español', 'MS Windows', 'Godot'],
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/866701/exec/Ejecutable_0.zip?VersionId=cTYPQOZcqUfAlewpYiHpQvSVjS.3kd9g',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/1930-two-sides-3',
     },
     {
       id: 8,
-      name: 'Masquerade Battle',
-      description: 'Lucha en un torneo de máscaras con combos y poderes especiales',
-      imageUrl: 'https://via.placeholder.com/415x415/EC469A/FFFFFF?text=Masquerade',
-      liveDemoUrl: '#',
-      tags: ['Fighting', 'Action'],
+      name: 'El Conflicto',
+      description: 'Hay una persona que tiene un conflicto con sus emociones, ayudale en esta lucha mental a recolectar reflexiones y ganar victorias para poder afrontar a sus emociones (version prototipo)',
+      imageUrl: ElConflicto,
+      tags: ['Arcade', 'Español', 'Web', 'LittleJS'],
+      liveDemoUrl: 'https://ggj2026.jimynicanor.com/',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/el-conflicto-4',
     },
     {
       id: 9,
-      name: 'Identity Crisis',
-      description: 'Resuelve puzzles cambiando entre diferentes personalidades con máscaras',
-      imageUrl: 'https://via.placeholder.com/415x415/1DF2F2/000000?text=Identity',
-      liveDemoUrl: '#',
-      moreInfoUrl: '#',
-      tags: ['Puzzle', 'Psychological'],
+      name: 'DeLogic',
+      description: 'Un juego sobre un hombre que es maldecido por una mascara, lo que le permite vivir en 2 estado (normal, y maldicion), ciertos objetos pueden ser interactuados con su estado normal y otros en su estado maldito',
+      imageUrl: Delogic,
+      tags: ['2D', 'Acción', 'Aventura', 'Arcade', 'Caminata', 'Español', 'Linux', 'Godot'],
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/884839/exec/Ejecutable.zip?VersionId=mRGuoIqu8CI9O59xURRJp2L68dW7pLUk',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/delogic-7',
+    },
+    {
+      id: 10,
+      name: 'Hide_Gan_GO',
+      description: 'This is the story of a black kitten named GAN. Driven by hunger and curiosity, GAN follows a mouse, unaware that this pursuit will lead him into a very strange cave. Once inside, the kitten collapses, falls unconscious, and begins to dream.',
+      imageUrl: Hide_Gan_GO,
+      tags: ['2D', 'Aventura', 'Casual', 'Top-down', 'Cubos', 'La vida no es blanco y negro', 'Multijugador local', 'Español', 'MS Windows', 'Web', '.Net', 'Unity'],
+      liveDemoUrl: 'https://dani-dev20.itch.io/hide-gan-go',
+      downloadUrl: 'https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/870823/exec/WINDOWNS_HIDE_GAN_GO.zip?VersionId=uRh05v15WuSl8vtDC0ni2EGMEWzlY85W',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/hideganggo-game-global-game-jam-2026-4',
+    },
+    {
+      id: 11,
+      name: 'Delivery Man',
+      description: 'Set in 2017 "Delivery Man" is a top-down stealth game where you play as a silent deliveryman trapped in the middle of a criminal city.',
+      imageUrl: DeliveryMan,
+      tags: ['3D', 'Arcade', 'Casual', 'Top-down', 'Inglés', 'Android', 'MS Windows', 'Web', 'Godot'],
+      liveDemoUrl: 'https://jphants.itch.io/delivery-man',
+      moreInfoUrl: 'https://globalgamejam.org/games/2026/delivery-man-4',
     },
   ];
 
@@ -117,7 +150,7 @@ const GamesSection: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#11091C] opacity-80" />
       <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#10081B] opacity-80" />
 
-      <div className="relative max-w-[1440px] mx-auto px-6 md:px-8 lg:px-20">
+      <div className="relative max-w-360 mx-auto px-6 md:px-8 lg:px-20">
         {/* Title Section */}
         <div className="flex flex-col items-center text-center mb-12 md:mb-16">
           <h2
@@ -138,22 +171,21 @@ const GamesSection: React.FC = () => {
         </div>
 
         {/* Games Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-6 lg:gap-8">
           {games.map((game) => (
             <div
               key={game.id}
               className="group relative"
             >
               {/* Game Card */}
-              <div className="relative overflow-hidden rounded-lg shadow-2xl transition-all duration-300 hover:shadow-[#EC469A]/30 hover:-translate-y-2">
+              <div className="relative overflow-hidden rounded-lg shadow-2xl transition-all duration-300 hover:shadow-[#EC469A]/30 hover:-translate-y-2 flex flex-col h-full w-full">
                 {/* Game Image */}
-                <div className="aspect-square overflow-hidden bg-gradient-to-br from-[#6E2880] to-[#3F215F] relative">
-                  <img
-                    src={game.imageUrl}
-                    alt={game.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-
+                <div className="overflow-hidden bg-linear-to-br from-theme-light-purple to-theme-purple relative">
+                      <img
+                        src={game.imageUrl || GamejamLogo}
+                        alt={game.name}
+                        className="w-full h-86 object-cover transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(211,52,233,0.3)]"
+                      />
                   {/* Desktop Hover Overlay */}
                   <div className="hidden md:flex absolute inset-0 bg-gradient-to-t from-[#11091C]/95 via-[#6E2880]/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex-col items-center justify-center gap-3 p-6">
                     <p className="text-white/90 text-sm text-center mb-2">
@@ -163,9 +195,9 @@ const GamesSection: React.FC = () => {
                 </div>
 
                 {/* Game Info Card - Always Visible (Mobile-Friendly) */}
-                <div className="bg-[#20152F] p-4">
+                <div className="bg-[#20152F] p-4 flex-1 flex flex-col">
                   {/* Game Title */}
-                  <h3 className="text-[#C6C6C6] font-bold text-lg mb-3 tracking-wide font-['Lato']">
+                  <h3 className="text-[#C6C6C6] font-bold text-lg mb-3 tracking-wide">
                     {game.name}
                   </h3>
 
@@ -189,18 +221,18 @@ const GamesSection: React.FC = () => {
                   )}
 
                   {/* Action Buttons - Always Visible */}
-                  <div className="flex flex-col sm:flex-row gap-2">
+                  <div className="flex flex-col sm:flex-row gap-x-2 gap-y-3 mt-2 flex-1 sm:items-end">
                     {game.liveDemoUrl && (
                       <CardButton
                         onClick={(e) => {
                           e.stopPropagation();
                           window.open(game.liveDemoUrl, '_blank');
                         }}
-                        className=""
-                        title="Jugar Ahora"
+                        className="border border-theme-cyan bg-theme-cyan text-black hover:shadow-theme-cyan hover:shadow-[0_0_18px_var(--color-theme-cyan)]"
+                        title="Jugar"
                       >
                         <Gamepad2 className="size-5" />
-                        Jugar ahora
+                        Jugar
                       </CardButton>
                     )}
 
@@ -210,7 +242,7 @@ const GamesSection: React.FC = () => {
                           e.stopPropagation();
                           window.open(game.downloadUrl, '_blank');
                         }}
-                        className=""
+                        className="border border-theme-pink bg-theme-pink text-white hover:shadow-theme-pink hover:shadow-[0_0_18px_var(--color-theme-pink)]"
                         title="Descargar"
                       >
                         <Download className="size-5" />
@@ -224,7 +256,7 @@ const GamesSection: React.FC = () => {
                           e.stopPropagation();
                           window.open(game.moreInfoUrl, '_blank');
                         }}
-                        className=""
+                        className="border border-theme-cyan text-theme-cyan hover:bg-theme-cyan/10"
                         title="Más Información"
                       >
                         <Info className="size-5" />
