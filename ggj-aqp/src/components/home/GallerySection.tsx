@@ -72,53 +72,9 @@ const GallerySection = () => {
                     }}
                 />
 
-                <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
-                    <div className="mb-12">
-                        <h2
-                            className="font-bold text-white mb-4"
-                            style={{
-                                fontSize: '56px',
-                                fontFamily: 'Raleway, sans-serif',
-                                lineHeight: '1.2'
-                            }}
-                        >
-                            Así fue nuestro evento
-                        </h2>
-                        <p
-                            className="font-bold mb-6"
-                            style={{
-                                fontSize: '24px',
-                                fontFamily: 'Raleway, sans-serif',
-                                color: '#42D1D1'
-                            }}
-                        >
-                            ¡Búscate y revive los mejores momentos!
-                        </p>
-                        <button
-                            className="px-8 py-4 rounded-lg font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105 cursor-pointer"
-                            style={{
-                                fontFamily: 'Montserrat, sans-serif',
-                                fontSize: '18px',
-                                border: '3px solid #F130EE',
-                                color: '#F130EE',
-                                backgroundColor: 'transparent',
-                                boxShadow: '0 0 20px rgba(241, 48, 238, 0.3)',
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.boxShadow = '0 0 30px rgba(241, 48, 238, 0.6)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.boxShadow = '0 0 20px rgba(241, 48, 238, 0.3)';
-                            }}
-                        >
-                            Ver galería completa
-                        </button>
-                    </div>
-                </div>
-
                 <div className="w-full py-20 relative" style={{ background: '#0F091C' }}>
                     <div className="w-full">
-                        <div className="text-left mb-16 px-6">
+                        <div className="text-left mb-16 max-w-7xl mx-auto px-6">
                             <h3
                                 style={{
                                     fontFamily: 'Zing Rust Demo, Impact, sans-serif',
