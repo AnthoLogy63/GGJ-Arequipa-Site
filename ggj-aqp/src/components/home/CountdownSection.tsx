@@ -1,7 +1,186 @@
+import { useState, useEffect } from 'react';
 import cerebroImg from '../../assets/postmorten/cerebro.svg';
 import focoImg from '../../assets/postmorten/foco.svg';
 import mandoImg from '../../assets/postmorten/mando.svg';
 import tazaImg from '../../assets/postmorten/taza.svg';
+
+const CountdownTimer = () => {
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+    });
+
+    useEffect(() => {
+        const targetDate = new Date('2026-03-06T10:00:00').getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                setTimeLeft({
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                    minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+                    seconds: Math.floor((difference % (1000 * 60)) / 1000),
+                });
+            } else {
+                setTimeLeft({
+                    days: 0,
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0,
+                });
+            }
+        };
+
+        updateCountdown();
+        const interval = setInterval(updateCountdown, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div className="flex gap-6 justify-center">
+            {/* Días */}
+            <div
+                className="flex flex-col items-center justify-center rounded-2xl transition-all duration-300 hover:scale-105"
+                style={{
+                    width: '140px',
+                    height: '140px',
+                    background: 'rgba(241, 48, 238, 0.15)',
+                    border: '3px solid #F130EE',
+                    boxShadow: '0 0 20px rgba(241, 48, 238, 0.4), inset 0 0 20px rgba(241, 48, 238, 0.15)',
+                }}
+            >
+                <span
+                    className="font-black text-white"
+                    style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '56px',
+                        lineHeight: '1',
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                    }}
+                >
+                    {timeLeft.days.toString().padStart(2, '0')}
+                </span>
+                <p
+                    className="font-bold text-white uppercase tracking-wider mt-2"
+                    style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '14px',
+                        letterSpacing: '1px'
+                    }}
+                >
+                    DÍAS
+                </p>
+            </div>
+
+            {/* Horas */}
+            <div
+                className="flex flex-col items-center justify-center rounded-2xl transition-all duration-300 hover:scale-105"
+                style={{
+                    width: '140px',
+                    height: '140px',
+                    background: 'rgba(29, 242, 242, 0.15)',
+                    border: '3px solid #1DF2F2',
+                    boxShadow: '0 0 20px rgba(29, 242, 242, 0.4), inset 0 0 20px rgba(29, 242, 242, 0.15)',
+                }}
+            >
+                <span
+                    className="font-black text-white"
+                    style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '56px',
+                        lineHeight: '1',
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                    }}
+                >
+                    {timeLeft.hours.toString().padStart(2, '0')}
+                </span>
+                <p
+                    className="font-bold text-white uppercase tracking-wider mt-2"
+                    style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '14px',
+                        letterSpacing: '1px'
+                    }}
+                >
+                    HORAS
+                </p>
+            </div>
+
+            {/* Minutos */}
+            <div
+                className="flex flex-col items-center justify-center rounded-2xl transition-all duration-300 hover:scale-105"
+                style={{
+                    width: '140px',
+                    height: '140px',
+                    background: 'rgba(158, 255, 255, 0.15)',
+                    border: '3px solid #9EFFFF',
+                    boxShadow: '0 0 20px rgba(158, 255, 255, 0.4), inset 0 0 20px rgba(158, 255, 255, 0.15)',
+                }}
+            >
+                <span
+                    className="font-black text-white"
+                    style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '56px',
+                        lineHeight: '1',
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                    }}
+                >
+                    {timeLeft.minutes.toString().padStart(2, '0')}
+                </span>
+                <p
+                    className="font-bold text-white uppercase tracking-wider mt-2"
+                    style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '14px',
+                        letterSpacing: '1px'
+                    }}
+                >
+                    MINUTOS
+                </p>
+            </div>
+
+            {/* Segundos */}
+            <div
+                className="flex flex-col items-center justify-center rounded-2xl transition-all duration-300 hover:scale-105"
+                style={{
+                    width: '140px',
+                    height: '140px',
+                    background: 'rgba(255, 164, 254, 0.15)',
+                    border: '3px solid #FFA4FE',
+                    boxShadow: '0 0 20px rgba(255, 164, 254, 0.4), inset 0 0 20px rgba(255, 164, 254, 0.15)',
+                }}
+            >
+                <span
+                    className="font-black text-white"
+                    style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '56px',
+                        lineHeight: '1',
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                    }}
+                >
+                    {timeLeft.seconds.toString().padStart(2, '0')}
+                </span>
+                <p
+                    className="font-bold text-white uppercase tracking-wider mt-2"
+                    style={{
+                        fontFamily: 'Montserrat, sans-serif',
+                        fontSize: '14px',
+                        letterSpacing: '1px'
+                    }}
+                >
+                    SEGUNDOS
+                </p>
+            </div>
+        </div>
+    );
+};
 
 const CountdownSection = () => {
     return (
@@ -134,7 +313,7 @@ const CountdownSection = () => {
                             }}
                         />
                     ))}
-                    
+
                     {/* Diamantes */}
                     {[...Array(18)].map((_, i) => (
                         <div
@@ -153,7 +332,7 @@ const CountdownSection = () => {
                             }}
                         />
                     ))}
-                    
+
                     {/* Cuadraditos */}
                     {[...Array(20)].map((_, i) => (
                         <div
@@ -171,7 +350,7 @@ const CountdownSection = () => {
                             }}
                         />
                     ))}
-                    
+
                     {/* Líneas horizontales sutiles */}
                     {[...Array(12)].map((_, i) => (
                         <div
@@ -188,7 +367,7 @@ const CountdownSection = () => {
                             }}
                         />
                     ))}
-                    
+
                     {/* Líneas verticales */}
                     {[...Array(15)].map((_, i) => (
                         <div
@@ -206,58 +385,32 @@ const CountdownSection = () => {
                         />
                     ))}
                 </div>
-                
-                <div className="relative max-w-7xl mx-auto w-full">
-                    {/* Contenedor flex con imagen y textos */}
-                    <div className="flex items-start gap-12 mb-16">
-                        {/* Textos a la izquierda */}
-                        <div className="flex-1 text-left">
-                            <h2
-                                className="font-bold text-white mb-6"
-                                style={{
-                                    fontSize: '64px',
-                                    fontFamily: 'Raleway, sans-serif',
-                                    lineHeight: '1.2'
-                                }}
-                            >
-                                El PostMortem esta en desarrollo
-                            </h2>
-                            
-                            <p
-                                className="font-bold mb-6"
-                                style={{
-                                    fontSize: '24px',
-                                    fontFamily: 'Raleway, sans-serif',
-                                    color: '#1DF2F2'
-                                }}
-                            >
-                                Analizando la rebelion creativa
-                            </p>
 
-                            <p
-                                className="text-white"
-                                style={{
-                                    fontSize: '18px',
-                                    fontFamily: 'Raleway, sans-serif',
-                                    lineHeight: '1.6',
-                                    maxWidth: '700px'
-                                }}
-                            >
-                                <span className="font-bold">¡La energía de la Arequipa Game Jam 2026 fue increíble!</span>
-                                <br />
-                                Estamos recopilando todas las estadísticas, los proyectos, las anécdotas y los mejores momentos para compartirlos contigo. Vuelve pronto para descubrir el resumen completo de esta maratón de desarrollo.
-                            </p>
-                        </div>
+                <div className="relative max-w-7xl mx-auto w-full">
+                    {/* Contenedor centrado con cerebro arriba y contador abajo */}
+                    <div className="flex flex-col items-center mb-16">
+                        {/* Título principal */}
+                        <h2
+                            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 text-center"
+                            style={{
+                                color: 'transparent',
+                                WebkitTextStroke: '2px #1DF2F2',
+                                paintOrder: 'stroke fill',
+                                fontFamily: "'Zing Rust Demo', cursive",
+                            }}
+                        >
+                            El PostMortem de la GGJ Arequipa se acerca
+                        </h2>
 
                         {/* Imagen del cerebro con decoraciones */}
-                        <div className="flex-shrink-0 relative">
-                            <img 
-                                src={cerebroImg} 
-                                alt="Cerebro" 
-                                className="w-96 h-96 object-contain"
+                        <div className="relative mb-12">
+                            <img
+                                src={cerebroImg}
+                                alt="Cerebro"
+                                className="w-80 h-80 object-contain"
                                 style={{ animation: 'float 3s ease-in-out infinite' }}
                             />
-                            
+
                             {/* Partículas decorativas alrededor del cerebro */}
                             {/* Rombos flotantes */}
                             <div
@@ -339,16 +492,46 @@ const CountdownSection = () => {
                                 }}
                             />
                         </div>
+
+                        {/* Contador de cuenta regresiva */}
+                        <CountdownTimer />
+
+                        {/* Texto descriptivo debajo del contador */}
+                        <div className="mt-12 text-center max-w-3xl">
+                            <p
+                                className="font-bold mb-4"
+                                style={{
+                                    fontSize: '24px',
+                                    fontFamily: 'Raleway, sans-serif',
+                                    color: '#1DF2F2'
+                                }}
+                            >
+                                Analizando la rebelión creativa
+                            </p>
+
+                            <p
+                                className="text-white"
+                                style={{
+                                    fontSize: '18px',
+                                    fontFamily: 'Raleway, sans-serif',
+                                    lineHeight: '1.6'
+                                }}
+                            >
+                                <span className="font-bold">¡La energía de la Arequipa Game Jam 2026 fue increíble!</span>
+                                <br />
+                                Estamos recopilando todas las estadísticas, los proyectos, las anécdotas y los mejores momentos para compartirlos contigo. Vuelve el 6 de marzo para descubrir el resumen completo de esta maratón de desarrollo.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Métricas Visuales - 7 Paralelogramos */}
                     <div className="relative px-4 py-16">
                         <div className="flex gap-4 max-w-7xl mx-auto justify-center items-start">
-                            
+
                             {/* Columna 1 - Card 1 y Card 2 */}
                             <div className="flex flex-col gap-4">
                                 {/* CARD 1 - Paralelogramo Rosado */}
-                                <div 
+                                <div
                                     className="relative"
                                     style={{
                                         width: '280px',
@@ -365,8 +548,8 @@ const CountdownSection = () => {
                                     }}
                                 >
                                     <div style={{ transform: 'skewX(10deg)' }}>
-                                        <div 
-                                            style={{ 
+                                        <div
+                                            style={{
                                                 fontFamily: 'Montserrat, sans-serif',
                                                 fontSize: '96px',
                                                 fontWeight: '800',
@@ -379,8 +562,8 @@ const CountdownSection = () => {
                                         >
                                             +80
                                         </div>
-                                        <div 
-                                            style={{ 
+                                        <div
+                                            style={{
                                                 fontFamily: 'Montserrat, sans-serif',
                                                 fontSize: '16px',
                                                 fontWeight: '600',
@@ -396,7 +579,7 @@ const CountdownSection = () => {
                                 </div>
 
                                 {/* CARD 2 - Paralelogramo pequeño con logo foco */}
-                                <div 
+                                <div
                                     className="relative"
                                     style={{
                                         width: '180px',
@@ -416,9 +599,9 @@ const CountdownSection = () => {
                                     }}
                                 >
                                     <div style={{ transform: 'skewX(10deg)' }}>
-                                        <img 
-                                            src={focoImg} 
-                                            alt="Foco" 
+                                        <img
+                                            src={focoImg}
+                                            alt="Foco"
                                             style={{
                                                 width: '160px',
                                                 height: '160px'
@@ -431,7 +614,7 @@ const CountdownSection = () => {
                             {/* Columna 2 - Card 3 y Card 4 */}
                             <div className="flex flex-col gap-4 relative">
                                 {/* CARD 3 - Paralelogramo con mando (derecha superior) */}
-                                <div 
+                                <div
                                     className="relative"
                                     style={{
                                         width: '180px',
@@ -450,9 +633,9 @@ const CountdownSection = () => {
                                     }}
                                 >
                                     <div style={{ transform: 'skewX(10deg)' }}>
-                                        <img 
-                                            src={mandoImg} 
-                                            alt="Mando" 
+                                        <img
+                                            src={mandoImg}
+                                            alt="Mando"
                                             style={{
                                                 width: '160px',
                                                 height: '160px'
@@ -462,7 +645,7 @@ const CountdownSection = () => {
                                 </div>
 
                                 {/* CARD 4 - Paralelogramo café (cian, debajo de card 3) */}
-                                <div 
+                                <div
                                     className="relative"
                                     style={{
                                         width: '300px',
@@ -482,8 +665,8 @@ const CountdownSection = () => {
                                     }}
                                 >
                                     <div style={{ transform: 'skewX(10deg)' }}>
-                                        <div 
-                                            style={{ 
+                                        <div
+                                            style={{
                                                 fontFamily: 'Montserrat, sans-serif',
                                                 fontSize: '96px',
                                                 fontWeight: '800',
@@ -496,8 +679,8 @@ const CountdownSection = () => {
                                         >
                                             +200
                                         </div>
-                                        <div 
-                                            style={{ 
+                                        <div
+                                            style={{
                                                 fontFamily: 'Montserrat, sans-serif',
                                                 fontSize: '16px',
                                                 fontWeight: '600',
@@ -507,7 +690,7 @@ const CountdownSection = () => {
                                                 letterSpacing: '0.5px'
                                             }}
                                         >
-                                            Tazas de Café<br/>Consumidos
+                                            Tazas de Café<br />Consumidos
                                         </div>
                                     </div>
                                 </div>
@@ -516,7 +699,7 @@ const CountdownSection = () => {
                             {/* Columna 3 - Card 5 y Card 6 */}
                             <div className="flex flex-col gap-4 relative">
                                 {/* CARD 5 - Paralelogramo Prototipos (cian claro, izquierda) */}
-                                <div 
+                                <div
                                     className="relative"
                                     style={{
                                         width: '220px',
@@ -535,8 +718,8 @@ const CountdownSection = () => {
                                     }}
                                 >
                                     <div style={{ transform: 'skewX(10deg)' }}>
-                                        <div 
-                                            style={{ 
+                                        <div
+                                            style={{
                                                 fontFamily: 'Montserrat, sans-serif',
                                                 fontSize: '96px',
                                                 fontWeight: '800',
@@ -549,8 +732,8 @@ const CountdownSection = () => {
                                         >
                                             15
                                         </div>
-                                        <div 
-                                            style={{ 
+                                        <div
+                                            style={{
                                                 fontFamily: 'Montserrat, sans-serif',
                                                 fontSize: '16px',
                                                 fontWeight: '600',
@@ -560,13 +743,13 @@ const CountdownSection = () => {
                                                 letterSpacing: '0.5px'
                                             }}
                                         >
-                                            Prototipos<br/>Creados
+                                            Prototipos<br />Creados
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* CARD 6 - Paralelogramo Tema Sorpresa (rosado claro, debajo) */}
-                                <div 
+                                <div
                                     className="relative"
                                     style={{
                                         width: '320px',
@@ -585,8 +768,8 @@ const CountdownSection = () => {
                                     }}
                                 >
                                     <div style={{ transform: 'skewX(10deg)' }}>
-                                        <div 
-                                            style={{ 
+                                        <div
+                                            style={{
                                                 fontFamily: 'Raleway, sans-serif',
                                                 fontSize: '60px',
                                                 fontWeight: '800',
@@ -601,8 +784,8 @@ const CountdownSection = () => {
                                         >
                                             MÁSCARA
                                         </div>
-                                        <div 
-                                            style={{ 
+                                        <div
+                                            style={{
                                                 fontFamily: 'Montserrat, sans-serif',
                                                 fontSize: '16px',
                                                 fontWeight: '600',
@@ -612,14 +795,14 @@ const CountdownSection = () => {
                                                 letterSpacing: '0.5px'
                                             }}
                                         >
-                                            Fue el Tema<br/>Sorpresa
+                                            Fue el Tema<br />Sorpresa
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             {/* CARD 7 - Paralelogramo con taza (al costado del card 5) */}
-                            <div 
+                            <div
                                 className="relative"
                                 style={{
                                     width: '240px',
@@ -636,9 +819,9 @@ const CountdownSection = () => {
                                 }}
                             >
                                 <div style={{ transform: 'skewX(10deg)' }}>
-                                    <img 
-                                        src={tazaImg} 
-                                        alt="Taza" 
+                                    <img
+                                        src={tazaImg}
+                                        alt="Taza"
                                         style={{
                                             width: '180px',
                                             height: '180px'
