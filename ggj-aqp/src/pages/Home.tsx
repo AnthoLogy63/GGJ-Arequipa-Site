@@ -13,6 +13,7 @@ import TeamSection from '../components/home/TeamSection';
 import SponsorsSection from '../components/home/SponsorsSection';
 import FaqSection from '../components/home/FaqSection';
 import FinalCallToAction from '../components/home/FinalCallToAction';
+import GamesSection from '../components/postmortem/GamesSection';
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <Navbar />
             <HeroSection />
             <CountdownSection />
+            <GamesSection />
             <GallerySection />
             <AboutSection />
             <RegistrationStepsSection />
