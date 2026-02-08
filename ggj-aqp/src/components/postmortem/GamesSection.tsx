@@ -1,4 +1,4 @@
-import clsx, {type ClassValue} from 'clsx';
+import clsx, { type ClassValue } from 'clsx';
 import { Download, Gamepad2, Info } from 'lucide-react';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -29,9 +29,9 @@ function cn(...classes: ClassValue[]) {
   return twMerge(clsx(classes));
 }
 
-function CardButton({className, ...props}: React.ComponentProps<'button'>) {
+function CardButton({ className, ...props }: React.ComponentProps<'button'>) {
   return (
-    <button className={cn('inline-flex px-3 h-10 py-2.5 gap-x-2 font-semibold text-shadow-md rounded-md transition-all duration-200 hover:scale-105 items-center justify-center', className)} {...props} />
+    <button className={cn('inline-flex px-3 h-10 py-2.5 gap-x-2 font-semibold text-shadow-md rounded-md transition-all duration-200 hover:scale-105 items-center justify-center cursor-pointer', className)} {...props} />
   );
 }
 
@@ -181,11 +181,11 @@ const GamesSection: React.FC = () => {
               <div className="relative overflow-hidden rounded-lg shadow-2xl transition-all duration-300 hover:shadow-[#EC469A]/30 hover:-translate-y-2 flex flex-col h-full w-full">
                 {/* Game Image */}
                 <div className="overflow-hidden bg-linear-to-br from-theme-light-purple to-theme-purple relative">
-                      <img
-                        src={game.imageUrl || GamejamLogo}
-                        alt={game.name}
-                        className="w-full h-86 object-cover transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(211,52,233,0.3)]"
-                      />
+                  <img
+                    src={game.imageUrl || GamejamLogo}
+                    alt={game.name}
+                    className="w-full h-86 object-cover transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(211,52,233,0.3)]"
+                  />
                   {/* Desktop Hover Overlay */}
                   <div className="hidden md:flex absolute inset-0 bg-gradient-to-t from-[#11091C]/95 via-[#6E2880]/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex-col items-center justify-center gap-3 p-6">
                     <p className="text-white/90 text-sm text-center mb-2">
