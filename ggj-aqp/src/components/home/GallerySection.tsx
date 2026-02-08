@@ -151,14 +151,8 @@ const GallerySection = () => {
                             <div
                                 className="flex gap-6 items-center gallery-carousel"
                                 style={{
-<<<<<<< HEAD
-                                    animation: 'scrollLeft 30s linear infinite',
-                                    width: 'max-content',
-                                    willChange: 'transform'
-=======
                                     animation: 'scrollLeft 200s linear infinite',
                                     width: 'max-content'
->>>>>>> feature/anthony
                                 }}
                             >
                                 {/* Triplicamos para bucle suave sin saltos */}
@@ -167,15 +161,9 @@ const GallerySection = () => {
                                         key={`row1-${index}`}
                                         className="flex-shrink-0 rounded-lg overflow-hidden gallery-image-wrapper"
                                         style={{
-<<<<<<< HEAD
-                                            width: '350px',
-                                            height: '250px',
-                                            transform: index % 2 === 0 ? 'translateY(-20px)' : 'translateY(20px)'
-=======
                                             width: '400px',
                                             height: '300px',
                                             transform: index % 2 === 0 ? 'translate3d(0, -30px, 0)' : 'translate3d(0, 30px, 0)'
->>>>>>> feature/anthony
                                         }}
                                     >
                                         <img
@@ -195,14 +183,8 @@ const GallerySection = () => {
                             <div
                                 className="flex gap-6 items-center gallery-carousel"
                                 style={{
-<<<<<<< HEAD
-                                    animation: 'scrollRight 30s linear infinite',
-                                    width: 'max-content',
-                                    willChange: 'transform'
-=======
                                     animation: 'scrollRight 200s linear infinite',
                                     width: 'max-content'
->>>>>>> feature/anthony
                                 }}
                             >
                                 {/* Triplicamos para bucle suave sin saltos */}
@@ -211,15 +193,9 @@ const GallerySection = () => {
                                         key={`row2-${index}`}
                                         className="flex-shrink-0 rounded-lg overflow-hidden gallery-image-wrapper"
                                         style={{
-<<<<<<< HEAD
-                                            width: '350px',
-                                            height: '250px',
-                                            transform: index % 2 === 0 ? 'translateY(20px)' : 'translateY(-20px)'
-=======
                                             width: '400px',
                                             height: '300px',
                                             transform: index % 2 === 0 ? 'translate3d(0, 30px, 0)' : 'translate3d(0, -30px, 0)'
->>>>>>> feature/anthony
                                         }}
                                     >
                                         <img
